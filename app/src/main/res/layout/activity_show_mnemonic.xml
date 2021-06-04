@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionPin.ShowMnemonic"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/backgroun_image1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="140dp">
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/login"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="20dp"
+                android:fontFamily="@font/montserrat"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/sign_up"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/purple_500"
+                android:textSize="20dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login"
+            android:text="@string/hello_nice"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginTop="80dp"
+            android:textSize="12dp"
+            android:textColor="@color/hello_color"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mnemonic"
+            android:fontFamily="@font/montserrat"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="20dp"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="40dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/border"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp">
+                    <TextView
+                        android:id="@+id/mnemonic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@android:color/darker_gray"
+                        android:justificationMode="inter_word"
+                        android:textStyle="bold"/>
+
+              <Button
+                  android:id="@+id/copy"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:drawableLeft="@drawable/ic_baseline_content_copy_24"
+                  android:drawableTint="#000"
+                  android:text="@string/copy"
+                  android:fontFamily="@font/montserrat"
+                  android:textStyle="bold"
+                  android:textAllCaps="false"
+                  android:textColor="@color/text_color"/>
+
+                </LinearLayout>
+
+
+
+                <Button
+                    android:id="@+id/referral_ready4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/user"
+                    android:text="@string/next"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_color"
+                    android:background="@drawable/rounded_button"
+                    android:textAllCaps="false"
+                    android:layout_margin="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="@string/fortext"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

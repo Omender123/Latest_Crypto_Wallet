@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Offer.Full_Offer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_artboard___5" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/offer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="100dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Offer Name"
+                    android:textColor="@color/white"
+                    android:textSize="28dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/offer_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/offer_name"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="100dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Offer Title"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/shortDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Short"
+            android:layout_margin="15dp"
+            android:textSize="25dp"
+            android:justificationMode="inter_word"
+            android:textColor="@color/toolbar_text_color"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="17dp"
+            android:textAllCaps="true"
+            android:justificationMode="inter_word"
+            android:textColor="@color/toolbar_text_color"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"/>
+
+        <TextView
+            android:id="@+id/long_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Long"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:justificationMode="inter_word"
+            android:textColor="@color/toolbar_text_color"
+            android:textStyle="normal"
+            android:fontFamily="@font/montserrat"/>
+
+    </LinearLayout>
+
+</ScrollView>

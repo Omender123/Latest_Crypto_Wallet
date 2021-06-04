@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">" iMX "</string>
+    <string name = "hello_blank_fragment"> สวัสดีส่วนที่ว่าง </string>
+
+    <string name = "drawer_open"> เปิดออก </string>
+    <string name = "drawer_close"> ปิด </string>
+
+    <string name = "dashboard"> แดชบอร์ด </string>
+    <string name = "wallet"> กระเป๋าเงิน </string>
+    <string name = "myWallet"> กระเป๋าเงินของฉัน </string>
+    <string name = "exchange"> สลับ </string>
+    <string name = "profile"> โปรไฟล์ </string>
+    <string name = "security"> ความปลอดภัย </string>
+    <string name = "send"> ส่ง </string>
+    <string name = "setting"> การตั้งค่า </string>
+    <string name = "offer"> ข้อเสนอ </string>
+    <string name = "support"> การสนับสนุน </string>
+    <string name = "dark_mode"> โหมดมืด </string>
+    <string name = "pay_history"> ประวัติการทำธุรกรรม </string>
+    <string name = "coin_history"> ประวัติเหรียญ </string>
+    <string name = "our_offer"> ข้อเสนอ </string>
+    <string name = "select_currency"> เลือกสกุลเงิน </string>
+    <string name = "customer_support"> การสนับสนุนลูกค้า </string>
+    <string name = "share"> แบ่งปัน </string>
+    <string name = "logout"> ออกจากระบบ </string>
+    <string name = "other"> อื่น ๆ </string>
+
+    <string name = "razor_api_key"> rzp_test_23oYrEfMJY6cVI </string>
+
+    <string name = "backup"> สำรองข้อมูล </string>
+    <string name = "To_fa"> 2 ฉก </string>
+    <string name = "passcode"> ปลอดภัยด้วยรหัสผ่าน </string>
+    <string name = "finger"> ปลอดภัยด้วยลายนิ้วมือ </string>
+    <string name = "privacy"> นโยบายความเป็นส่วนตัว </string>
+
+
+    <string name = "mobile_support"> การสนับสนุนทางแชท </string>
+    <string name = "knowledge"> ฐานความรู้ </string>
+    <string name = "ticket"> ตั๋ว </string>
+    <string name = "contact_us"> ติดต่อเรา </string>
+    <string name = "support_text"> ใช้ตัวเลือกด้านล่างยอมรับเกี่ยวกับ IMT </string>
+    <string name = "support_text1"> แก้ไขปัญหาและติดต่อกลับ </string>
+    <string name = "text3"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </string>
+
+    <string name = "more"> เพิ่มเติม </string>
+    <string name = "text2"> ลายนิ้วมือหรือลายนิ้วมือดิจิทัลหมายถึงร่องรอยของข้อมูลที่ใครบางคนทิ้งไว้ </string>
+    <string name = "text1"> รหัสผ่านเป็นความลับที่จำได้ซึ่งโดยทั่วไปจะเป็นสตริงของอักขระซึ่งโดยปกติจะใช้เพื่อยืนยันตัวตนของผู้ใช้ </string>
+    <string name = "text"> สำเนาสำรองที่เหมาะสมจะถูกเก็บไว้ในระบบหรือสื่อที่แยกจากกันเช่นเทปจากข้อมูลหลักเพื่อป้องกันความเป็นไปได้ที่ข้อมูลจะสูญหายเนื่องจากฮาร์ดแวร์หลักหรือซอฟต์แวร์ล้มเหลว </string>
+
+    <string name = "google2fa"> Google 2 ฉก </string>
+    <string name = "email2fa"> อีเมล 2 ฉก </string>
+    <string name = "text_google2fa"> เปิด Google 2 ฉก Security เพื่อรักษาความปลอดภัยให้กับบัญชีของคุณมากขึ้น </string>
+    <string name = "text_email2fa"> เปิดการรักษาความปลอดภัยของอีเมล 2FA เพื่อรักษาความปลอดภัยให้กับบัญชีของคุณมากขึ้น </string>
+    <string name = "get_started"> เริ่มต้น </string>
+    <string name = "send_bitcoin"> ส่ง Bitcoin ไปยัง IMT กระเป๋าสตางค์ ของคุณ </string>
+
+    <string name = "account_balance"> ยอดคงเหลือในบัญชี </string>
+
+
+   <!-- <! - ข้อความสำหรับหน้าจอการตั้งค่า ->-->
+    <string name = "notification"> การแจ้งเตือน </string>
+    <string name = "sound"> ตรวจสอบการอัปเดต </string>
+    <string name = "currency"> สกุลเงิน </string>
+    <string name = "advance"> ขั้นสูง </string>
+    <string name = "sync"> ซิงค์อุปกรณ์ </string>
+    <string name = "sync1"> อุปกรณ์ที่ใช้งาน </string>
+    <string name = "restore"> การจัดการ Crypto </string>
+    <string name = "detele"> ลบ กระเป๋าสตางค์ </string>
+    <string name = "usd"> USD </string>
+    <string name = "below_text"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna </string>
+
+    <string name = "cryptoinfo"> ข้อมูลสกุลเงินดิจิทัล </string>
+    <string name = "barcode_scan"> สแกน คิวอาร์โค้ด </string>
+    <string name = "recieve"> รับ </string>
+    <string name = "scan"> สแกน </string>
+    <string name = "balance"> ยอดคงเหลือ </string>
+    <string name = "add_money"> เติมเงิน </string>
+    <string name = "pay"> ชำระเงิน </string>
+    <string name = "add"> ป้อนจำนวน </string>
+    <string name = "add1"> เพิ่มเงิน </string>
+    <string name = "complete"> เสร็จสมบูรณ์ </string>
+    <string name = "add_text"> ก่อนที่จะเพิ่มเงินเข้ากระเป๋าเงินของคุณคุณยอมรับข้อกำหนดของเรา &amp; นโยบายความเป็นส่วนตัว </string>
+    <string name = "add_trem_and_condition"> ยอมรับข้อกำหนดของเรา &amp; นโยบายความเป็นส่วนตัว </string>
+    <string name = "your_barcode"> ที่อยู่ กระเป๋าสตางค์ ของคุณ </string>
+    <string name = "tab_barcode"> แท็บที่อยู่ กระเป๋าสตางค์ เพื่อคัดลอก </string>
+    <string name = "barcode"> บาร์โค้ดที่อยู่ </string>
+  <!--  <! - ข้อความสำหรับหน้าจอเข้าสู่ระบบและลงทะเบียน ->-->
+    <string name = "login"> เข้าสู่ระบบ </string>
+    <string name = "sign_up"> สมัครใช้งาน </string>
+    <string name = "hello"> สวัสดี ! </string>
+    <string name = "welcome_back"> ยินดีต้อนรับกลับ </string>
+    <string name = "name"> ชื่อ </string>
+    <string name = "email"> อีเมล </string>
+    <string name = "password"> รหัสผ่าน </string>
+    <string name = "re_password"> ใส่รหัสผ่านซ้ำ </string>
+    <string name = "referal_code"> รหัสอ้างอิง </string>
+    <string name = "phone"> หมายเลขโทรศัพท์ </string>
+    <string name = "username"> ชื่อผู้ใช้ </string>
+    <string name = "Nice"> สวัสดียินดีที่ได้รู้จัก! </string>
+    <string name = "hello_nice"> สวัสดียินดีที่ได้รู้จัก! </string>
+    <string name = "crate"> สร้างบัญชีของคุณ </string>
+    <string name = "enter_referral"> ป้อนรหัสอ้างอิงของคุณ </string>
+    <string name = "your_referral"> รหัสอ้างอิงของคุณ </string>
+    <string name = "ready"> พร้อมใช้งาน </string>
+    <string name = "not_referral"> ฉันไม่มีรหัสอ้างอิง </string>
+    <string name = "next"> ถัดไป </string>
+    <string name = "forget"> ลืมรหัสผ่าน </string>
+    <string name = "forget_password"> ลืมรหัสผ่าน </string>
+    <string name = "otp_send"> สนข ได้รับในบัญชีอีเมลของคุณ </string>
+    <string name = "comfirm"> ยืนยันที่อยู่อีเมล / สนข </string>
+    <string name = "enter_otp"> ป้อน สนข ของคุณ </string>
+    <string name = "not_otp"> ฉันไม่รับ สนข ส่งอีกครั้ง </string>
+    <string name = "change_password"> เปลี่ยนรหัสผ่าน </string>
+    <string name = "new_password"> รหัสผ่านใหม่ </string>
+    <string name = "confirm_password"> ยืนยันรหัสผ่าน </string>
+    <string name = "create_passcode"> สร้างรหัสผ่านของคุณ </string>
+    <string name = "confirm_passcode"> ยืนยันรหัสผ่านของคุณ </string>
+    <string name = "enter_passcode"> ป้อนรหัสของคุณ </string>
+    <string name = "done"> เสร็จสิ้น </string>
+    <string name = "transaction"> พินธุรกรรม </string>
+    <string name = "Secure_wallet"> กระเป๋าเงินที่ปลอดภัย </string>
+    <string name = "c_transaction"> ยืนยัน ปัก ธุรกรรม </string>
+    <string name = "enter_pin"> ป้อน ปัก ธุรกรรม </string>
+    <string name = "mnemonic"> คัดลอกไปยัง ช่วยในการจำ </string>
+    <string name = "enter_mnemonic"> ป้อน ช่วยในการจำ </string>
+    <string name = "add_more"> เพิ่มเพิ่มเติม </string>
+    <string name = "overview"> ภาพรวม </string>
+    <string name = "fortext"> โปรดช่วยจำไว้ตลอดชีวิต และข้อกำหนดของความต้องการในการจำนี้ในขณะที่ลืมรหัสผ่าน </string>
+
+
+    <string name = "Gmail_Text"> การตรวจสอบสิทธิ์ของ Google </string>
+    <string name = "Emailtext"> ยืนยันรหัสอีเมลของคุณ </string>
+    <string name = "GoogleAuthentication"> การตรวจสอบสิทธิ์ของ Google </string>
+    <string name = "createaccount"> บัญชีถูกสร้างขึ้น </string>
+    <string name = "googleauth"> ป้อน Google การรับรองความถูกต้อง </string>
+    <string name = "skip"> ข้าม </string>
+    <string name = "Addverification"> เพิ่มการยืนยัน </string>
+    <string name = "sucessfully"> สำเร็จ </string>
+
+    <string name = "light"> โหมดแสง </string>
+    <string name = "dark"> โหมดมืด </string>
+    <string name = "payout_text1"> ป้อนอีเมล OTP </string>
+    <string name = "payout_text2"> ป้อน Google Token </string>
+    <string name = "knwoledge_Text_heading"> sd dfask msadj msad mads poad wdt </string>
+    <string name = "knowlege_Description_Demo"> สวัสดีฉันเป็น Demo Text ที่แสดงการใช้งานเลย์เอาต์ตอนนี้มันแสดงการสาธิตของเลย์เอาต์นี้ </string>
+    <string name = "add_ticket"> เพิ่มตั๋ว </string>
+
+
+    <string name = "contact_title"> รายละเอียดการติดต่อ </string>
+    <string name = "contact_Email"> ที่อยู่อีเมล </string>
+    <string name = "contact_Email_Address"> imxchange.imx@gmail.com </string>
+    <string name = "contact_Phone"> หมายเลขโทรศัพท์ </string>
+    <string name = "contact_Phone_No"> + 66 646981930 </string>
+    <string name = "contact_website"> เว็บไซต์ </string>
+    <string name = "contact_website_address"> www.imx.global </string>
+
+    <string name = "wallettext"> พิมพ์ขั้นตอนที่ปลอดภัยของคุณเพื่อกู้คืนกระเป๋าเงินที่มีอยู่ </string>
+    <string name = "restorewallet"> กู้คืน กระเป๋าสตางค์ </string>
+    <string name = "selectcurrency"> เลือกสกุลเงิน </string>
+    <string name = "secretephases"> ขั้นตอนลับ </string>
+    <string name = "devicesync"> คุณต้องการซิงค์กับอุปกรณ์ใด </string>
+    <string name = "scandes"> เปิด IMT Desktop ไปที่การตั้งค่าจากนั้นอุปกรณ์จากนั้นคลิกปุ่มซิงค์ </string>
+    <string name = "scanqr"> สแกน คิวอาร์โค้ด </string>
+    <string name = "passcode_text"> ป้อนรูปแบบการล็อกหน้าจอโทรศัพท์ PIN รหัสผ่านหรือลายนิ้วมือ </string>
+    <string name = "passcode_detail"> ปลดล็อก Crypto กระเป๋าสตางค์ </string>
+    <string name = "transaction_text"> ไม่มีประวัติการทำธุรกรรม </string>
+    <string name = "ticket_text"> ไม่มีประวัติตั๋วเก่า </string>
+    <string name = "add_currency"> เพิ่มสกุลเงิน </string>
+
+    <string name = "txt_pin"> กรุณาป้อน พิน ธุรกรรมของคุณ ที่คุณสร้างขึ้นในขณะสมัครใช้งาน </string>
+
+    <!--<! - การตั้งค่าข้อความเนื้อหา ->-->
+    <string name = "noti_text"> เราต้องการแจ้งให้คุณทราบเกี่ยวกับเหตุการณ์ล่าสุดที่เกี่ยวข้องกับ iMX </string>
+    <string name = "sound_text">เรากำลังมาพร้อมกับการอัปเดตใหม่ </string>
+    <string name = "currency_text"> คุณสามารถติดตามราคา crypto สดในสกุลเงินที่คุณต้องการได้ </string>
+    <string name = "active_text"> ติดตามกิจกรรมการเข้าสู่ระบบบัญชีของคุณ </string>
+    <string name = "cryto_text"> เพลิดเพลินกับคุณสมบัติล่าสุดบนแพลตฟอร์ม iMX เพื่อรับสิ่งที่ดีที่สุดจากแอปพลิเคชัน </string>
+
+   <!-- <! - ข้อความเนื้อหาสนับสนุน ->-->
+    <string name = "mobile_text"> คุณสามารถพูดคุยกับเราเกี่ยวกับปัญหาของคุณได้ </string>
+    <string name = "knowledge_text"> แก้ไขปัญหาของคุณเกี่ยวกับคำถามที่พบบ่อย </string>
+    <string name = "tickets_text"> แจ้งปัญหาของคุณแล้วเราจะติดต่อกลับพร้อมวิธีแก้ปัญหาของคุณ </string>
+    <string name = "contact_text"> ติดต่อเราโดยตรง </string>
+
+    <string name = "prefs_theme_key"> ธีม </string>
+
+    <string name = "language"> ภาษา </string>
+
+    <string name = "exit_text"> คุณต้องการออกหรือไม่ </string>
+    <string name = "log_text"> คุณแน่ใจหรือไม่ว่าจะออกจากระบบ !!!!! </string>
+    <string name = "yes"> ใช่ </string>
+    <string name = "no"> ไม่ใช่ </string>
+    <string name = "add_Query"> เพิ่มการสืบค้นของคุณ </string>
+    <string name = "subject"> หัวเรื่อง </string>
+    <string name = "enter_Query"> ป้อนคำค้นหา </string>
+    <string name = "add_text1"> เพิ่ม </string>
+    <string name = "verify_txt"> การยืนยัน </string>
+    <string name = "new_chat"> แชทใหม่ </string>
+    <string name = "old_chat"> แชทเก่า </string>
+    <string name = "recevied"> ได้รับ </string>
+    <string name = "coin_address"> ป้อนที่อยู่เหรียญ </string>
+    <string name = "sumbit"> ส่ง </string>
+    <string name = "trans_su"> การทำธุรกรรมสำเร็จ </string>
+    <string name = "download"> ดาวน์โหลด </string>
+    <string name = "copy"> คัดลอก </string>
+    <string name = "teans_id"> รหัสธุรกรรม </string>
+    <string name = "paid_to"> จ่ายให้ </string>
+    <string name = "status"> สถานะ </string>
+    <string name = "show"> แสดงรายละเอียด </string>
+    <string name = "hide"> ซ่อนรายละเอียด </string>
+    <string name = "total_amount"> จำนวนเงินทั้งหมด </string>
+    <string name = "price"> ราคา </string>
+    <string name = "swap_p2p"> แลกเปลี่ยนยูทิลิตี้ </string>
+    <string name = "coin"> ป้อนจำนวนเหรียญที่จะโอน </string>
+    <string name = "account"> บัญชี </string>
+    <string name = "payment"> การชำระเงิน </string>
+    <string name = "about"> เกี่ยวกับ </string>
+    <string name = "click"> ปุ่มคลิกเพื่อดาวน์โหลด </string>
+    <string name = "for1"> สำหรับดาวน์โหลด ช่วยในการจำ </string>
+    <string name = "save"> โปรดบันทึก ช่วยในการจำตลอดชีวิต </string>
+    <string name = "search"> ค้นหา </string>
+    <string name = "story"> เรื่องราว </string>
+    <string name = "old_ticket"> ตั๋วเก่า </string>
+    <string name = "recent"> ประวัติการทำธุรกรรมล่าสุด </string>
+    <string name = "enter"> ป้อน รหัสผู้ใช้ หรือชื่อผู้ใช้ </string>
+    <string name = "paid_form"> ชำระจาก </string>
+
+    <string name = "threat_mode"> โหมดภัยคุกคาม </string>
+    <string name = "caution"> ข้อควรระวัง </string>
+    <string name = "threat_text"> การดำเนินการนี้จะล็อกบัญชีของคุณอย่างถาวร เว้นแต่คุณจะส่งผ่านพารามิเตอร์ความปลอดภัยทั้งหมด </string>
+
+    <string name = "your_referral_code"> รหัสอ้างอิงของคุณ </string>
+    <string name = "tab_below"> แท็บไปที่ข้อความเพื่อคัดลอกรหัสอ้างอิง </string>
+
+    <string name = "no_chat_text"> ไม่มีประวัติการแชทเก่า </string>
+    <string name = "un_lock"> ปลดล็อคบัญชี </string>
+
+    <string name = "close_chat"> ปิดการแชท </string>
+    <string name = "close_chat_text"> คุณต้องการยุติการแชทหรือไม่ </string>
+    <string name = "confirm"> ยืนยัน </string>
+    <string name = "cancel"> ยกเลิก </string>
+
+    <string name="imt_u">ImSmart Utility</string>
+
+    <string name="reff">ฉันไม่มีรหัสอ้างอิง</string>
+    <string name = "noconnection"> กรุณาเชื่อมต่อกับเครือข่าย WIFI หรือเปิดใช้งานข้อมูลมือถือ </string>
+    <string name="recent_txt">คุณไม่มีธุรกรรมล่าสุด</string>
+
+    <string name="scan_txt"> สแกนรหัส QR โดยคลิกปุ่มบนหน้าจอ</string>
+
+    <string name = "kyc"> KYC </string>
+    <string name = "kyc_txt"> โปรดกรอก kyc ของคุณเพื่อความปลอดภัยที่ดีขึ้น </string>
+    <string name = "kyc_country"> ประเทศ </string>
+    <string name = "kyc_address"> ที่อยู่ </string>
+    <string name = "doc_type"> ประเภทเอกสาร </string>
+    <string name = "docu_men"> เอกสาร </string>
+
+    <string name = "house_no"> บ้าน / ห้องชุด / อพาร์ตเมนต์ </string>
+    <string name = "street_add"> ที่อยู่ </string>
+    <string name = "zip_code"> รหัสไปรษณีย์ </string>
+    <string name = "doc_no"> หมายเลขเอกสาร </string>
+
+    <string name ="choose"> เลือกไฟล์ </string>
+    <string name ="acko"> รับทราบ </string>
+
+    <string name="Confirm">การยืนยัน</string>
+    <string name="Amt_in_cryto">จำนวนเงินใน crypto</string>
+    <string name="Amt_in_USD">จำนวนเงินเป็น USD</string>
+    <string name="Reciver_add">ที่อยู่ผู้รับ</string>
+    <string name="Trans_hsh">แฮชธุรกรรม</string>
+    <string name="Trans_sts">สถานะการทำธุรกรรม</string>
+
+    <string name = "obtain"> รับ Google 2 ฉก </string>
+
+    <string name = "resetPin"> รีเซ็ตพิน </string>
+    <string name = "forgetPin"> ลืม PIN </string>
+    <string name = "resetPintxt"> คุณสามารถรีเซ็ต PIN ธุรกรรมของคุณได้ </string>
+    <string name = "forgetPintxt"> ตั้งค่า PIN ธุรกรรมของคุณในกรณีที่คุณลืม </string>
+
+    <string name = "currentPin"> พินปัจจุบัน </string>
+    <string name = "enter_currentPin"> ป้อน PIN ปัจจุบัน </string>
+    <string name = "newPin"> พินใหม่ </string>
+    <string name = "enter_newPin"> ป้อนพินใหม่ </string>
+    <string name = "update_pin"> PIN ธุรกรรมของคุณอัปเดตเรียบร้อยแล้ว </string>
+
+    <string name = "com_newPin"> ยืนยันพินใหม่ </string>
+
+    <string name ="txt_mnemonic"> ทำตามขั้นตอนนี้เพื่อรับ ช่วยในการจำ </string>
+    <string name ="follow_mnemonic"> การตั้งค่า >> การสำรองข้อมูล >> การยืนยัน >> ขั้นตอนลับ </string>
+
+    <string name = "userEmail"> ชื่อผู้ใช้หรืออีเมล </string>
+
+    <string name = "top_money"> เติมเงิน </string>
+    <string name = "top_money1"> เลือกวิธีการเติมเงินเพื่อเติมเงิน </string>
+    <string name = "paypal"> จ่ายเพื่อน </string>
+    <string name = "bank"> ธนาคาร โอน</string>
+    <string name = "account_no"> หมายเลขบัญชีธนาคาร </string>
+    <string name = "transfer"> โอน </string>
+    <string name = "bank_name"> ชื่อธนาคาร </string>
+    <string name = "transaction_id"> รหัสธุรกรรม </string>
+    <string name = "upi_id"> รหัส UPI </string>
+    <string name = "ifsc"> รหัส SWIFT </string>
+    <string name = "bank_hol"> ชื่อเจ้าของธนาคาร </string>
+    <string name = "bank_show"> แสดงรายละเอียดธนาคาร </string>
+    <string name = "qr_code"> รหัส QR ภาษาไทย </string>
+
+
+    <string name = "redeem"> แลก </string>
+    <string name = "redeem_utility"> แลกในยูทิลิตี้ </string>
+    <string name = "redeem_now"> แลกเลย </string>
+    <string name = "term"> ข้อกำหนดในการให้บริการ </string>
+    <string name = "rewards"> รางวัล </string>
+    <string name = "imx_point"> จุด IMX </string>
+    <string name = "redeem_gift"> แลกเป็นของขวัญ </string>
+    <string name = "Rewards_his"> ประวัติรางวัล </string>
+    <string name = "product"> ผลิตภัณฑ์ </string>
+    <string name = "cart"> รถเข็น </string>
+    <string name = "history"> ประวัติ </string>
+    <string name = "categories"> หมวดหมู่ </string>
+</resources>

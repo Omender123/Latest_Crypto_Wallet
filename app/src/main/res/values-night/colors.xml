@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FF03DAC5</color> <!--progress bar color-->
+    <color name="purple_500">#F1BB0E</color><!-- tool bar color-->
+    <color name="purple_700">#1F2641</color> <!--status bar color-->
+    <color name="teal_200">#F1BB0E</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="background">#1F2641</color>
+    <color name="background1">#323C63</color>
+    <color name="status_color">#1F2641</color>
+    <color name="toolbar">#1F2641</color>
+    <color name="toolbar_text_color">#F8F8F8</color>
+    <color name="icon"> #232b49</color>
+    <color name="Orange">#ED8A4C</color>
+    <color name="drawer_background">#1F2641</color>
+    <color name="drawer_icon">#F8F8F8</color>
+    <color name="drawer_tittle">#F8F8F8</color>
+    <color name="card_background">#363F61</color>
+    <color name="pink">#EA485C</color>
+    <color name="green">#00E676</color>
+    <color name="red">#FF1100</color>
+    <color name="stoke_color">#FFFFFF</color>
+    <color name="layout_color">#363F61</color>
+    <color name="over">#1F2641</color>
+    <color name="graph">#1F2641</color>
+    <color name="grey_light_secondary">#cccccc</color>
+    <color name="grey_light_tertiary">#eeeeee</color>
+    <color name="bal_color">#E0AB00</color>
+
+    <color name="graph_line">#F9CD1B</color>
+
+    <color name="start_color_graph">#66DD7714</color>
+    <color name="end_color_graph">#1ADCA906</color>
+    <color name="swap_color">#3A4671</color>
+    <color name="graph_icon_color">#FFFFFF</color>
+    <color name="blue">#FFFFFF</color>
+    <color name="empty_color">#FFFFFF</color>
+
+</resources>

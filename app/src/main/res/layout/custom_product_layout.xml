@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="10dp"
+    android:background="@color/background">
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="@color/card_product_back"
+        app:cardCornerRadius="13dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkbox_cart"
+                style="@style/CustomCheckbox03"
+                android:layout_width="24dp"
+                android:layout_gravity="right"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp" />
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/image"/>
+
+            <TextView
+                android:id="@+id/text_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Casual Analog Orange"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="normal"
+                android:textSize="10dp"
+                android:fontFamily="@font/montserrat"/>
+            <TextView
+                android:id="@+id/text_pt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5500pt"
+                android:textColor="@color/green1"
+                android:textAlignment="center"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="normal"
+                android:textSize="9dp"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:id="@+id/text_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50$"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textSize="13dp"
+                android:fontFamily="@font/montserrat"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

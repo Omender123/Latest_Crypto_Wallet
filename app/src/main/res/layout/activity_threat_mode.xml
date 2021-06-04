@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".Activity.Threat_Mode">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="60dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_height="match_parent"
+            android:onClick="back"
+            android:src="@drawable/ic_baseline_arrow_back_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_gravity="center"
+            android:text="@string/threat_mode"
+            android:textColor="@color/white"
+            android:id="@+id/toolbar_title" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_threat"/>
+
+            <TextView
+                android:id="@+id/textt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/caution"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/textC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/threat_text"
+                android:justificationMode="inter_word"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/montserrat"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/OutlineBox1"
+                android:id="@+id/enterpss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@android:color/darker_gray">
+
+                <EditText
+                    android:id="@+id/enter_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:drawableTint="@android:color/darker_gray"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/OutlineBox1"
+                android:id="@+id/enterotp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/welcome"
+                android:layout_marginTop="20dp"
+                android:hint="@string/enter_otp"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@android:color/darker_gray">
+
+                <EditText
+                    android:id="@+id/enter_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:drawableTint="@android:color/darker_gray"
+                    android:ems="10"
+                    android:inputType="numberPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enterpin"
+                style="@style/OutlineBox1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/welcome"
+                android:layout_marginTop="20dp"
+                android:hint="@string/transaction"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@android:color/darker_gray">
+
+                <EditText
+                    android:id="@+id/enter_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/black"
+                    android:drawableTint="@android:color/darker_gray"
+                    android:ems="10"
+                    android:inputType="numberPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/submit"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+              app:cardCornerRadius="8dp"
+               app:cardElevation="3dp"
+               android:layout_marginTop="20dp"
+               app:cardBackgroundColor="@color/teal_200">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:text="@string/comfirm"
+                   android:maxLength="7"
+                   android:textColor="#000000"
+                   android:textStyle="bold"
+                   android:fontFamily="@font/montserrat"
+                   android:textSize="15dp"/>
+           </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

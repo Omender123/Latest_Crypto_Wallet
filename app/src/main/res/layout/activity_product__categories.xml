@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".Rewards.Product_Categories">
+    <com.crypto.croytowallet.Extra_Class.DrawableTextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:background="@color/toolbar"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:text="@string/rewards"
+        android:drawableRight="@drawable/ic_icon_feather_shopping_cart"
+        android:textColor="@color/white"
+        android:id="@+id/toolbar_title"
+        tools:ignore="OnClick,RtlCompat"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Categories_recyclerView"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        tools:listitem="@layout/custom_categories_layout"/>
+
+
+</LinearLayout>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".Activity.Scretephases">
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="60dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_arrow_back_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_gravity="center"
+            android:text="@string/secretephases"
+            android:textColor="@color/white"
+            android:id="@+id/toolbar_title" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="50dp"
+                android:elevation="2dp"
+                app:cardBackgroundColor="@color/card_background"
+                android:layout_marginVertical="20dp"
+                android:layout_marginEnd="0dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:weightSum="3">
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_baseline_dashboard_24_yellow"
+                            tools:ignore="VectorDrawableCompat" />
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/click"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textStyle="bold"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/for1"
+                            android:textAlignment="center"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text1"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:layout_marginTop="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text2"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text3"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text4"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text5"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text6"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text7"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text8"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text9"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text10"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text11"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:id="@+id/text12"
+                            android:text="1. Apple"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/toolbar_text_color"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="20dp"/>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardView"
+                android:layout_marginTop="-30dp"
+                android:layout_marginBottom="-20dp"
+                android:text="@string/save"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/button_secrete"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:layout_margin="50dp"
+                android:drawablePadding="40dp"
+                android:layout_below="@id/text_about"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:drawableLeft="@drawable/ic_baseline_content_copy_24"
+                android:background="@drawable/rounded_button"
+                android:layout_marginTop="42dp"
+                android:text="@string/copy" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

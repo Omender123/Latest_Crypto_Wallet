@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:orientation="vertical">
+
+      <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+          <TextView
+                android:id="@+id/lblListHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/drop_down_arrow"
+                android:textColor="@color/toolbar_text_color"
+                android:padding="10dp"
+                android:textSize="14sp" />
+          <ImageView
+                android:id="@+id/drop_down_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingEnd="8dp"
+                android:src="@drawable/readmore" />
+        </RelativeLayout>
+
+
+
+</LinearLayout>

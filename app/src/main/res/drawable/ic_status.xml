@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:tint="@color/drawer_icon"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+  <group>
+    <clip-path
+        android:pathData="M0,0h100v100h-100z"/>
+
+    <path
+        android:pathData="M66.794,25l9.618,9.618L55.92,55.128l-16.8,-16.8L8,69.508l5.924,5.924 25.2,-25.216 16.8,16.817L82.373,40.6l9.618,9.618L91.991,25Z"
+        android:fillColor="#242424"/>
+  </group>
+</vector>

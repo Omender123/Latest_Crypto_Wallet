@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1082226873911",
+    "project_id": "croyto-wallet",
+    "storage_bucket": "croyto-wallet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082226873911:android:99b54f6b3a87e15a1a11b2",
+        "android_client_info": {
+          "package_name": "com.crypto.croytowallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082226873911-hpd93nbtkpkk7e8u0kb9em29h7ke32df.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaHtajAdAXacrHs82nofOmMRbfZPFTO7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082226873911-hpd93nbtkpkk7e8u0kb9em29h7ke32df.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

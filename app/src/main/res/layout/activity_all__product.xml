@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@color/background"
+tools:context=".Rewards.All_Product">
+<com.crypto.croytowallet.Extra_Class.DrawableTextView
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:textSize="25dp"
+    android:textStyle="bold"
+    android:background="@color/toolbar"
+    android:gravity="center_vertical"
+    android:textAlignment="center"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+    android:text="@string/product"
+    android:drawableRight="@drawable/ic_icon_feather_shopping_cart"
+    android:textColor="@color/white"
+    android:id="@+id/toolbar_title"
+    tools:ignore="OnClick,RtlCompat"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Watches"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/toolbar_text_color"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="@font/montserrat"/>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/Product_recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="10dp"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+    app:spanCount="2"
+    tools:itemCount="10"
+    tools:listitem="@layout/custom_product_layout"/>
+
+
+</LinearLayout>

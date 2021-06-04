@@ -1,0 +1,318 @@
+<resources>
+    <string name="app_name"> iMX </string>
+    <string name="hello_blank_fragment"> हैलो खाली टुकड़ा </string>
+
+    <string name="drawer_open"> drawe open </string>
+    <string name="drawer_close"> drawe close </string>
+    <string name="dashboard"> डैशबोर्ड </string>
+    <string name="wallet"> बटुआ </string>
+    <string name="myWallet"> मेरा वॉलेट </string>
+    <string name="exchange"> स्वैप </string>
+    <string name="profile"> प्रोफ़ाइल </string>
+    <string name="security"> सुरक्षा </string>
+    <string name="send"> संदेश </string>
+    <string name="setting"> स्थापना </string>
+    <string name="offer"> ऑफ़र </string>
+    <string name="support"> समर्थन </string>
+    <string name="dark_mode"> डार्क मोड </string>
+    <string name="pay_history"> लेनदेन इतिहास </string>
+    <string name="coin_history"> सिक्का इतिहास </string>
+    <string name="our_offer"> ऑफ़र </string>
+    <string name="select_currency"> मुद्रा चुनें </string>
+    <string name="customer_support"> ग्राहक सहायता </string>
+    <string name="share"> शेयर </string>
+    <string name="logout"> लॉगआउट </string>
+    <string name="other"> अन्य </string>
+
+    <string name="razor_api_key"> rzp_test_23oYrEfMJY6cVI </string>
+
+    <string name="backup"> बैकअप </string>
+    <string name="To_fa"> 2 एफ ए </string>
+    <string name="passcode"> पासकोड के साथ सुरक्षित करें </string>
+    <string name="finger"> फ़िंगरप्रिंट के साथ सुरक्षित करें </string>
+    <string name="privacy"> गोपनीयता नीति </string>
+
+
+    <string name="mobile_support"> चैट सहायता </string>
+    <string name="knowledge"> ज्ञानकोष </string>
+    <string name="ticket"> टिकट </string>
+    <string name="contact_us"> हमसे संपर्क करें </string>
+    <string name="support_text"> आईएम टी के बारे में नीचे दिए गए विकल्पों का उपयोग करें, </string>
+    <string name="support_text1"> समस्या का समाधान करें और संपर्क में रहें, </string>
+    <string name="text3">लोरम इप्सम गाजर, कंसीटेटर वर्षों में उदासी, लेकिन समय को फेंकने के लिए आसान है</string>
+
+
+    <string name="more"> अधिक </string>
+    <string name="text2"> एक फिंगरप्रिंट या डिजिटल फिंगरप्रिंट किसी व्यक्ति द्वारा छोड़ी गई जानकारी के किसी भी निशान को संदर्भित करता है। </string>
+    <string name="text1"> एक पासकोड, एक मेमोरेटेड सीक्रेट है, आमतौर पर एक स्ट्रिंग ऑफ कैरेक्टर्स, जिसका इस्तेमाल आमतौर पर यूजर आइडेंटिटी की पुष्टि के लिए किया जाता है। </string>
+    <string name="text"> प्राथमिक हार्डवेयर या सॉफ़्टवेयर विफलता के कारण डेटा हानि की संभावना से बचाने के लिए एक उपयुक्त बैकअप प्रतिलिपि को प्राथमिक डेटा से अलग सिस्टम या माध्यम में संग्रहीत किया जाता है। </string>
+
+    <string name="google2fa"> गूगल 2 एफ ए </string>
+    <string name="email2fa"> ईमेल 2 एफ ए </string>
+    <string name="text_google2fa"> अपने खाते को बेहतर ढंग से सुरक्षित करने के लिए Google 2 एफ ए सुरक्षा चालू करें। </string>
+    <string name="text_email2fa"> अपने खाते को बेहतर ढंग से सुरक्षित करने के लिए ईमेल 2 एफ ए सुरक्षा चालू करें। </string>
+    <string name="get_started"> आरंभ करें </string>
+    <string name="send_bitcoin"> अपने आईएम टी वॉलेट में Bitcoin भेजें </string>
+
+    <string name="account_balance"> खाता शेष </string>
+
+
+    <!--स्क्रीन सेट करने के लिए टेक्स्ट-->
+    <string name="notification"> सूचनाएं </string>
+    <string name="sound"> अद्यतन की जाँच करें </string>
+    <string name="currency"> मुद्रा </string>
+    <string name="advance"> उन्नत </string>
+    <string name="sync"> सिंक डिवाइस </string>
+    <string name="sync1"> सक्रिय उपकरण </string>
+    <string name="restore"> क्रिप्टो मैनेजमेंट </string>
+    <string name="detele"> डिलीट वॉलेट </string>
+    <string name="usd"> USD </string>
+    <string name="below_text"> लोरम इप्सम डोलर अमेट, कंसेटेटुर सेप्सिंग एलीट्र, सेड डायम नॉनमी ईरमॉड अस्थायी इनविडंट यूट लैबर एट डोलोर मैग्ना </string>
+
+    <string name="cryptoinfo"> क्रिप्टोक्यूरेंसी जानकारी </string>
+    <string name="barcode_scan"> किसी भी QR कोड को स्कैन करें </string>
+    <string name="recieve"> प्राप्त करें </string>
+    <string name="scan"> स्कैन </string>
+    <string name="balance"> संतुलन </string>
+    <string name="add_money"> टॉप अप </string>
+    <string name="pay"> वेतन </string>
+    <string name="add"> राशि दर्ज करें </string>
+    <string name="add1"> पैसे जोड़ें </string>
+    <string name="complete"> पूरा </string>
+    <string name="add_text"> अपने वॉलेट में पैसे जोड़ने से पहले, आप हमारी शर्तें स्वीकार करते हैं &amp; गोपनीयता नीति </string>
+    <string name="add_trem_and_condition"> हमारी शर्तें स्वीकार करें &amp; गोपनीयता नीति </string>
+    <string name="your_barcode"> आपका बटुआ पता </string>
+    <string name="tab_barcode"> टैब वॉलेट का पता कॉपी करने के लिए </string>
+    <string name="barcode"> बारकोड पता </string>
+    <!--लॉगिन और साइनअप स्क्रीन के लिए पाठ -->
+    <string name="login"> लॉगिन </string>
+    <string name="sign_up"> साइन अप करें </string>
+    <string name="hello"> हैलो ! </string>
+    <string name="welcome_back"> वेलकम बैक </string>
+    <string name="name"> नाम </string>
+    <string name="email"> Email </string>
+    <string name="password"> पासवर्ड </string>
+    <string name="re_password"> दोहराएँ पासवर्ड </string>
+    <string name="referal_code"> रेफरल कोड </string>
+    <string name="phone"> फ़ोन नंबर। </string>
+    <string name="username"> उपयोगकर्ता नाम </string>
+    <string name="Nice"> नमस्कार, आपसे मिलकर अच्छा लगा! </string>
+
+    <string name="hello_nice"> नमस्कार, आपसे मिलकर अच्छा लगा! </string>
+    <string name="crate"> अपना खाता बनाएँ </string>
+    <string name="enter_referral"> अपना रेफरल कोड डालें </string>
+    <string name="your_referral"> आपका रेफरल कोड </string>
+    <string name="ready"> जाने के लिए तैयार </string>
+    <string name="not_referral"> मेरे पास रेफरल कोड नहीं है </string>
+    <string name="next"> अगला </string>
+    <string name="forget"> मेरा पासवर्ड भूल गए </string>
+    <string name="forget_password"> पासवर्ड भूल गए </string>
+    <string name="otp_send"> ओटीपी आपके ईमेल खाते में प्राप्त होता है </string>
+    <string name="comfirm"> ईमेल एड्रेस / ओटीपी </string>
+    की पुष्टि करें
+    <string name="enter_otp"> अपना ओटीपी दर्ज करें </string>
+    <string name="not_otp"> मैं दोबारा प्राप्त नहीं करता ओटीपी भेजें </string>
+    <string name="change_password"> पासवर्ड बदलें </string>
+    <string name="new_password"> नया पासवर्ड </string>
+    <string name="confirm_password"> पासवर्ड की पुष्टि करें </string>
+    <string name="create_passcode"> अपना पासकोड बनाएं </string>
+    <string name="confirm_passcode"> अपने पासकोड की पुष्टि करें </string>
+    <string name="enter_passcode"> अपना पासकोड दर्ज करें </string>
+    <string name="done"> हो गया </string>
+    <string name="transaction"> लेनदेन का पिन </string>
+    <string name="Secure_wallet"> सिक्योर वॉलेट </string>
+    <string name="c_transaction"> ट्रांज़ेक्शन पिन की पुष्टि करें </string>
+    <string name="enter_pin"> लेनदेन का पिन दर्ज करें </string>
+    <string name="mnemonic"> स्मृति सहायक पर कॉपी करें </string>
+    <string name="enter_mnemonic"> स्मृति सहायक दर्ज करें </string>
+    <string name="add_more"> और जोड़ें </string>
+    <string name="overview"> ओवरव्यू </string>
+    <string name="fortext"> कृपया जीवन काल के लिए महामारी को बचाएं। और फ़ोरगेट पासवर्ड के समय इस स्मृति सहायक की आवश्यकता की आवश्यकता। </string>
+
+
+    <string name="Gmail_Text"> गूगल प्रमाणीकरण </string>
+    <string name="Emailtext"> अपनी ईमेल आईडी सत्यापित करें </string>
+    <string name="GoogleAuthentication"> गूगल प्रमाणीकरण </string>
+    <string name="createaccount"> खाता बनाया जाता है </string>
+    <string name="googleauth"> गूगल प्रमाणीकरण दर्ज करें </string>
+    <string name="skip"> छोड़ें </string>
+    <string name="Addverification"> सत्यापन जोड़ें </string>
+    <string name="sucessfully"> सफलतापूर्वक </string>
+
+    <string name="light"> लाइट मोड </string>
+    <string name="dark"> डार्क मोड </string>
+    <string name="payout_text1"> ईमेल ओटीपी दर्ज करें </string>
+    <string name="payout_text2"> गूगल टोकन दर्ज करें </string>
+    <string name="knwoledge_Text_heading"> यह sd dfask msadj msad mads poad wdt </string>
+    <string name="knowlege_Description_Demo"> हैलो मैं डेमो टेक्स्ट हूं जो कि लेआउट के कार्यान्वयन को दिखाता है। अब कैसे इस लेआउट के डेमो को दिखाएं </string>
+    <string name="add_ticket"> टिकट जोड़ें </string>
+
+
+    <string name="contact_title"> संपर्क विवरण </string>
+    <string name="contact_Email"> ईमेल पता </string>
+    <string name="contact_Email_Address"> imxchange.imx@gmail.com </string>
+    <string name="contact_Phone"> फ़ोन नंबर। </string>
+    <string name="contact_Phone_No"> + 66 646981930 </string>
+    <string name="contact_website"> वेबसाइट </string>
+    <string name="contact_website_address"> www.imx.global </string>
+
+    <string name="wallettext"> मौजूदा वॉलेट को पुनर्स्थापित करने के लिए अपने स्रावित चरणों को टाइप करें </string>
+    <string name="restorewallet"> वॉलेट को पुनर्स्थापित करें </string>
+    <string name="selectcurrency"> मुद्रा चुनें </string>
+    <string name="secretephases"> छिपाना चरण </string>
+    <string name="devicesync"> आप किस डिवाइस को सिंक करना चाहेंगे? </string>
+    <string name="scandes"> आईएमटी डेस्कटॉप गो को सेटिंग पर खोलें। तब डिवाइस पर क्लिक करें, फिर सिंक बटन पर क्लिक करें </string>
+    <string name="scanqr"> स्कैन क्यूआर कोड </string>
+    <string name="passcode_text"> फ़ोन स्क्रीन लॉक पैटर्न, पिन, पासवर्ड या फ़िंगरप्रिंट दर्ज करें </string>
+    <string name="passcode_detail"> क्रिप्टो वॉलेट </string>
+    अनलॉक करें
+    <string name="transaction_text"> नो ट्रांजेक्शन हिस्ट्री </string>
+    <string name="ticket_text"> कोई पुराना टिकट इतिहास नहीं </string>
+    <string name="add_currency"> मुद्रा जोड़ें </string>
+
+    <string name="txt_pin"> कृपया अपना लेनदेन पिन दर्ज करें। जिसे आपने साइन अप करते समय बनाया है। </string>
+    <!--  सामग्री पाठ सेट करना -->
+    <string name="noti_text"> हम आपको नवीनतम घटनाओं से संबंधित iMX के संपर्क में रखना चाहते हैं। </string>
+    <string name="sound_text"> हम नया अपडेट लेकर आ रहे हैं। </string>
+    <string name="currency_text"> आप अपनी पसंद की स्ट्रिप करेंसी में लाइव क्रिप्टो कीमतों को ट्रैक कर सकते हैं। </string>
+    <string name="active_text"> अपनी खाता लॉगिन गतिविधि ट्रैक करें। </string>
+    <string name="cryto_text"> iMX प्लेटफॉर्म पर नवीनतम सुविधाओं का आनंद लें, आवेदन से सर्वश्रेष्ठ प्राप्त करने के लिए।</string>
+
+    <!-- समर्थन सामग्री पाठ -->
+    <string name="mobile_text"> आप अपने मुद्दों पर हमारे साथ चैट कर सकते हैं। </string>
+    <string name="knowledge_text"> अक्सर पूछे जाने वाले प्रश्नों के साथ अपने मुद्दों को हल करें। </string>
+    <string name="tickets_text"> अपना मुद्दा उठाएं और हम आपके समाधान के साथ आपके पास वापस आ जाएंगे। </string>
+    <string name="contact_text"> सीधे हमसे संपर्क करें। </string>
+
+    <string name="prefs_theme_key"> विषय </string>
+    <string name="language"> भाषा </string>
+
+    <string name="exit_text"> क्या आप बाहर निकलना चाहते हैं? </string>
+    <string name="log_text"> क्या आप लॉग आउट !!!!! </string>
+    <string name="yes">  हाँ </string>
+    <string name="no"> नहीं </string>
+
+    <string name="add_Query"> अपनी क्वेरी जोड़ें  </string>
+    <string name="subject"> विषय  </string>
+    <string name="enter_Query"> क्वेरी दर्ज करें  </string>
+    <string name="add_text1"> जोड़ना  </string>
+    <string name="verify_txt"> सत्यापन  </string>
+    <string name="new_chat"> नया चैट  </string>
+    <string name="old_chat"> पुराना चैट  </string>
+    <string name="recevied"> प्राप्त  </string>
+    <string name="coin_address"> सिक्का पता दर्ज करें  </string>
+    <string name="sumbit"> सबमिट करें  </string>
+    <string name="trans_su"> लेनदेन सफल  </string>
+    <string name="download"> डाउनलोड  </string>
+    <string name="copy"> कॉपी करें  </string>
+    <string name="teans_id"> लेन-देन आईडी </string>
+    <string name="paid_to"> पेड टू  </string>
+    <string name="status"> स्थिति  </string>
+    <string name="show"> विवरण दिखाएं  </string>
+    <string name="hide"> डिटेल्स छिपाएं  </string>
+    <string name="total_amount"> कुल राशि  </string>
+    <string name="price"> मूल्य  </string>
+    <string name="swap_p2p"> स्वैप उपयोगिता </string>
+    <string name="coin"> ट्रांसफर के लिए कॉइन अमाउंट डालें  </string>
+    <string name="account"> खाता  </string>
+    <string name="payment"> भुगतान  </string>
+    <string name="about"> के बारे में  </string>
+    <string name="click"> डाउनलोड बटन पर क्लिक करें  </string>
+    <string name="for1"> डाउनलोड के लिए  </string>
+    <string name="save"> लाइफ टाइम के लिए इस स्मृति सहायक को सेव करें </string>
+    <string name="search"> खोज </string>
+    <string name="story"> कहानियां </string>
+    <string name="old_ticket"> पुराना टिकट </string>
+    <string name="recent"> हालिया लेन-देन इतिहास </string>
+    <string name="enter"> उपयोगकर्ता आईडी या उपयोगकर्ता नाम दर्ज करें </string>
+    <string name="paid_form">से भुगतान किया </string>
+
+    <string name="threat_mode"> खतरा मोड </string>
+    <string name="caution"> सावधानी </string>
+    <string name="threat_text"> यह आपके खाते को स्थायी रूप से लॉक कर देगा। जब तक आप सभी सुरक्षा पैरामीटर पास नहीं करते। </string>
+
+    <string name="your_referral_code"> आपका रेफरल कोड </string>
+    <string name="tab_below"> रेफ़र कोड कॉपी करने के लिए टेक्स्ट को टैब </string>
+
+    <string name="no_chat_text"> कोई पुराना चैट इतिहास नहीं </string>
+    <string name="un_lock"> खाता अनलॉक</string>
+
+    <string name="close_chat"> चैट बंद करें </string>
+    <string name="close_chat_text"> क्या आप चैट समाप्त करना चाहते हैं? </string>
+    <string name="confirm"> पुष्टि करें </string>
+    <string name="cancel"> रद्द करें </string>
+
+    <string name="imt_u">ImSmart Utility</string>
+
+    <string name="reff">मैं रेफरल कोड नहीं है</string>
+    <string name="noconnection"> कृपया WIFI नेटवर्क से कनेक्ट करें या मोबाइल डेटा को सक्षम करें</string>
+
+    <string name="recent_txt">आपके पास हाल ही में कोई लेनदेन नहीं है</string>
+    <string name="scan_txt">स्क्रीन बटन पर क्लिक करके QR कोड स्कैन करें </string>
+    <string name="kyc"> KYC </string>
+    <string name="kyc_txt"> बेहतर सुरक्षा के लिए कृपया अपना kyc पूरा करें </string>
+    <string name="kyc_country"> देश </string>
+    <string name="kyc_address"> पता </string>
+    <string name="doc_type"> दस्तावेज़ प्रकार </string>
+    <string name="docu_men"> दस्तावेज़ </string>
+
+    <string name="house_no"> मकान / सुइट / अपार्टमेंट </string>
+    <string name="street_add"> स्ट्रीट एड्रेस </string>
+    <string name="zip_code"> ज़िप कोड </string>
+    <string name="doc_no"> डॉक्यूमेंट नंबर </string>
+
+    <string name="choose"> फ़ाइल चुनें </string>
+    <string name="acko"> पावती </string>
+
+    <string name="Confirm">पुष्टीकरण</string>
+    <string name="Amt_in_cryto">क्रिप्टो में राशि</string>
+    <string name="Amt_in_USD">USD में राशि</string>
+    <string name="Reciver_add">रिसीवर का पता</string>
+    <string name="Trans_hsh">लेन-देन हैश</string>
+    <string name="Trans_sts">लेन-देन की स्थिति</string>
+
+    <string name="obtain"> गूगल 2 एफ ए  प्राप्त करें </string>
+
+    <string name="resetPin"> रीसेट पिन </string>
+    <string name="forgetPin"> पिन भूल जाओ </string>
+    <string name="resetPintxt"> आप अपना लेनदेन पिन रीसेट कर सकते हैं। </string>
+    <string name="forgetPintxt">  यदि आप इसे भूल जाते हैं, तो अपना ट्रांजेक्शन पिन सेट करें </string>
+
+    <string name="currentPin"> करंट पिन </string>
+    <string name="enter_currentPin"> करंट पिन दर्ज करें </string>
+    <string name="newPin"> नया पिन  </string>
+    <string name="enter_newPin"> नया पिन दर्ज करें </string>
+    <string name="update_pin"> आपका लेन-देन पिन सफलतापूर्वक अपडेट है </string>
+    <string name="com_newPin"> नए पिन की पुष्टि करें </string>
+
+    <string name="txt_mnemonic"> अपने स्मृति सहायक को प्राप्त करने के लिए इसका अनुसरण करें </string>
+    <string name="follow_mnemonic"> सेटिंग >>  बैकअप >> सत्यापन >> सुरक्षित चरण </string>
+    <string name="userEmail"> उपयोगकर्ता नाम या ईमेल </string>
+
+    <string name="top_money"> टॉपअप मनी </string>
+    <string name="top_money1"> पैसे जोड़ने के लिए अपना टॉप अप तरीका चुनें </string>
+    <string name="paypal"> पे पाल </string>
+    <string name="bank"> बैंक स्थानांतरण</string>
+    <string name="account_no"> बैंक खाता संख्या </string>
+    <string name="transfer"> स्थानांतरण </string>
+    <string name="bank_name"> बैंक नाम </string>
+    <string name="transaction_id"> लेनदेन आईडी </string>
+    <string name="upi_id"> यूपीआई आईडी </string>
+    <string name="ifsc"> SWIFT कोड </string>
+    <string name="bank_hol"> बैंक होल्डर का नाम </string>
+    <string name="bank_show"> बैंक विवरण दिखाएं </string>
+    <string name="qr_code">थाई क्यूआर कोड</string>
+
+    <string name="redeem"> रिडीम </string>
+    <string name="redeem_utility">उपयोगिता में रिडीम करें</string>
+    <string name="redeem_now">अब रिडीम करें </string>
+    <string name="term"> नियम और शर्तें</string>
+    <string name="rewards"> पुरस्कार </string>
+    <string name="imx_point">IMX पॉइंट</string>
+    <string name="redeem_gift">उपहार में भुनाएं</string>
+    <string name="Rewards_his"> रिवॉर्ड्स इतिहास </string>
+    <string name="product"> उत्पाद</string>
+    <string name="cart">कार्ट</string>
+    <string name="history"> इतिहास </string>
+    <string name="categories"> श्रेणियाँ </string>
+</resources>

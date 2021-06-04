@@ -1,0 +1,321 @@
+<resources>
+    <string name="app_name"> iMX </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="drawer_open"> drawe open</string>
+    <string name="drawer_close"> drawe close</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="wallet">Wallet</string>
+    <string name="myWallet">My Wallet</string>
+    <string name="exchange">Swap</string>
+    <string name="profile">Profile</string>
+    <string name="security">Security</string>
+    <string name="send">Send</string>
+    <string name="setting">Setting</string>
+    <string name="offer">Offer</string>
+    <string name="support">Support</string>
+    <string name="dark_mode">Dark Mode </string>
+    <string name="pay_history">Transaction History</string>
+    <string name="coin_history">Coin History</string>
+    <string name="our_offer">Offer</string>
+    <string name="select_currency">Select Currency</string>
+    <string name="customer_support">Customer Support</string>
+    <string name="share">Share</string>
+    <string name="logout">Logout</string>
+    <string name="other">Other</string>
+
+    <string name="razor_api_key">rzp_test_23oYrEfMJY6cVI</string>
+
+    <string name="backup">Backups</string>
+    <string name="To_fa">2FA</string>
+    <string name="passcode">Secure With Passcode</string>
+    <string name="finger">Secure With Fingerprint</string>
+    <string name="privacy">Privacy Policy</string>
+
+
+    <string name="mobile_support">Chat Support</string>
+    <string name="knowledge">Knowledge Base</string>
+    <string name="ticket">Ticket</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="support_text">Use the options below tolearn about IMT,  </string>
+    <string name="support_text1">Solve the problem and get in touch,</string>
+    <string name="text3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</string>
+
+    <string name="more">More</string>
+    <string name="text2">a fingerprint or digital fingerprint refers to any trace of information left by someone.</string>
+    <string name="text1">A passcode, is a memorized secret, typically a string of characters, usually used to confirm a user identity.</string>
+    <string name="text">A proper backup copy is stored in a separate system or medium, such as tape, from the primary data to protect against the possibility of data loss due to primary hardware or software failure.</string>
+
+    <string name="google2fa">Google 2FA</string>
+    <string name="email2fa">Email 2FA</string>
+    <string name="text_google2fa">Turn on Google 2FA Security to better secure your Account.</string>
+    <string name="text_email2fa">Turn on Email 2FA Security to better secure your Account.</string>
+    <string name="get_started">Get Started</string>
+    <string name="send_bitcoin">Send Bitcoin to your IMT Wallet</string>
+
+    <string name="account_balance">Account Balance</string>
+
+
+    <!--text for setting screen-->
+    <string name="notification">Notifications</string>
+    <string name="sound">Check Update</string>
+    <string name="currency">Currency</string>
+    <string name="advance">Advanced</string>
+    <string name="sync">Sync Devices</string>
+    <string name="sync1">Active Devices</string>
+    <string name="restore">Crypto Management</string>
+    <string name="detele">Delete Wallet</string>
+    <string name="usd">USD</string>
+    <string name="below_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna </string>
+
+    <string name="cryptoinfo">Cryptocurrency Info</string>
+    <string name="barcode_scan">Scan Any QR Code </string>
+    <string name="recieve">Receive</string>
+    <string name="scan">Scan</string>
+    <string name="balance">Balance</string>
+    <string name="add_money">Top Up</string>
+    <string name="pay">Pay</string>
+    <string name="add">Enter Amount </string>
+    <string name="add1">Add Money</string>
+    <string name="complete">Complete</string>
+    <string name="add_text">Before adding money into your wallet up, you accept our Terms &amp; Privacy policy</string>
+    <string name="add_trem_and_condition">accept our Terms &amp; Privacy policy</string>
+    <string name="your_barcode">Your Wallet Address</string>
+    <string name="tab_barcode">Tab Wallet address to Copy</string>
+
+
+    <string name="barcode">Barcode Addrees</string>
+    <!--text for Login and Signup screen-->
+    <string name="login">Login</string>
+    <string name="sign_up">Signup</string>
+    <string name="hello">Hello!</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="re_password">Repeat Password</string>
+    <string name="referal_code">Referral Code</string>
+    <string name="phone">Phone No.</string>
+    <string name="username">Username</string>
+    <string name="Nice">Hello,nice to meet you!</string>
+    <string name="hello_nice">Hello, nice to meet you!</string>
+    <string name="crate">Create your Account</string>
+    <string name="enter_referral">Enter Your Referral Code</string>
+    <string name="your_referral">Your Referral Code</string>
+    <string name="ready">Ready to go </string>
+    <string name="not_referral">I Dont Have Referral Code</string>
+    <string name="next">Next</string>
+    <string name="forget">Forgot My Password</string>
+    <string name="forget_password">Forgot Password</string>
+    <string name="otp_send">OTP  receive in your email account</string>
+    <string name="comfirm">Confirm email address / OTP</string>
+    <string name="enter_otp">Enter Your OTP</string>
+    <string name="not_otp">I Do not Receive OTP Send Again</string>
+    <string name="change_password">Change Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_passcode">Create Your Passcode </string>
+    <string name="confirm_passcode">Confirm Your Passcode </string>
+    <string name="enter_passcode">Enter Your Passcode </string>
+    <string name="done">Done</string>
+    <string name="transaction">Transaction Pin</string>
+    <string name="Secure_wallet">Secure wallet</string>
+    <string name="c_transaction">Confirm Transaction Pin</string>
+    <string name="enter_pin">Enter Transaction Pin</string>
+    <string name="mnemonic">Copy to Mnemonic</string>
+    <string name="enter_mnemonic">Enter Mnemonic</string>
+    <string name="add_more">Add More</string>
+    <string name="overview">Overview</string>
+    <string name="fortext">Please save the mnemonic for life time. and the requirment of this Mnemonic need at the time of the Forget password. </string>
+
+
+    <string name="Gmail_Text">Google Authentication</string>
+    <string name="Emailtext"> verify your Email id </string>
+    <string name="GoogleAuthentication">Google Authentication</string>
+    <string name="createaccount">Account is created</string>
+    <string name="googleauth">Enter Google Authentication </string>
+    <string name="skip">Skip</string>
+    <string name="Addverification">Add Verification</string>
+    <string name="sucessfully">Successfully</string>
+
+    <string name="light">Light Mode</string>
+    <string name="dark">Dark Mode</string>
+    <string name="payout_text1">Enter Email OTP</string>
+    <string name="payout_text2">Enter Google Token </string>
+    <string name="knwoledge_Text_heading">This sd dfask msadj msad mads poad wdt</string>
+    <string name="knowlege_Description_Demo">Hello I am Demo Text that show thew implementation of the layout.Now Its show the the Demo of this layout</string>
+    <string name="add_ticket">Add Ticket</string>
+
+
+    <string name="contact_title">Contact Details</string>
+    <string name="contact_Email">Email Address</string>
+    <string name="contact_Email_Address">imxchange.imx@gmail.com</string>
+    <string name="contact_Phone">Phone No.</string>
+    <string name="contact_Phone_No">+66 646981930</string>
+    <string name="contact_website">Website</string>
+    <string name="contact_website_address">www.imx.global</string>
+
+    <string name="wallettext">Type your secrete Phases to restore existing wallet</string>
+    <string name="restorewallet">Restore Wallet </string>
+    <string name="selectcurrency">Select Currency</string>
+    <string name="secretephases">Secrete Phases</string>
+    <string name="devicesync">What Device would you like to sync to?</string>
+    <string name="scandes">Open IMT Desktop.Go To The Setting.Then Device,Then Click the Sync Button</string>
+    <string name="scanqr">Scan QR Code</string>
+    <string name="passcode_text">Enter phone screen lock pattern, PIN, password or Fingerprint</string>
+    <string name="passcode_detail">Unlock Crypto Wallet</string>
+    <string name="transaction_text">No Transaction History</string>
+    <string name="ticket_text">No Old Ticket History</string>
+    <string name="add_currency">Add Currency</string>
+
+    <string name="txt_pin">Kindly enter your transaction PIN.  Which you created while sign up.</string>
+
+    <!-- Setting content text-->
+    <string name="noti_text"> We want to keep you in touch on the latest events related iMX.</string>
+    <string name="sound_text"> We are coming up with new Update.</string>
+    <string name="currency_text"> You can track the live crypto prices in your prefer stripe currency.</string>
+    <string name="active_text"> Track your account login activity.</string>
+    <string name="cryto_text"> Enjoy the latest features on iMX platform, to get the best from the application.</string>
+
+    <!-- Support content text-->
+    <string name="mobile_text"> You can chat with us on your issues.</string>
+    <string name="knowledge_text"> Resolve your issues with frequently asked questions.</string>
+    <string name="tickets_text"> Raise your issue and we will get back to you with your solution.</string>
+    <string name="contact_text"> Reach us to us directly.</string>
+
+    <string name="prefs_theme_key">theme</string>
+
+    <string name="language">Language</string>
+
+    <string name="exit_text">Do you want to exit?</string>
+    <string name="log_text">Are you sure to Logout !!!!!</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add_Query">Add Your Query</string>
+    <string name="subject">Subject</string>
+    <string name="enter_Query"> Enter Query</string>
+    <string name="add_text1">Add</string>
+    <string name="verify_txt">Verification</string>
+    <string name="new_chat">New Chat</string>
+    <string name="old_chat">Old Chat</string>
+    <string name="recevied">Received</string>
+    <string name="coin_address">Enter Coin Address</string>
+    <string name="sumbit">Submit</string>
+    <string name="trans_su">Transaction Successful</string>
+    <string name="download">Download</string>
+    <string name="copy">Copy</string>
+    <string name="teans_id">Transaction Id</string>
+    <string name="paid_to">Paid to</string>
+    <string name="status">Status</string>
+    <string name="show">Show Details</string>
+    <string name="hide">Hide Details</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="price">Price</string>
+    <string name="swap_p2p">SWAP Utility</string>
+    <string name="coin">Enter Coin Amount to Transfer</string>
+    <string name="account">Account</string>
+    <string name="payment">Payment</string>
+    <string name="about">About</string>
+    <string name="click">Click to Download Button</string>
+    <string name="for1">For Download Mnemonic</string>
+    <string name="save">Please save this  Mnemonic for Life time</string>
+    <string name="search">Search</string>
+    <string name="story">Stories</string>
+    <string name="old_ticket">Old Ticket</string>
+    <string name="recent">Recent Transaction History</string>
+    <string name="enter">Enter User ID or User name</string>
+    <string name="paid_form">Paid From </string>
+    <string name="threat_mode">Threat Mode</string>
+    <string name="caution">Caution</string>
+    <string name="threat_text">This will lock your account permanently. Unless you passed all the security parameter.</string>
+
+    <string name="your_referral_code">Your Referral Code</string>
+    <string name="tab_below">Tab to text to copy referral code</string>
+
+    <string name="no_chat_text">No Old Chat History</string>
+    <string name="un_lock">UnLock Account</string>
+
+    <string name="close_chat">Close chat</string>
+    <string name="close_chat_text">Do you want to end chat?</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="imt_u">ImSmart Utility</string>
+
+    <string name="reff">I Don\'t Have Referral Code</string>
+    <string name="noconnection">Kindly connect to a WIFI network or enable Mobile Data</string>
+    <string name="recent_txt">You don\'t have any recent transactions</string>
+
+    <string name="scan_txt">Scan QR code by clicking the on screen button </string>
+
+    <string name="kyc">KYC</string>
+    <string name="kyc_txt">Please complete your kyc for better security </string>
+    <string name="kyc_country">Country</string>
+    <string name="kyc_address"> Address</string>
+    <string name="doc_type">Document type</string>
+    <string name="docu_men">Documents</string>
+
+    <string name="house_no">House/Suite/apartment</string>
+    <string name="street_add">Street Address</string>
+    <string name="zip_code">Zip code</string>
+    <string name="doc_no">Document Number</string>
+
+    <string name="choose">Choose file</string>
+
+    <string name="acko">Acknowledgment</string>
+
+    <string name="Confirm">Confirmation</string>
+    <string name="Amt_in_cryto">Amount in crypto</string>
+    <string name="Amt_in_USD">Amount in USD</string>
+    <string name="Reciver_add">Receiver Address</string>
+    <string name="Trans_hsh">Transaction hash</string>
+    <string name="Trans_sts">Transaction Status</string>
+
+    <string name="obtain">Obtain Google 2 FA </string>
+
+    <string name="resetPin">Reset PIN</string>
+    <string name="forgetPin">Forget PIN</string>
+    <string name="resetPintxt">You can reset your transaction PIN.</string>
+    <string name="forgetPintxt">Setup your Transaction PIN, in case your forget it.</string>
+
+    <string name="currentPin">Current PIN</string>
+    <string name="enter_currentPin">Enter Current PIN</string>
+    <string name="newPin">New Pin</string>
+    <string name="com_newPin">Confirm New PIN</string>
+    <string name="enter_newPin">Enter New PIN</string>
+    <string name="update_pin">Your Transaction PIN is Successfully Update </string>
+
+    <string name="txt_mnemonic">Follow this to get your Mnemonic</string>
+    <string name="follow_mnemonic">Setting >> BackUp >> Verification >> Secrete Phases </string>
+    <string name="userEmail">Username or Email</string>
+
+    <string name="top_money">Topup Money</string>
+    <string name="top_money1">Select your Top Up method to add money</string>
+    <string name="paypal">Paypal</string>
+    <string name="bank">Bank Transfer</string>
+    <string name="account_no">Bank Account Number</string>
+    <string name="transfer">Transfer</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="transaction_id">Transaction ID</string>
+    <string name="upi_id">UPI ID</string>
+    <string name="ifsc">SWIFT Code</string>
+    <string name="bank_hol">Bank Holder Name</string>
+    <string name="bank_show">Show Bank Details</string>
+    <string name="qr_code">Thai QR code</string>
+
+    <string name="redeem">Redeem</string>
+    <string name="redeem_utility">Redeem in Utility</string>
+    <string name="redeem_now">Redeem Now</string>
+    <string name="term">Terms &amp; Conditions</string>
+    <string name="rewards">Rewards</string>
+    <string name="imx_point">IMX Point</string>
+    <string name="redeem_gift">Redeem in Gifts</string>
+    <string name="Rewards_his">Rewards History</string>
+    <string name="product">Products</string>
+    <string name="cart">Cart</string>
+    <string name="history">History</string>
+    <string name="categories">Categories</string>
+
+
+</resources>

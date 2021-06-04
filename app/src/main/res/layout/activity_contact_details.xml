@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Activity.Contact_details">
+
+    <LinearLayout
+        android:id="@+id/Contact_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/toolbar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:text="@string/contact_title"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/Contact_title"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="5dp"
+
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="5dp">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="5dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/backup"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/contact_Email"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/backup"
+                android:layout_below="@id/text"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="10dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/contact_Email_Address"
+                android:justificationMode="inter_word"
+                />
+            <ImageView
+                android:id="@+id/backup"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignLeft="@id/view"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="17dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_contact_details_email" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_phone_no."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_below="@id/card_email"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="5dp"
+
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="5dp">
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="5dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/backup1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="17dp"
+                android:textStyle="bold"
+                android:text="@string/contact_Phone"
+                android:fontFamily="@font/montserrat"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/backup1"
+                android:layout_below="@id/text2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginTop="2dp"
+                android:textSize="10dp"
+                android:text="@string/contact_Phone_No"
+                android:justificationMode="inter_word"
+                />
+            <ImageView
+                android:id="@+id/backup1"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_alignLeft="@id/view1"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="17dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_contact_details_phone" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_webSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_below="@id/card_phone_no."
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="5dp"
+
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="5dp">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="5dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/backup3"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="17dp"
+                android:textStyle="bold"
+                android:text="@string/contact_website"
+                android:fontFamily="@font/montserrat"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/backup3"
+                android:layout_below="@id/text3"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/montserrat"
+                android:textSize="10dp"
+                android:text="@string/contact_website_address"
+                android:justificationMode="inter_word"
+                />
+            <ImageView
+                android:id="@+id/backup3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignLeft="@id/view2"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="17dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_contact_details_website" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

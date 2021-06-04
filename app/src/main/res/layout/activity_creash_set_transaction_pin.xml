@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".login.CreashSetTransactionPin">
+    <LinearLayout
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/toolbar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerTransation">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="back"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:text="@string/transaction"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="40dp">
+
+    <TextView
+        android:id="@+id/transaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hello"
+        android:fontFamily="@font/montserrat"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="@string/enter_pin"
+        android:textColor="@color/toolbar_text_color"
+        android:layout_gravity="center"/>
+
+    <com.chaos.view.PinView
+        android:id="@+id/enter_pin"
+        style="@style/PinWidget.PinView"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/transaction"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:cursorVisible="true"
+        android:hint="******"
+        android:inputType="numberPassword"
+        android:textColor="@color/toolbar_text_color"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="6"
+        app:itemHeight="50dp"
+        app:itemRadius="6dp"
+        app:itemSpacing="10dp"
+        app:itemWidth="45dp"
+        app:lineColor="@android:color/darker_gray"
+        app:lineWidth="2dp"
+        app:viewType="rectangle" />
+
+        <TextView
+            android:id="@+id/transaction1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hello"
+            android:fontFamily="@font/montserrat"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="@string/c_transaction"
+            android:textColor="@color/toolbar_text_color"
+            android:layout_gravity="center"/>
+
+        <com.chaos.view.PinView
+            android:id="@+id/enter_pin1"
+            style="@style/PinWidget.PinView"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/transaction"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:cursorVisible="true"
+            android:hint="******"
+            android:inputType="numberPassword"
+            android:textColor="@color/toolbar_text_color"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:cursorWidth="2dp"
+            app:hideLineWhenFilled="false"
+            app:itemCount="6"
+            app:itemHeight="50dp"
+            app:itemRadius="6dp"
+            app:itemSpacing="10dp"
+            app:itemWidth="45dp"
+            app:lineColor="@android:color/darker_gray"
+            app:lineWidth="2dp"
+            app:viewType="rectangle" />
+
+
+        <TextView
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000"
+            android:layout_below="@id/Text_value"
+            android:backgroundTint="@color/purple_500"
+            android:background="@drawable/textviewborder"
+            android:text="@string/sumbit"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="60dp"/>
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

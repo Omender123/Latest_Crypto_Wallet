@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".SetTransactionPin.NewPin"
+android:background="@color/background"
+android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/toolbar"
+    android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:onClick="back"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_arrow_back_24"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginRight="50dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_gravity="center"
+        android:text="@string/newPin"
+        android:textColor="@color/white"
+        android:id="@+id/toolbar_title" />
+</LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_newPin"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/toolbar_text_color"
+                android:textStyle="normal"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/newPin"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/toolbar_text_color"
+                android:layout_marginTop="30dp"/>
+
+            <com.chaos.view.PinView
+                android:id="@+id/enterNew_pin"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                android:cursorVisible="true"
+                android:inputType="numberPassword"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cursorWidth="2dp"
+                app:hideLineWhenFilled="false"
+                app:itemCount="6"
+                app:itemHeight="45dp"
+                app:itemRadius="6dp"
+                app:itemSpacing="20dp"
+                app:itemWidth="40dp"
+                app:lineColor="@android:color/darker_gray"
+                app:lineWidth="2dp"
+                app:viewType="rectangle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/com_newPin"
+                android:layout_marginTop="30dp"
+                android:textSize="14dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/toolbar_text_color"
+                android:textStyle="normal"/>
+
+            <com.chaos.view.PinView
+                android:id="@+id/enter_confirm_pin"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:cursorVisible="true"
+                android:inputType="numberPassword"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cursorWidth="2dp"
+                app:hideLineWhenFilled="false"
+                app:itemCount="6"
+                app:itemHeight="45dp"
+                app:itemRadius="6dp"
+                app:itemSpacing="20dp"
+                app:itemWidth="40dp"
+                app:lineColor="@android:color/darker_gray"
+                app:lineWidth="2dp"
+                app:viewType="rectangle" />
+            <Button
+                android:id="@+id/confirm_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/button_color_rounded"
+                android:text="@string/confirm"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="false"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".fragement.Profile">
+<LinearLayout
+    android:id="@+id/profile1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center"
+    android:paddingBottom="30dp"
+    android:orientation="vertical">
+    <ImageView
+
+        android:layout_marginTop="15dp"
+        android:id="@+id/share1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_profile_share"/>
+
+    <TextView
+        android:id="@+id/get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_started"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/toolbar_text_color"
+        android:textStyle="bold|normal"/>
+    <TextView
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_bitcoin"
+        android:textSize="16dp"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/toolbar_text_color"
+
+        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/security1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/view"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/security"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_security" />
+
+        </RelativeLayout>
+
+  </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/setting1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/view1"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/setting"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp" />
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_settings"
+                android:layout_marginRight="16dp"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/support1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/view2"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/support"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp"
+                 />
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_support"
+                android:layout_marginRight="16dp"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/threat_mode"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/view3"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/threat_mode"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp"
+                />
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_threat_mode1"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/referral_code1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/view4"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/referal_code"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_share"
+                android:scaleType="fitXY"
+                android:layout_marginRight="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/langauge1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/view5"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/language"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_translate"
+                android:scaleType="fitXY"
+                android:layout_marginRight="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Rewards"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/view6"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/rewards"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_rewards_icon"
+                android:scaleType="fitXY"
+                android:layout_marginRight="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+
+</ScrollView>

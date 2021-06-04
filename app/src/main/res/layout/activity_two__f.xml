@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:toggle="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".Activity.Two_FA">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/toolbar"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_24"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:layout_marginRight="50dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_gravity="center"
+                android:text="@string/To_fa"
+                android:textColor="@color/white"
+                android:id="@+id/toolbar_title" />
+        </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/g2a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="15dp">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="5dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/google"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:text="@string/google2fa"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/google"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignLeft="@id/view"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="17dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_google" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text1"
+                android:layout_alignLeft="@id/google"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="2dp"
+                android:textSize="11dp"
+                android:layout_marginRight="11dp"
+                android:layout_toLeftOf="@+id/toogle1"
+                android:justificationMode="inter_word"
+                android:text="@string/text_google2fa"
+                />
+
+            <com.zcw.togglebutton.ToggleButton
+                android:id="@+id/toogle1"
+                android:layout_width="54dp"
+                toggle:tbOnColor="@color/green"
+                toggle:tbOffColor="#ddd"
+                toggle:tbBorderWidth="2dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="3dp">
+            </com.zcw.togglebutton.ToggleButton>
+                </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/e2a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="15dp">
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="5dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/gradient" />
+
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/finger"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:text="@string/email2fa"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/finger"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignLeft="@id/view1"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="17dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_gmail" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text2"
+                android:layout_alignLeft="@id/finger"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="2dp"
+                android:textSize="11dp"
+                android:layout_marginRight="11dp"
+                android:layout_toLeftOf="@+id/toogle2"
+                android:justificationMode="inter_word"
+                android:text="@string/text_email2fa"
+                />
+            <com.zcw.togglebutton.ToggleButton
+                android:id="@+id/toogle2"
+                android:layout_width="54dp"
+                toggle:tbOnColor="@color/green"
+                toggle:tbOffColor="#ddd"
+                app:tbAnimate="true"
+                toggle:tbBorderWidth="2dp"
+                android:layout_height="30dp"
+
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="3dp">
+            </com.zcw.togglebutton.ToggleButton>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        android:onClick="Obtain_2fa"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        app:cardBackgroundColor="@color/teal_200">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/obtain"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:textSize="15dp"/>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

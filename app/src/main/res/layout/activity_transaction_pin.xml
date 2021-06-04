@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".TransactionPin.TransactionPin">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/backgroun_image1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/login"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/sign_up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/purple_500"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/hello_nice"
+            android:textColor="@color/hello_color"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/enter_pin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/text_color"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="40dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/transaction"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:id="@+id/root_otp_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <EditText
+                        android:id="@+id/otp_edit_box1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box3"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box4"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box5"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+
+                        android:imeOptions="actionNext"
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box6"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+                <!--     <com.goodiebag.pinview.Pinview
+                         android:id="@+id/pinview"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         app:pinWidth="35dp"
+                         app:pinHeight="35dp"
+                         android:layout_marginLeft="20dp"
+                         android:layout_marginRight="20dp"
+                         app:pinLength="6"
+                         app:cursorVisible="false"
+                         app:forceKeyboard="true"
+                         app:inputType="text"
+                         app:password="false"/>-->
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/c_transaction"
+                    android:textColor="@android:color/darker_gray"
+                    android:textStyle="normal"
+                    android:textSize="18dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/root_otp_layou1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal"
+
+                    android:textColor="@color/black"
+                    android:weightSum="6">
+
+                    <EditText
+                        android:id="@+id/otp_edit_box11"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box22"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box33"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box44"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box55"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+
+                        android:gravity="center"
+                        android:inputType="numberPassword"
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/otp_edit_box66"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_curve_bg"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberPassword"
+
+                        android:maxLength="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <!--      <com.goodiebag.pinview.Pinview
+
+                          android:id="@+id/pinview1"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          app:pinWidth="35dp"
+                          app:pinHeight="35dp"
+                          android:layout_marginLeft="20dp"
+                          android:layout_marginRight="20dp"
+                          app:pinLength="6"
+                          app:cursorVisible="true"
+                          app:forceKeyboard="true"
+                          app:inputType="text"
+                          android:textColor="@color/black"
+                          app:password="false"/>
+  -->
+
+
+                <Button
+                    android:id="@+id/referral_ready"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/user"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/rounded_button"
+                    android:onClick="Trnasaction_Pin"
+                    android:text="@string/next"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:justificationMode="inter_word"
+                    android:paddingBottom="10dp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Kindly enter in the Transaction PIN in order to make sure you will able to set up the transaction PIN for your account. "
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

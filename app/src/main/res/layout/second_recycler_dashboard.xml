@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/background"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/coinImage1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/coinprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/coinImage1"
+        android:text="$2500.00"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/toolbar_text_color"
+        android:layout_marginTop="30dp"/>
+    <TextView
+         android:id="@+id/coinname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/coinImage1"
+        android:text="Bitcoin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/toolbar_text_color"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/coinprice"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="0"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/toolbar_text_color"
+        android:layout_marginTop="25dp"/>
+    <TextView
+        android:id="@+id/coinrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+4.80%"
+        android:layout_alignParentRight="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/toolbar_text_color"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/coinprice"/>
+
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

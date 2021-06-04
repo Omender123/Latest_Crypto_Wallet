@@ -1,0 +1,316 @@
+<resources>
+    <string name="app_name"> iMX </string>
+    <string name="hello_blank_fragment">こんにちは空白のフラグメント</string>
+
+    <string name="drawer_open"> drawe open </string>
+    <string name="drawer_close"> drawe close </string>
+
+    <string name="dashboard">ダッシュボード</string>
+    <string name="wallet">ウォレット</string>
+    <string name="myWallet">マイウォレット</string>
+    <string name="exchange">スワップ</string>
+    <string name="profile">プロファイル</string>
+    <string name="security">セキュリティ</string>
+    <string name="send">送信</string>
+    <string name="setting">設定</string>
+    <string name="offer">オファー</string>
+    <string name="support">サポート</string>
+    <string name="dark_mode">ダークモード</string>
+    <string name="pay_history">取引履歴</string>
+    <string name="coin_history">コインの履歴</string>
+    <string name="our_offer">オファー</string>
+    <string name="select_currency">通貨を選択</string>
+    <string name="customer_support">カスタマーサポート</string>
+    <string name="share">共有</string>
+    <string name="logout">ログアウト</string>
+    <string name="other">その他</string>
+
+    <string name="razor_api_key"> rzp_test_23oYrEfMJY6cVI </string>
+
+    <string name="backup">バックアップ</string>
+    <string name="To_fa"> 2FA </string>
+    <string name="passcode">パスコードで保護</string>
+    <string name="finger">指紋で保護</string>
+    <string name="privacy">プライバシーポリシー</string>
+
+
+    <string name="mobile_support">チャットサポート</string>
+    <string name="knowledge">ナレッジベース</string>
+    <string name="ticket">チケット</string>
+    <string name="contact_us">お問い合わせ</string>
+    <string name="support_text">以下のオプションを使用して、IMTについて学習します。</string>
+    <string name="support_text1">問題を解決して連絡してください</string>
+    <string name="text3"> Lorem ipsum dolor sit amet、consetetur sadipscing elitr、sed diam nonumy eirmod tempor invidunt ut </string>
+
+    <string name="more">その他</string>
+    <string name="text2">指紋またはデジタル指紋とは、誰かが残した情報の痕跡を指します。</string>
+    <string name="text1">パスコードは記憶された秘密であり、通常は文字列であり、通常はユーザーIDを確認するために使用されます。</string>
+    <string name="text">適切なバックアップコピーは、プライマリデータとは別のシステムまたはメディア（テープなど）に保存され、プライマリハードウェアまたはソフトウェアの障害によるデータ損失の可能性から保護します。</string>
+
+    <string name="google2fa"> Google 2FA </string>
+    <string name="email2fa">メール2FA </string>
+    <string name="text_google2fa"> Google 2FAセキュリティをオンにして、アカウントのセキュリティを強化します。</string>
+    <string name="text_email2fa">メール2FAセキュリティをオンにして、アカウントのセキュリティを強化します。</string>
+    <string name="get_started">はじめに</string>
+    <string name="send_bitcoin">ビットコインをIMTウォレットに送信</string>
+
+    <string name="account_balance">アカウントの残高</string>
+
+
+    <!--<！-設定画面のテキスト->-->
+    <string name="notification">通知</string>
+    <string name="sound">​アップデートをチェックする</string>
+    <string name="currency">通貨</string>
+    <string name="advance">詳細</string>
+    <string name="sync">デバイスの同期</string>
+    <string name="sync1">アクティブデバイス</string>
+    <string name="restore">暗号管理</string>
+    <string name="detele">ウォレットを削除</string>
+    <string name="usd"> USD </string>
+    <string name="below_text"> Lorem ipsum dolor sit amet、consetetur sadipscing elitr、sed diam nonumy eirmod tempor invidunt ut Labore et dolore magna </string>
+
+    <string name="cryptoinfo">暗号通貨情報</string>
+    <string name="barcode_scan">任意のQRコードをスキャンする</string>
+    <string name="recieve">受信</string>
+    <string name="scan">スキャン</string>
+    <string name="balance">残高</string>
+    <string name="add_money">トップアップ</string>
+    <string name="pay">支払い</string>
+    <string name="add">金額を入力</string>
+    <string name="add1">お金を追加</string>
+    <string name="complete">完了</string>
+    <string name="add_text">ウォレットにお金を追加する前に、利用規約に同意したことになります。プライバシーポリシー</string>
+    <string name="add_trem_and_condition">利用規約に同意し、プライバシーポリシー</string>
+    <string name="your_barcode">ウォレットアドレス</string>
+    <string name="tab_barcode">コピーするタブウォレットアドレス</string>
+    <string name="barcode">バーコードアドレス</string>
+
+    <!--text for Login and Signup screen-->
+    <string name="login">ログイン</string>
+    <string name="sign_up">サインアップ</string>
+    <string name="hello">こんにちは! </string>
+    <string name="welcome_back">おかえりなさい</string>
+    <string name="name">名前</string>
+    <string name="email">メール</string>
+    <string name="password">パスワード</string>
+    <string name="re_password">パスワードを繰り返す</string>
+    <string name="referal_code">紹介コード</string>
+    <string name="phone">電話番号</string>
+    <string name="username">ユーザー名</string>
+    <string name="Nice">こんにちは、はじめまして！</string>
+    <string name="hello_nice">こんにちは、はじめまして！</string>
+    <string name="crate">アカウントを作成する</string>
+    <string name="enter_referral">紹介コードを入力してください</string>
+    <string name="your_referral">紹介コード</string>
+    <string name="ready">準備完了</string>
+    <string name="not_referral">紹介コードがありません</string>
+    <string name="next">次へ</string>
+    <string name="forget">パスワードを忘れた</string>
+    <string name="forget_password">パスワードを忘れた</string>
+    <string name="otp_send"> OTPはメールアカウントで受信します</string>
+    <string name="comfirm">メールアドレス/ OTPの確認</string>
+    <string name="enter_otp"> OTPを入力してください</string>
+    <string name="not_otp"> OTP送信を再度受信しません</string>
+    <string name="change_password">パスワードの変更</string>
+    <string name="new_password">新しいパスワード</string>
+    <string name="confirm_password">パスワードの確認</string>
+    <string name="create_passcode">パスコードを作成する</string>
+    <string name="confirm_passcode">パスコードを確認する</string>
+    <string name="enter_passcode">パスコードを入力してください</string>
+    <string name="done">完了</string>
+    <string name="transaction">トランザクションピン</string>
+    <string name="Secure_wallet">安全なウォレット</string>
+    <string name="c_transaction">トランザクションピンの確認</string>
+    <string name="enter_pin">トランザクションピンを入力</string>
+    <string name="mnemonic">ニーモニックにコピー</string>
+    <string name="enter_mnemonic">ニーモニックを入力</string>
+    <string name="add_more">さらに追加</string>
+    <string name="overview">概要</string>
+    <string name="fortext">ニーモニックを一生保存してください。パスワードを忘れたときのこのニーモニックの必要性。 </string>
+
+
+    <string name="Gmail_Text"> Google認証</string>
+    <string name="Emailtext">メールIDを確認する</string>
+    <string name="GoogleAuthentication"> Google認証</string>
+    <string name="createaccount">アカウントが作成されます</string>
+    <string name="googleauth"> Google認証を入力してください</string>
+    <string name="skip">スキップ</string>
+    <string name="Addverification">検証の追加</string>
+    <string name="sucessfully">成功</string>
+
+    <string name="light">ライトモード</string>
+    <string name="dark">ダークモード</string>
+    <string name="payout_text1">メールOTPを入力</string>
+    <string name="payout_text2"> Googleトークンを入力してください</string>
+    <string name="knwoledge_Text_heading">このsddfask msadj msad mads poad wdt </string>
+    <string name="knowlege_Description_Demo">こんにちは私はレイアウトの実装を示すデモテキストです。これでこのレイアウトのデモが表示されます</string>
+    <string name="add_ticket">チケットを追加</string>
+
+    <string name="contact_title">連絡先の詳細</string>
+    <string name="contact_Email">メールアドレス</string>
+    <string name="contact_Email_Address"> imxchange.imx@gmail.com </string>
+    <string name="contact_Phone">電話番号</string>
+    <string name="contact_Phone_No"> +66 646981930 </string>
+    <string name="contact_website">ウェブサイト</string>
+    <string name="contact_website_address"> www.imx.global </string>
+
+    <string name="wallettext">シークレットフェーズを入力して既存のウォレットを復元します</string>
+    <string name="restorewallet">ウォレットを復元する</string>
+    <string name="selectcurrency">通貨を選択</string>
+    <string name="secretephases">シークレットフェーズ</string>
+    <string name="devicesync">どのデバイスに同期しますか？</string>
+    <string name="scandes"> IMTデスクトップを開きます。設定に移動します。次にデバイス、次に同期ボタンをクリックします</string>
+    <string name="scanqr"> QRコードをスキャンする</string>
+    <string name="passcode_text">電話スクリーンのロックパターン、PIN、パスワード、または指紋を入力してください</string>
+    <string name="passcode_detail">暗号ウォレットのロックを解除する</string>
+    <string name="transaction_text">トランザクション履歴なし</string>
+    <string name="ticket_text">古いチケット履歴はありません</string>
+    <string name="add_currency">通貨を追加</string>
+
+    <string name="txt_pin">トランザクションPINを入力してください。サインアップ時に作成したもの。</string>
+
+    <!--<！-コンテンツテキストの設定->-->
+    <string name="noti_text"> iMXに関連する最新のイベントについてお知らせします。</string>
+    <string name="sound_text">新しいアップデートを考えています。</string>
+    <string name="currency_text">お好みのストライプ通貨でライブ暗号価格を追跡できます。</string>
+    <string name="active_text">アカウントのログインアクティビティを追跡します。</string>
+    <string name="cryto_text"> iMXプラットフォームの最新機能を楽しんで、アプリケーションを最大限に活用してください。</string>
+
+    <!--<！-サポートコンテンツテキスト->-->
+    <string name="mobile_text">問題についてチャットできます。</string>
+    <string name="knowledge_text">よくある質問で問題を解決してください。</string>
+    <string name="tickets_text">問題を提起してください。解決策について、折り返しご連絡いたします。</string>
+    <string name="contact_text">直接ご連絡ください。</string>
+
+    <string name="prefs_theme_key">テーマ</string>
+
+    <string name="language">言語</string>
+    <string name="exit_text">終了しますか？</string>
+    <string name="log_text">ログアウトしてもよろしいですか!!!!! </string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+
+    <string name="add_Query">クエリを追加</string>
+    <string name="subject">件名</string>
+    <string name="enter_Query">クエリを入力</string>
+    <string name="add_text1">追加</string>
+    <string name="verify_txt">確認</string>
+    <string name="new_chat">新しいチャット</string>
+    <string name="old_chat">古いチャット</string>
+    <string name="recevied">受信済み</string>
+    <string name="coin_address">コインアドレスを入力</string>
+    <string name="sumbit">送信</string>
+    <string name="trans_su">トランザクションが成功しました</string>
+    <string name="download">ダウンロード</string>
+    <string name="copy">コピー</string>
+    <string name="teans_id">トランザクションID </string>
+    <string name="paid_to">支払い先</string>
+    <string name="status">ステータス</string>
+    <string name="show">詳細を表示</string>
+    <string name="hide">詳細を非表示</string>
+    <string name="total_amount">合計金額</string>
+    <string name="price">価格</string>
+    <string name="swap_p2p">スワップユーティリティ</string>
+    <string name="coin">転送するコインの金額を入力してください</string>
+    <string name="account">アカウント</string>
+    <string name="payment">支払い</string>
+    <string name="about">概要</string>
+    <string name="click">クリックしてダウンロードボタン</string>
+    <string name="for1">ダウンロードニーモニックの場合</string>
+    <string name="save">このニーモニックを一生保存してください</string>
+    <string name="search">検索</string>
+    <string name="story">ストーリー</string>
+    <string name="old_ticket">古いチケット</string>
+    <string name="recent">最近のトランザクション履歴</string>
+    <string name="enter">ユーザーIDまたはユーザー名を入力</string>
+    <string name="paid_form">から支払われた </string>
+
+    <string name="threat_mode">脅威モード</string>
+    <string name="caution">注意</string>
+    <string name="threat_text">これにより、アカウントが永続的にロックされます。 すべてのセキュリティパラメータを渡さない限り。</string>
+    <string name="your_referral_code">紹介コード</string>
+    <string name="tab_below">参照コードをコピーするためのテキストへのタブ</string>
+
+    <string name="no_chat_text">古いチャット履歴はありません</string>
+    <string name="un_lock">アカウントのロックを解除する</string>
+
+    <string name="close_chat">チャットを閉じる</string>
+    <string name="close_chat_text">チャットを終了しますか？</string>
+    <string name="confirm">確認</string>
+    <string name="cancel">キャンセル</string>
+
+    <string name="imt_u">ImSmart Utility</string>
+
+    <string name="reff">私は紹介コードを持っていません</string>
+
+    <string name="noconnection"> WIFIネットワークに接続するか、モバイルデータを有効にしてください</string>
+    <string name="recent_txt">最近の取引はありません</string>
+    <string name="scan_txt">स画面上のボタンをクリックしてQRコードをスキャンします</string>
+
+    <string name="kyc"> KYC </string>
+    <string name="kyc_txt">セキュリティを強化するためにkycを完成させてください</string>
+    <string name="kyc_country">国</string>
+    <string name="kyc_address">アドレス</string>
+    <string name="doc_type">ドキュメントタイプ</string>
+    <string name="docu_men">ドキュメント</string>
+
+    <string name="house_no">家/スイート/アパート</string>
+    <string name="street_add">番地</string>
+    <string name="zip_code">郵便番号</string>
+    <string name="doc_no">ドキュメント番号</string>
+    <string name="choose">ファイルを選択</string>
+
+    <string name="acko">謝辞</string>
+    <string name="Confirm">確認</string>
+    <string name="Amt_in_cryto">暗号通貨での金額</string>
+    <string name="Amt_in_USD">米ドルでの金額</string>
+    <string name="Reciver_add">受信者アドレス</string>
+    <string name="Trans_hsh">トランザクションハッシュ</string>
+    <string name="Trans_sts">トランザクションステータス</string>
+    <string name="obtain"> Google 2FAを取得する</string>
+
+    <string name="resetPin">ピンをリセット</string>
+    <string name="forgetPin">ピンを忘れる</string>
+    <string name="resetPintxt">トランザクションピンをリセットできます。</string>
+    <string name="forgetPintxt">忘れてしまった場合に備えてトランザクションPINを設定します。</string>
+
+    <string name="currentPin">現在のピン</string>
+    <string name="enter_currentPin">現在のPINを入力</string>
+    <string name="newPin">新しいピン</string>
+    <string name="enter_newPin">新しいピンを入力</string>
+    <string name="update_pin">トランザクションPINが正常に更新されました</string>
+    <string name="com_newPin">新しいピンを確認</string>
+
+    <string name="txt_mnemonic">これに従ってニーモニックを取得します</string>
+    <string name="follow_mnemonic">設定>>バックアップ>>検証>>シークレットフェーズ</string>
+
+    <string name="userEmail">ユーザー名またはメールアドレス</string>
+
+    <string name="top_money">チャージマネー</string>
+    <string name="top_money1">お金を追加するためのトップアップ方法を選択してください</string>
+    <string name="paypal">ペイパル</string>
+    <string name="bank">銀行 転送</string>
+    <string name="account_no">銀行口座番号</string>
+    <string name="transfer">転送</string>
+    <string name="bank_name">銀行名</string>
+    <string name="transaction_id">トランザクションID </string>
+    <string name="upi_id"> UPI ID </string>
+    <string name="ifsc"> SWIFT Code</string>
+    <string name="bank_hol">銀行名</string>
+    <string name="bank_show">銀行の詳細を表示</string>
+    <string name="qr_code">タイのQRコード</string>
+
+
+    <string name="redeem">引き換え </string>
+    <string name="redeem_utility">ユーティリティで利用 </string>
+    <string name="redeem_now">今すぐ利用 </string>
+    <string name="term">利用規約 </string>
+    <string name="rewards">報酬 </string>
+    <string name="imx_point"> IMXポイント </string>
+    <string name="redeem_gift">ギフトと引き換える </string>
+    <string name="Rewards_his">特典の履歴 </string>
+    <string name="product">製品 </string>
+    <string name="cart">カート </string>
+    <string name="history">履歴 </string>
+    <string name="categories">カテゴリ </string>
+</resources>

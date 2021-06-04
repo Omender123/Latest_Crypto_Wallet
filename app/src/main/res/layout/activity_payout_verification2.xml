@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent"
+    tools:context=".CoinTransfer.Payout_verification">
+
+
+    <LinearLayout
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/toolbar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerTransation">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:text="@string/verify_txt"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/hello_nice"
+        android:textSize="12dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/hello">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/transaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hello"
+                android:fontFamily="@font/montserrat"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/enter_pin"
+                android:textColor="@color/toolbar_text_color" />
+
+            <com.chaos.view.PinView
+                android:id="@+id/enter_pin"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/transaction"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:cursorVisible="true"
+                android:hint="******"
+                android:layout_marginLeft="20dp"
+                android:inputType="numberPassword"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cursorWidth="2dp"
+                app:hideLineWhenFilled="false"
+                app:itemCount="6"
+                app:itemHeight="50dp"
+                app:itemRadius="6dp"
+                app:itemSpacing="10dp"
+                app:itemWidth="45dp"
+                app:lineColor="@android:color/darker_gray"
+                app:lineWidth="2dp"
+                app:viewType="rectangle" />
+
+
+            <TextView
+                android:id="@+id/Email_payout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/enter_pin"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="@string/payout_text1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pass"
+                style="@style/OutlineBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Email_payout"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@android:color/darker_gray">
+
+                <EditText
+                    android:id="@+id/enter_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@android:color/darker_gray"
+                    android:ems="10"
+                    android:inputType="numberPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <TextView
+                android:id="@+id/Gmail_payout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pass"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginTop="20dp"
+                android:text="@string/payout_text2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pass1"
+                style="@style/OutlineBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Gmail_payout"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@android:color/darker_gray">
+
+                <EditText
+                    android:id="@+id/enter_GoogleToken"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@android:color/darker_gray"
+                    android:ems="10"
+                    android:inputType="numberPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/Text_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
+                android:text="@string/txt_pin"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/pass1"/>
+
+            <TextView
+                android:id="@+id/Next_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#000"
+                android:layout_below="@id/Text_value"
+                android:backgroundTint="@color/purple_500"
+                android:background="@drawable/textviewborder"
+                android:text="@string/next"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="60dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/btn_sendOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/timer"
+                    android:alpha="0.4"
+                    android:gravity="center"
+                    android:text="@string/not_otp"
+                    android:textAlignment="textEnd"
+                    android:layout_marginRight="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"
+                    tools:ignore="RtlCompat" />
+
+                <RelativeLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <ProgressBar
+                        android:id="@+id/progressBarCircle"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/drawable_circle_dark_blue"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/drawable_circle_yellow"
+                        android:rotation="-90" />
+
+                    <TextView
+                        android:id="@+id/timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="11dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montserrat"
+                        android:text="60s"
+                        android:textSize="8dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/red"
+                        android:textStyle="normal|italic" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

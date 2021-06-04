@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".Rewards.Rewards">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:textSize="25dp"
+        android:onClick="back"
+        android:textStyle="bold"
+        android:background="@color/toolbar"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:paddingStart="15dp"
+        android:paddingEnd="25dp"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:text="@string/rewards"
+        android:textColor="@color/white"
+        android:id="@+id/toolbar_title"
+        tools:ignore="RtlCompat" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:background="@drawable/ic_redeem_box"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/imx_point"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/toolbar"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="normal"/>
+                    <TextView
+                        android:id="@+id/imx_point"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/toolbar"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/redeem_utility"
+                        android:textSize="15dp"
+                        android:background="@drawable/box"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingStart="25dp"
+                        android:paddingEnd="25dp"
+                        android:onClick="OpenRedeem"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/toolbar"
+                        android:fontFamily="@font/montserrat"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/redeem_gift"
+                android:textSize="16dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/toolbar_text_color"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"/>
+            <TextView
+                android:id="@+id/moretransactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Categories_btn"
+                android:text="@string/more"
+                android:textSize="14sp"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_blue_dark"
+                />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/product_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="08dp"
+            tools:itemCount="5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/custom_product_layout"/>
+-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Rewards_his"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/toolbar_text_color"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/history_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="05dp"
+            tools:itemCount="7"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/custom_transactio_history"/>
+
+    </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+

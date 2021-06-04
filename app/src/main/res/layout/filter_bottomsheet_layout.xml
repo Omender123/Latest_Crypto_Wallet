@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:id="@+id/bottom">
+
+
+
+    <TextView
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:drawableLeft="@drawable/ic_baseline_close_24"
+        android:drawableTint="@color/drawer_icon"
+        android:text="Filter"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/drawer_icon"
+        android:textStyle="normal"
+        android:fontFamily="@font/montserrat"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="01dp"
+        android:background="@color/drawer_icon"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date Range"
+                android:gravity="start"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/drawer_icon"
+                android:fontFamily="@font/montserrat"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Form (Starting Date)"
+                android:gravity="start"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textStyle="normal"
+                android:textColor="@color/drawer_icon"
+                android:fontFamily="@font/montserrat"/>
+            <TextView
+                android:id="@+id/startDate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="start|center_vertical"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:drawableRight="@drawable/ic_baseline_calender_24"
+                android:drawableTint="@color/drawer_icon"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginRight="15sp"
+                android:layout_marginLeft="15sp"
+                android:background="@drawable/border"
+                android:textStyle="normal"
+                android:textColor="@color/drawer_icon"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To (Last Date)"
+                android:gravity="start"
+                android:textSize="13sp"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textStyle="normal"
+                android:textColor="@color/drawer_icon"
+                android:fontFamily="@font/montserrat"/>
+            <TextView
+                android:id="@+id/endDate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="start|center_vertical"
+                android:textSize="15sp"
+                android:paddingStart="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginRight="15sp"
+                android:layout_marginLeft="15sp"
+                android:drawableTint="@color/drawer_icon"
+                android:drawableRight="@drawable/ic_baseline_calender_24"
+                android:background="@drawable/border"
+                android:textStyle="normal"
+                android:textColor="@color/drawer_icon"
+                android:fontFamily="@font/montserrat"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15sp"
+                android:layout_marginLeft="15sp"
+                android:orientation="vertical"
+                >
+
+                <RadioButton
+                    android:id="@+id/month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/drawer_icon"
+                    android:text="1 Month"
+                    android:textSize="14sp"
+                    android:layoutDirection="rtl"
+                    android:bufferType="normal"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/montserrat"/>
+
+                <RadioButton
+                    android:id="@+id/day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/drawer_icon"
+                    android:text="Last Seven Days"
+                    android:textSize="14sp"
+                    android:layoutDirection="rtl"
+                    android:bufferType="normal"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/montserrat"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Short"
+                android:gravity="start"
+                android:textSize="18sp"
+                android:layout_marginTop="05dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/drawer_icon"
+                android:fontFamily="@font/montserrat"/>
+            <CheckBox
+                android:id="@+id/L_to_H"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/drawer_icon"
+                android:text="Low To High"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"
+                android:textSize="14sp"
+                android:layoutDirection="rtl"
+                android:bufferType="normal"
+                android:textStyle="normal"
+                android:fontFamily="@font/montserrat"/>
+            <CheckBox
+                android:id="@+id/H_to_L"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/drawer_icon"
+                android:text="High To Low"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"
+                android:textSize="14sp"
+                android:layoutDirection="rtl"
+                android:bufferType="normal"
+                android:textStyle="normal"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amount Range"
+                android:gravity="start"
+                android:textSize="18sp"
+                android:layout_marginTop="05dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/drawer_icon"
+                android:fontFamily="@font/montserrat"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="08dp"
+                android:layout_marginRight="15sp"
+                android:layout_marginLeft="15sp"
+                android:orientation="vertical"
+                >
+
+                <RadioButton
+                    android:id="@+id/radio_1to200"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/drawer_icon"
+                    android:text="1-200 Rs"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp"
+                    android:layoutDirection="rtl"
+                    android:bufferType="normal"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/montserrat"/>
+
+                <RadioButton
+                    android:id="@+id/radio_201to500"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/drawer_icon"
+                    android:text="201-500 Rs"
+                    android:textSize="14sp"
+                    android:layoutDirection="rtl"
+                    android:bufferType="normal"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/montserrat"/>
+                <RadioButton
+                    android:id="@+id/radio_500"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/drawer_icon"
+                    android:text="500+ Rs"
+                    android:textSize="14sp"
+                    android:layoutDirection="rtl"
+                    android:bufferType="normal"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/montserrat"/>
+            </RadioGroup>
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="15dp"
+              android:layout_marginRight="15dp"
+              android:layout_marginTop="05dp">
+
+              <TextView
+                  android:id="@+id/clear_all"
+                  android:layout_width="match_parent"
+                  android:layout_height="40dp"
+                  android:layout_alignParentStart="true"
+                  android:layout_alignParentLeft="true"
+                  android:layout_marginTop="05dp"
+                  android:layout_toStartOf="@+id/find"
+                  android:fontFamily="@font/montserrat"
+                  android:gravity="start"
+                  android:paddingLeft="16dp"
+                  android:paddingRight="16dp"
+                  android:text="Clear All"
+                  android:textColor="@color/drawer_icon"
+                  android:textSize="15sp"
+                  android:textStyle="normal" />
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/find"
+                  android:layout_width="150dp"
+                  android:layout_height="40dp"
+                   android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true"
+                  app:cardBackgroundColor="#000"
+                  app:cardCornerRadius="5dp"
+                  android:paddingLeft="16dp"
+                  android:paddingRight="16dp">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_gravity="center"
+                      android:textStyle="normal"
+                      android:layout_margin="1dp"
+                      android:text="Find"
+                      android:background="@color/purple_500"
+                      android:gravity="center"
+                      android:textSize="17sp"
+                      android:textColor="#000"
+                      android:fontFamily="@font/montserrat"
+                      />
+              </androidx.cardview.widget.CardView>
+
+          </RelativeLayout>
+
+            </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

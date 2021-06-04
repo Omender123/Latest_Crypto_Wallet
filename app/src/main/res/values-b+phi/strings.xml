@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">" iMX "</string>
+
+    <string name = "hello_blank_fragment"> Kamusta blangko na fragment </string>
+
+    <string name = "drawer_open"> drawe open </string>
+    <string name = "drawer_close"> drawe close </string>
+
+    <string name = "dashboard"> Dashboard </string>
+    <string name = "wallet"> Wallet </string>
+    <string name = "myWallet"> Aking Wallet </string>
+    <string name = "exchange"> Ipagpalit </string>
+    <string name = "profile"> Profile </string>
+    <string name = "security"> Security </string>
+    <string name = "send"> Ipadala </string>
+    <string name = "setting"> Setting </string>
+    <string name = "offer"> Alok </string>
+    <string name = "support"> Suporta </string>
+    <string name = "dark_mode"> Madilim na Mode </string>
+    <string name = "pay_history"> Kasaysayan ng Transaksyon </string>
+    <string name = "coin_history"> Kasaysayan ng Barya </string>
+    <string name = "our_offer"> Alok </string>
+    <string name = "select_currency"> Piliin ang Pera </string>
+    <string name = "customer_support"> Suporta ng Customer </string>
+    <string name = "share"> Ibahagi </string>
+    <string name = "logout"> Mag-logout </string>
+    <string name = "other"> Iba pa </string>
+
+    <string name = "razor_api_key"> rzp_test_23oYrEfMJY6cVI </string>
+
+    <string name = "backup"> Mga Backup </string>
+    <string name = "To_fa"> 2FA </string>
+    <string name = "passcode"> Ligtas sa Passcode </string>
+    <string name = "finger"> Ligtas Gamit ang Fingerprint </string>
+    <string name = "privacy"> Patakaran sa Pagkapribado </string>
+
+
+    <string name = "mobile_support"> Suporta sa Chat </string>
+    <string name = "knowledge"> Batayan sa Kaalaman </string>
+    <string name = "ticket"> Tiket </string>
+    <string name = "contact_us"> Makipag-ugnay sa Amin </string>
+    <string name = "support_text"> Gamitin ang mga pagpipilian sa ibaba upang matuto tungkol sa IMT, </string>
+    <string name = "support_text1"> Malutas ang problema at makipag-ugnay, </string>
+    <string name = "text3"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </string>
+
+    <string name = "more"> Higit pa </string>
+    <string name = "text2"> isang fingerprint o digital fingerprint ay tumutukoy sa anumang bakas ng impormasyong naiwan ng isang tao. </string>
+    <string name = "text1"> Ang isang passcode, ay isang kabisadong lihim, karaniwang isang string ng mga character, karaniwang ginagamit upang kumpirmahin ang isang pagkakakilanlan ng gumagamit. </string>
+    <string name = "text"> Ang isang tamang backup na kopya ay nakaimbak sa isang hiwalay na system o daluyan, tulad ng tape, mula sa pangunahing data upang maprotektahan laban sa posibilidad ng pagkawala ng data dahil sa pangunahing hardware o pagkabigo ng software. </string>
+
+    <string name = "google2fa"> Google 2FA </string>
+    <string name = "email2fa"> Email 2FA </string>
+    <string name = "text_google2fa"> I-on ang Seguridad ng Google 2FA upang mas ma-secure ang iyong Account. </string>
+    <string name = "text_email2fa"> I-on ang Email 2FA Security upang mas ma-secure ang iyong Account. </string>
+    <string name = "get_started"> Magsimula </string>
+    <string name = "send_bitcoin"> Ipadala ang Bitcoin sa iyong IMT Wallet </string>
+
+    <string name = "account_balance"> Balanse sa Account </string>
+
+
+    <!--<! - teksto para sa setting ng screen ->-->
+    <string name = "notification"> Mga Notification </string>
+    <string name = "sound"> Pagsusuri ng update </string>
+    <string name = "currency"> Pera </string>
+    <string name = "advance"> Advanced </string>
+    <string name = "sync"> Mga Device sa Pag-sync </string>
+    <string name = "sync1"> Mga Aktibong Device </string>
+    <string name = "restore"> Pamamahala ng Crypto </string>
+    <string name = "detele"> Tanggalin ang Wallet </string>
+    <string name = "usd"> USD </string>
+    <string name = "below_text"> Ang iyong pangalan ay nai-install, pinagsama-sama ng isang elitr, habang hindi pinapasok ang iyong pansamantalang invidunt para labore et dolore magna </string>
+
+    <string name = "cryptoinfo"> Impormasyon sa Cryptocurrency </string>
+    <string name = "barcode_scan"> I-scan ang Anumang QR Code </string>
+    <string name = "recieve"> Tumanggap ng </string>
+    <string name = "scan"> I-scan ang </string>
+    <string name = "balance"> Balanse </string>
+    <string name = "add_money"> Top Up </string>
+    <string name = "pay"> Bayaran </string>
+    <string name = "add"> Ipasok ang Halaga </string>
+    <string name = "add1"> Magdagdag ng Pera </string>
+    <string name = "complete"> Kumpletong </string>
+    <string name = "add_text"> Bago magdagdag ng pera sa iyong wallet, tatanggapin mo ang aming Mga Tuntunin &amp; Patakaran sa privacy </string>
+    <string name = "add_trem_and_condition"> tanggapin ang aming Mga Tuntunin &amp; Patakaran sa privacy </string>
+    <string name = "your_barcode"> Iyong Wallet Address </string>
+    <string name = "tab_barcode"> Tab Wallet address upang Kopyahin </string>
+    <string name = "barcode"> Mga Barcode Addree </string>
+  <!--  <! - teksto para sa screen ng Pag-login at Pag-signup ->-->
+    <string name = "login"> Pag-login </string>
+    <string name = "sign_up"> Pag-sign up </string>
+    <string name = "hello"> Kumusta ! </string>
+    <string name = "welcome_back"> Maligayang Pagbalik </string>
+    <string name = "name"> Pangalan </string>
+    <string name = "email"> Email </string>
+    <string name = "password"> Password </string>
+    <string name = "re_password"> Ulitin ang Password </string>
+    <string name = "referal_code"> Referral Code </string>
+    <string name = "phone"> Numero ng Telepono </string>
+    <string name = "username"> Username </string>
+    <string name = "Nice"> Hello, nice to meet you! </string>
+    <string name = "hello_nice"> Kumusta, masayang makilala kita! </string>
+    <string name = "crate"> Lumikha ng iyong Account </string>
+    <string name = "enter_referral"> Ipasok ang Iyong Referral Code </string>
+    <string name = "your_referral"> Ang iyong Referral Code </string>
+    <string name = "ready"> Handa nang umalis </string>
+    <string name = "not_referral"> Wala akong Referral Code </string>
+    <string name = "next"> Susunod </string>
+    <string name = "forget"> Nakalimutan ang Aking Password </string>
+    <string name = "forget_password"> Nakalimutan ang Password </string>
+    <string name = "otp_send"> Tumanggap ng OTP sa iyong email account </string>
+    <string name = "comfirm"> Kumpirmahin ang email address / OTP </string>
+    <string name = "enter_otp"> Ipasok ang Iyong OTP </string>
+    <string name = "not_otp"> Hindi Ko Natatanggap ang OTP Ipadala Muli </string>
+    <string name = "change_password"> Baguhin ang Password </string>
+    <string name = "new_password"> Bagong Password </string>
+    <string name = "confirm_password"> Kumpirmahin ang Password </string>
+    <string name = "create_passcode"> Lumikha ng Iyong Passcode </string>
+    <string name = "confirm_passcode"> Kumpirmahin ang Iyong Passcode </string>
+    <string name = "enter_passcode"> Ipasok ang Iyong Passcode </string>
+    <string name = "done"> Tapos na </string>
+    <string name = "transaction"> Transaction Pin </string>
+    <string name = "Secure_wallet"> Secure wallet </string>
+    <string name = "c_transaction"> Kumpirmahin ang Pin ng Transaksyon </string>
+    <string name = "enter_pin"> Ipasok ang Transaction Pin </string>
+    <string name = "mnemonic"> Kopyahin sa Mnemonic </string>
+    <string name = "enter_mnemonic"> Ipasok ang Mnemonic </string>
+    <string name = "add_more"> Magdagdag ng Higit Pa </string>
+    <string name = "overview"> Pangkalahatang-ideya </string>
+    <string name = "fortext"> Mangyaring i-save ang mnemonic para sa oras ng buhay. at ang kinakailangan ng Mnemonic na pangangailangan na ito sa oras ng kalimutan ang password. </string>
+
+
+    <string name = "Gmail_Text"> Pagpapatotoo ng Google </string>
+    <string name = "Emailtext"> i-verify ang iyong Email id </string>
+    <string name = "GoogleAuthentication"> Google Authentication </string>
+    <string name = "createaccount"> Ang account ay nilikha </string>
+    <string name = "googleauth"> Ipasok ang Google Authentication </string>
+    <string name = "skip"> Laktawan </string>
+    <string name = "Addverification"> Magdagdag ng Pag-verify </string>
+    <string name = "sucessfully"> Matagumpay na </string>
+
+    <string name = "light"> Light Mode </string>
+    <string name = "dark"> Dark Mode </string>
+    <string name = "payout_text1"> Ipasok ang Email OTP </string>
+    <string name = "payout_text2"> Ipasok ang Google Token </string>
+    <string name = "knwoledge_Text_heading"> Ito sd dfask msadj msad mads poad wdt </string>
+    <string name = "knowlege_Description_Demo"> Hello I am Demo Text na nagpapakita ng pagpapatupad ng layout. Ngayon Ipinapakita nito ang Demo ng layout na ito </string>
+    <string name = "add_ticket"> Magdagdag ng Ticket </string>
+
+
+    <string name = "contact_title"> Mga Detalye ng Pakikipag-ugnay </string>
+    <string name = "contact_Email"> Email Address </string>
+    <string name = "contact_Email_Address"> imxchange.imx@gmail.com </string>
+    <string name = "contact_Phone"> Numero ng Telepono </string>
+    <string name = "contact_Phone_No"> + 66 646981930 </string>
+    <string name = "contact_website"> Website </string>
+    <string name = "contact_website_address"> www.imx.global </string>
+
+    <string name = "wallettext"> I-type ang iyong mga lihim na Phase upang maibalik ang mayroon nang wallet </string>
+    <string name = "restorewallet"> Ibalik ang Wallet </string>
+    <string name = "selectcurrency"> Piliin ang Pera </string>
+    <string name = "secretephases"> I-sikreto ang Mga Phase </string>
+    <string name = "devicesync"> Anong Device ang nais mong i-sync? </string>
+    <string name = "scandes"> Buksan ang IMT Desktop. Pumunta Sa Pagtatakda. Pagkatapos Device, Pagkatapos I-click ang Sync Button </string>
+    <string name = "scanqr"> I-scan ang QR Code </string>
+    <string name = "passcode_text"> Ipasok ang pattern ng lock ng screen ng telepono, PIN, password o Fingerprint </string>
+    <string name = "passcode_detail"> I-unlock ang Crypto Wallet </string>
+    <string name = "transaction_text"> Walang Kasaysayan sa Transaksyon </string>
+    <string name = "ticket_text"> Walang Lumang Kasaysayan sa Tiket </string>
+    <string name = "add_currency"> Magdagdag ng Pera </string>
+
+    <string name = "txt_pin"> Pinapayuhang ipasok ang iyong PIN ng transaksyon. Na iyong nilikha habang nag-sign up. </string>
+
+   <!-- <! - Ang pagtatakda ng teksto ng nilalaman ->-->
+    <string name = "noti_text"> Gusto naming mapanatili kang makipag-ugnay sa pinakabagong mga kaganapan na nauugnay sa iMX. </string>
+    <string name = "sound_text"> Paparating kami ng bagong Update. </string>
+    <string name = "currency_text"> Maaari mong subaybayan ang mga live na presyo ng crypto sa iyong ginustong stripe currency. </string>
+    <string name = "active_text"> Subaybayan ang iyong aktibidad sa pag-login sa account. </string>
+    <string name = "cryto_text"> Masiyahan sa mga pinakabagong tampok sa platform ng iMX, upang makuha ang pinakamahusay mula sa application. </string>
+
+   <!-- <! - Suporta ng teksto ng nilalaman ->-->
+    <string name = "mobile_text"> Maaari kang makipag-chat sa amin sa iyong mga isyu. </string>
+    <string name = "knowledge_text"> Lutasin ang iyong mga isyu sa mga madalas itanong. </string>
+    <string name = "tickets_text"> Taasan ang iyong isyu at babalikan ka namin ng iyong solusyon. </string>
+    <string name = "contact_text"> Direktang makipag-ugnay sa amin. </string>
+
+    <string name = "prefs_theme_key"> tema </string>
+
+    <string name = "language"> Wika </string>
+
+    <string name = "exit_text"> Gusto mo bang lumabas? </string>
+    <string name = "log_text"> Sigurado ka bang Mag-logout !!!!! </string>
+    <string name = "yes"> Oo </string>
+    <string name = "no"> Hindi </string>
+    <string name = "add_Query"> Idagdag ang Iyong Query </string>
+    <string name = "subject"> Paksa </string>
+    <string name = "enter_Query"> Ipasok ang Query </string>
+    <string name = "add_text1"> Idagdag </string>
+    <string name = "verify_txt"> Pag-verify </string>
+    <string name = "new_chat"> Bagong Chat </string>
+    <string name = "old_chat"> Old Chat </string>
+    <string name = "recevied"> Natanggap </string>
+    <string name = "coin_address"> Ipasok ang Coin Address </string>
+    <string name = "sumbit"> Isumite </string>
+    <string name = "trans_su"> Matagumpay ang Transaksyon </string>
+    <string name = "download"> I-download </string>
+    <string name = "copy"> Kopyahin </string>
+    <string name = "teans_id"> Transaction Id </string>
+    <string name = "paid_to"> Bayad sa </string>
+    <string name = "status"> Status </string>
+    <string name = "show"> Ipakita ang Mga Detalye </string>
+    <string name = "hide"> Itago ang Mga Detalye </string>
+    <string name = "total_amount"> Kabuuang Halaga </string>
+    <string name = "price"> Presyo </string>
+    <string name = "swap_p2p"> Ipagpalit Kagamitan </string>
+    <string name = "coin"> Ipasok ang Halaga ng Barya sa Paglipat </string>
+    <string name = "account"> Account </string>
+    <string name = "payment"> Pagbabayad </string>
+    <string name = "about"> About </string>
+    <string name = "click"> Mag-click upang Mag-download ng Button </string>
+    <string name = "for1"> Para sa Pag-download ng Mnemonic </string>
+    <string name = "save"> Mangyaring i-save ang Mnemonic for Life na oras na ito </string>
+    <string name = "search"> Paghahanap </string>
+    <string name = "story"> Mga Kwento </string>
+    <string name = "old_ticket"> Old Ticket </string>
+    <string name = "recent"> Kamakailang Kasaysayan sa Transaksyon </string>
+    <string name = "enter"> Ipasok ang User ID o User name </string>
+    <string name = "paid_form"> Bayad Mula sa </string>
+
+    <string name = "threat_mode"> mode ng banta </string>
+    <string name = "caution"> Pag-iingat </string>
+    <string name = "threat_text"> Ito ay permanenteng magla-lock ng iyong account. Maliban kung naipasa mo ang lahat ng parameter ng seguridad. </string>
+
+
+    <string name = "your_referral_code"> Ang iyong Referral Code </string>
+    <string name = "tab_below"> Tab sa teksto upang kopyahin ang referral code </string>
+
+    <string name = "no_chat_text"> Walang Lumang Kasaysayan sa Chat </string>
+    <string name = "un_lock"> I-unlock ang Account</string>
+
+    <string name = "close_chat"> Isara ang chat </string>
+    <string name = "close_chat_text"> Nais mo bang wakasan ang chat? </string>
+    <string name = "confirm"> Kumpirmahin </string>
+    <string name = "cancel"> Kanselahin </string>
+
+    <string name="imt_u">ImSmart Utility</string>
+    <string name="reff">私は紹介コードを持っていません</string>
+
+    <string name = "noconnection"> Pinapayuhan na kumonekta sa isang WIFI network o paganahin ang Mobile Data </string>
+    <string name="recent_txt">Wala kang kamakailang mga transaksyon</string>
+    <string name="scan_txt">I-scan ang QR code sa pamamagitan ng pag-click sa pindutan ng screen</string>
+
+    <string name = "kyc"> KYC </string>
+    <string name = "kyc_txt"> Mangyaring kumpletuhin ang iyong kyc para sa mas mahusay na seguridad </string>
+    <string name = "kyc_country"> Bansa </string>
+    <string name = "kyc_address"> Address </string>
+    <string name = "doc_type"> Uri ng dokumento </string>
+    <string name = "docu_men"> Mga Dokumento </string>
+
+    <string name = "house_no"> House / Suite / apartment </string>
+    <string name = "street_add"> Street Address </string>
+    <string name = "zip_code"> Zip code </string>
+    <string name = "doc_no"> Numero ng Dokumento </string>
+    <string name = "choose"> Pumili ng file </string>
+
+    <string name ="acko"> Pagkilala </string>
+
+    <string name="Confirm">Pagkumpirma</string>
+    <string name="Amt_in_cryto">Halaga sa crypto</string>
+    <string name="Amt_in_USD">Halaga sa USD</string>
+    <string name="Reciver_add">Address ng Tagatanggap</string>
+    <string name="Trans_hsh">Transaksyon hash</string>
+    <string name="Trans_sts">Katayuan sa Transaksyon</string>
+
+    <string name = "obtain"> Kunin ang Google 2 FA </string>
+
+    <string name = "resetPin"> I-reset ang Pin </string>
+    <string name = "forgetPin"> Kalimutan ang Pin </string>
+    <string name = "resetPintxt"> Maaari mong i-reset ang iyong PIN ng transaksyon.</string>
+    <string name = "forgetPintxt"> I-setup ang iyong Transaction PIN, kung sakaling kalimutan mo ito.</string>
+
+    <string name = "currentPin"> Kasalukuyang Pin </string>
+    <string name = "enter_currentPin"> Ipasok ang Kasalukuyang Pin </string>
+    <string name = "newPin"> Bagong Pin </string>
+    <string name = "enter_newPin"> Ipasok ang Bagong Pin </string>
+    <string name = "update_pin"> Matagumpay na Ina-update ang iyong PIN ng Transaksyon </string>
+    <string name = "com_newPin"> Kumpirmahin ang Bagong Pin </string>
+    <string name = "txt_mnemonic"> Sundin ito upang makuha ang iyong Mnemonic </string>
+
+    <string name="follow_mnemonic"> Pagtatakda >> I-back Up >> Pag-verify >> Lihim na Mga Phase</string>
+
+    <string name = "userEmail"> Username o Email </string>
+
+    <string name = "top_money"> Topup Pera </string>
+    <string name = "top_money1"> Piliin ang iyong paraan ng Top Up upang magdagdag ng pera </string>
+    <string name = "paypal"> Magbayad pal </string>
+    <string name = "bank"> bangko Paglipat </string>
+    <string name = "account_no"> Numero ng bangko Account </string>
+    <string name = "transfer"> Paglipat </string>
+    <string name = "bank_name"> Pangalan ng bangko </string>
+    <string name = "transaction_id"> Id ng Transaksyon </string>
+    <string name = "upi_id"> UPI Id </string>
+    <string name = "ifsc"> SWIFT Code </string>
+    <string name = "bank_hol"> Pangalan ng May-ari ng bangko </string>
+    <string name = "bank_show"> Ipakita ang Mga Detalye ng bangko </string>
+    <string name = "qr_code"> Thai QR code </string>
+
+
+    <string name = "redeem"> Kunin ang </string>
+    <string name = "redeem_utility"> I-redeem sa Utility </string>
+    <string name = "redeem_now"> I-red now </string>
+    <string name = "term"> mga tuntunin at kundisyon </string>
+    <string name = "rewards"> Mga Gantimpala </string>
+    <string name = "imx_point"> IMX Point </string>
+    <string name = "redeem_gift"> Kunin sa Mga Regalo </string>
+    <string name = "Rewards_his"> Kasaysayan ng Mga Gantimpala </string>
+    <string name = "product"> Mga Produkto </string>
+    <string name = "cart"> Cart </string>
+    <string name = "history"> Kasaysayan </string>
+    <string name = "categories"> Mga Kategoryang </string>
+
+</resources>

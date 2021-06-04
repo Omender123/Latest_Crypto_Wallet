@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".ImtSmart.ImSmartSendManual">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/toolbar"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_gravity="center"
+            android:text="@string/send"
+            android:textColor="@color/white"
+            android:id="@+id/toolbar_title" />
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user"
+        android:layout_below="@id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/coin_address"
+        app:hintTextColor="@color/toolbar_text_color"
+        style="@style/OutlineBox"
+        android:layout_margin="20dp">
+        <EditText
+            android:id="@+id/ed_username1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="@color/toolbar_text_color"
+            android:inputType="text"
+            android:drawableLeft="@drawable/ic_user_name"
+            android:drawableStart="@drawable/ic_user_name"
+            android:textCursorDrawable="@null"
+            android:drawablePadding="10dp"
+            android:drawableTint="@android:color/darker_gray"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/userId"
+         android:layout_below="@id/welcome"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:hint="UserId"
+         style="@style/OutlineBox"
+         android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp">
+         <EditText
+             android:id="@+id/ed_userID"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:textColor="@color/toolbar"
+             android:inputType="text"
+             android:drawableLeft="@drawable/ic_user_name"
+             android:drawableStart="@drawable/ic_user_name"
+             android:textCursorDrawable="@null"
+             android:drawablePadding="10dp"
+             android:drawableTint="@android:color/darker_gray"/>
+     </com.google.android.material.textfield.TextInputLayout>-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/purple_500"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:layout_gravity="center"
+            android:maxLength="7"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:textColor="@color/black"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

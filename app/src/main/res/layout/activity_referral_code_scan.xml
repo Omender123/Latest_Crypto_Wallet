@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/status_color"
+tools:context=".signup.Referral_code_scan">
+
+<TextView
+    android:id="@+id/back1"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginLeft="30dp"
+    android:drawableLeft="@drawable/ic_baseline_close_24"
+    android:text="@string/barcode_scan"
+    android:textAlignment="center"
+    android:textStyle="bold"
+    android:textSize="18dp"
+    android:textColor="@color/white" />
+
+<com.budiyev.android.codescanner.CodeScannerView
+    android:id="@+id/scannerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/back1"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentBottom="true"
+    app:frameAspectRatioHeight="1"
+    app:frameAspectRatioWidth="1"
+    app:frameColor="@android:color/white"
+    app:frameCornersRadius="0dp"
+    app:frameCornersSize="50dp"
+    app:frameSize="0.75"
+    app:frameThickness="2dp"
+    app:maskColor="#77000000" />
+
+
+
+
+
+</RelativeLayout>

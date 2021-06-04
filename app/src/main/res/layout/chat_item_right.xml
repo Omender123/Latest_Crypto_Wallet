@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:background="@color/background"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10-12-2020"
+                android:textStyle="normal"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="10dp"
+                android:fontFamily="@font/montserrat"/>
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:30"
+                android:maxLength="5"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="1dp"
+                android:textStyle="normal"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="10dp"
+                android:fontFamily="@font/montserrat"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_right"
+            android:text="hello"
+            android:layout_below="@id/linear"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/show_message"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:padding="8dp"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_seen"
+            android:layout_below="@id/show_message"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#000000</color>
+    <color name="purple_500">#F1BB0E</color>
+    <color name="purple_700">#000000</color>
+    <color name="teal_200">#F1BB0E</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="black">#4C4C4C</color>
+    <color name="white">#F8F8F8</color>
+
+
+    <color name="background">#F8F8F8</color>
+    <color name="background1">#FFFFFF</color>
+    <color name="status_color">#000000</color>
+    <color name="toolbar">#272a30</color>
+    <color name="toolbar_text_color">#242424</color>
+    <color name="Orange">#ED8A4C</color>
+    <color name="drawer_background">#F8F8F8</color>
+    <color name="drawer_icon">#1F2641</color>
+    <color name="drawer_tittle">#1F2641</color>
+    <color name="card_background">#FFFFFFFF</color>
+    <color name="pink">#EA485C</color>
+    <color name="green">#00E676</color>
+    <color name="green1">#0EC40D</color>
+    <color name="red">#FF1100</color>
+    <color name="light_gray">@android:color/darker_gray</color>
+    <color name="border_color">#F1BB0E</color>
+    <color name="txt_hide">#DAD8D8</color>
+    <color name="stoke_color">#33707070</color>
+    <color name="layout_color">#F1F1F1</color>
+    <!--bottom section color-->
+    <color name="select">#F7CE2B</color>
+    <color name="un_select">#aaa</color>
+    <!--gradent color Header-->
+    <color name="end_color">#F7CE2B</color>
+    <color name="start_color">#F1BB0E</color>
+    <color name="over">#EFEFEF</color>
+    <color name="graph">#F1BB0E</color>
+    <color name="grey_light_secondary">#cccccc</color>
+    <color name="grey_light_tertiary">#eeeeee</color>
+
+    <color name="bal_color">#E0AB00</color>
+
+    <color name="graph_back">#E0AB00</color>
+
+    <color name="graph_line">#FFFFFF</color>
+
+    <color name="start_color_graph">#DD7714</color>
+    <color name="end_color_graph">#DCA906</color>
+
+    <color name="swap_color">#F1BB0E</color>
+
+    <color name="graph_icon_color">#000000</color>
+    <color name="icon"> #F19D0E</color>
+
+    <color name="colorYellow">#F5FA55</color>
+    <color name="colorPrimaryDark">#0E121B</color>
+
+    <color name="blue">#044B7F</color>
+    <color name="empty_color">#F1BB0E</color>
+
+    <color name="card_product_back">#EBEAEC</color>
+    <color name="hello_color">#99303030</color>
+    <color name="text_color">#303030</color>
+</resources>

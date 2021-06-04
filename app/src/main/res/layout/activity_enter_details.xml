@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SetTransactionPin.EnterDetails"
+    android:background="@color/background"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/toolbar"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:onClick="back"
+        android:src="@drawable/ic_baseline_arrow_back_24"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginRight="50dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_gravity="center"
+        android:text="@string/forgetPin"
+        android:textColor="@color/white"
+        android:id="@+id/toolbar_title" />
+
+</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/enterpss"
+        style="@style/OutlineBox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/password"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@android:color/darker_gray">
+
+        <EditText
+            android:id="@+id/enter_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableTint="@android:color/darker_gray"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/enterotp"
+        style="@style/OutlineBox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/enter_otp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@android:color/darker_gray">
+
+        <EditText
+            android:id="@+id/enter_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableTint="@android:color/darker_gray"
+            android:textColor="@color/black"
+            android:ems="10"
+            android:inputType="numberPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/nxt_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/button_color_rounded"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/resendOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/timer"
+                android:alpha="0.4"
+                android:gravity="center"
+                android:text="@string/not_otp"
+                android:textAlignment="textEnd"
+                android:layout_marginRight="10dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/purple_500"
+                tools:ignore="RtlCompat" />
+
+            <RelativeLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:gravity="center">
+                <ProgressBar
+                    android:id="@+id/progressBarCircle"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/drawable_circle_dark_blue"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/drawable_circle_yellow"
+                    android:rotation="-90" />
+
+                <TextView
+                    android:id="@+id/timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="11dp"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat"
+                    android:text="60s"
+                    android:textSize="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/red"
+                    android:textStyle="normal|italic" />
+            </RelativeLayout>
+
+        </LinearLayout>
+</LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- <item
+         android:title="Home"
+         android:id="@id/home"
+         android:icon="@drawable/home"
+         android:menuCategory="secondary"/>
+
+    <item
+        android:title="About"
+        android:id="@id/about"
+        android:icon="@drawable/about"
+
+        android:menuCategory="secondary"/>
+
+    <item
+        android:title="Bookmark"
+        android:id="@id/bookmark"
+        android:icon="@drawable/bookmark"
+        android:menuCategory="secondary"/>
+    --><item
+        android:id="@id/deshboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/dashboard"
+        android:menuCategory="secondary"/>
+    <item
+        android:id="@id/myWallet"
+        android:icon="@drawable/ic_homewallet"
+        android:title="@string/wallet"
+        android:menuCategory="secondary"/>
+    <item
+        android:id="@id/exchange"
+        android:icon="@drawable/ic_exchange"
+        android:title="@string/exchange"
+        android:menuCategory="secondary"/>
+    <item
+        android:id="@id/profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile"
+        android:menuCategory="secondary"/>
+
+
+</menu>

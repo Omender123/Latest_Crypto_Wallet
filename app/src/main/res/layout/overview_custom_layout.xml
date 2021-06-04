@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="0dp"
+        android:padding="10dp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="1dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/group16188" />
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/coinName"
+                android:padding="10dp"
+                app:srcCompat="@mipmap/path2059" />
+
+            <TextView
+                android:id="@+id/coinName"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/image"
+                android:layout_marginTop="12dp"
+                android:padding="1dp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Bitcoin"
+                android:textColor="@color/toolbar_text_color"
+                android:textSize="14dp"
+                android:justificationMode="inter_word"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/coinsymbols"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coinName"
+                android:layout_marginStart="6dp"
+                android:layout_toEndOf="@id/image"
+                android:text="BTC"
+                android:textAllCaps="true"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="normal"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:maxLength="8"
+                android:layout_alignParentRight="true"
+                android:layout_toEndOf="@+id/imageView3"
+                android:fontFamily="sans-serif-black"
+                android:gravity="right"
+                android:textSize="13sp"
+                android:textColor="@color/toolbar_text_color" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_toEndOf="@+id/imageView3"
+                android:orientation="horizontal"
+                android:gravity="right">
+                <TextView
+                    android:id="@+id/increaseRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="1dp"
+                    android:maxLength="5"
+                    android:text="4.08"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/toolbar_text_color"
+                    android:textSize="13dp" />
+                <TextView
+                    android:id="@+id/null1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:drawablePadding="1dp"
+                    android:textSize="13dp"
+                    android:textColor="@color/toolbar_text_color"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                   />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".signup.Add_Verification1">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/backgroun_image1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="140dp">
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/login"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="20dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/sign_up"
+                android:textColor="@color/purple_500"
+                android:textSize="20dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/hello_color"
+            android:text="@string/Nice"
+            />
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hello"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginBottom="20dp"
+            android:text="@string/Addverification"
+            android:textColor="@color/text_color"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:paddingBottom="40dp">
+
+
+
+                <RelativeLayout
+                    android:id="@+id/Email_verifacation"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@drawable/verifying_textview"
+                    android:backgroundTint="#EDEDED"
+                    android:layout_gravity="center"
+                    android:paddingBottom="15dp">
+
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/email_img"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/Emailtext"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#242424"
+                        android:textSize="17dp" />
+
+                    <ImageView
+                        android:id="@+id/email_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/email_img"/>
+
+                    <ImageView
+                        android:id="@+id/email_img1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginRight="9dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_baseline_check_circle_24" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/verifying_textview"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#EDEDED"
+                    android:paddingBottom="15dp">
+
+
+                    <TextView
+                        android:id="@+id/text_gmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/gmail_img"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/Gmail_Text"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="#242424"
+                        android:textSize="17dp" />
+
+                    <ImageView
+                        android:id="@+id/gmail_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/gmail_img"/>
+
+
+                    <CheckBox
+                        android:id="@+id/checkbox2"
+                        style="@style/CustomCheckbox02"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:checked="false"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="3dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/show_dailog"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/verifying_textview"
+                    android:backgroundTint="@color/purple_500"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/text_color"
+                    android:textAllCaps="false"
+                    android:text="@string/skip" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

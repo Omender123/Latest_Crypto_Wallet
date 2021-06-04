@@ -1,0 +1,16 @@
+<vector android:height="24dp" android:viewportHeight="100"
+    android:viewportWidth="100" android:width="24dp"
+    android:tint="@color/drawer_icon"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <clip-path android:pathData="M0,0h100v100h-100z"/>
+        <path  android:fillColor="#00000000"
+            android:pathData="M87.194,87.906L87.194,79.232A17.348,17.348 0,0 0,69.846 61.884h-34.7A17.348,17.348 0,0 0,17.801 79.232v8.674"
+            android:strokeColor="#242424"
+            android:strokeLineCap="round" android:strokeLineJoin="round" android:strokeWidth="5"/>
+        <path  android:fillColor="#00000000"
+            android:pathData="M69.849,27.187A17.348,17.348 0,1 1,52.497 9.839,17.348 17.348,0 0,1 69.849,27.187Z"
+            android:strokeColor="#242424"
+            android:strokeLineCap="round" android:strokeLineJoin="round" android:strokeWidth="5"/>
+    </group>
+</vector>

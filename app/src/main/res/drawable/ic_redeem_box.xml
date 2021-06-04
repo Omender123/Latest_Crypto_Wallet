@@ -1,0 +1,53 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="346dp"
+    android:height="194dp"
+    android:viewportWidth="346"
+    android:viewportHeight="194">
+  <group>
+    <clip-path
+        android:pathData="M0,0h346v194h-346z"/>
+    <path
+        android:pathData="M18,0L328,0A18,18 0,0 1,346 18L346,176A18,18 0,0 1,328 194L18,194A18,18 0,0 1,0 176L0,18A18,18 0,0 1,18 0z">
+      <aapt:attr name="android:fillColor">
+        <gradient 
+            android:startY="15.908"
+            android:endY="185.27"
+            android:startX="-5.8440953E-16"
+            android:endX="346"
+            android:type="linear">
+          <item android:offset="0" android:color="#FFF7CE2B"/>
+          <item android:offset="1" android:color="#FFF1BB0E"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+    <group>
+      <clip-path
+          android:pathData="M-18,106m-66,0a66,66 0,1 1,132 0a66,66 0,1 1,-132 0"/>
+      <path
+          android:pathData="M16,1L326,1A18,18 0,0 1,344 19L344,177A18,18 0,0 1,326 195L16,195A18,18 0,0 1,-2 177L-2,19A18,18 0,0 1,16 1z"
+          android:strokeAlpha="0.1"
+          android:fillColor="#fff"
+          android:fillAlpha="0.1"/>
+    </group>
+    <group>
+      <clip-path
+          android:pathData="M349,185m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0"/>
+      <path
+          android:pathData="M18,0L328,0A18,18 0,0 1,346 18L346,176A18,18 0,0 1,328 194L18,194A18,18 0,0 1,0 176L0,18A18,18 0,0 1,18 0z"
+          android:strokeAlpha="0.1"
+          android:fillColor="#fff"
+          android:fillAlpha="0.1"/>
+    </group>
+    <group>
+      <clip-path
+          android:pathData="M345,65m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0"/>
+      <path
+          android:pathData="M18,0L328,0A18,18 0,0 1,346 18L346,176A18,18 0,0 1,328 194L18,194A18,18 0,0 1,0 176L0,18A18,18 0,0 1,18 0z"
+          android:strokeAlpha="0.1"
+          android:fillColor="#fff"
+          android:fillAlpha="0.1"/>
+    </group>
+
+  </group>
+</vector>

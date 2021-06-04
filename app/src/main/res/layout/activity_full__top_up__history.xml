@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TopUp.Full_TopUp_History">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:textSize="23dp"
+        android:onClick="back"
+        android:textStyle="bold"
+        android:background="@color/toolbar"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:paddingStart="15dp"
+        android:paddingEnd="25dp"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:text="TopUp History"
+        android:textColor="@color/white"
+        android:id="@+id/toolbar_title"
+        tools:ignore="RtlCompat" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:background="@drawable/ic_redeem_box"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Received Utility"
+                    android:textSize="17dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/toolbar"
+                    android:fontFamily="@font/montserrat"
+                    android:textStyle="normal"/>
+                <TextView
+                    android:id="@+id/text_utility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/toolbar"
+                    android:fontFamily="@font/montserrat"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="08dp"
+                app:cardElevation="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_toEndOf="@+id/view"
+                            android:text="@string/teans_id"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="13dp" />
+
+
+                        <TextView
+                            android:id="@+id/trans_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:justificationMode="inter_word"
+                            android:layout_toStartOf="@+id/btn_copy"
+                            android:layout_toEndOf="@+id/view"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/btn_copy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/copy"
+                            android:onClick="btn_copy"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/purple_500"/>
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="5dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/gradient" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:id="@+id/text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_toEndOf="@+id/view1"
+                            android:text="Date"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="13dp" />
+
+
+                        <TextView
+                            android:id="@+id/text_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/text1"
+                            android:maxLength="10"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toEndOf="@+id/view1"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="15dp" />
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="5dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/gradient" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:id="@+id/text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_toEndOf="@+id/view2"
+                            android:text="Paid Amount"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="13dp" />
+
+
+                        <TextView
+                            android:id="@+id/paid_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/text2"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                             android:layout_toEndOf="@+id/view2"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="15dp" />
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="5dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/gradient" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp">
+                        <TextView
+                            android:id="@+id/transstatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_toEndOf="@+id/view3"
+                            android:text="@string/status"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="13dp" />
+
+
+                        <TextView
+                            android:id="@+id/text_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/transstatus"
+                            android:layout_toEndOf="@+id/view3"
+                            android:layout_marginLeft="20dp"
+                            android:fontFamily="@font/montserrat"
+                            android:justificationMode="inter_word"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="17dp" />
+
+                        <ImageView
+                            android:id="@+id/image_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_check_circle_24"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_alignParentRight="true"/>
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="5dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/gradient" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/text6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/imx_point"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="10dp" />
+
+
+                        <TextView
+                            android:id="@+id/text_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text6"
+                            android:layout_marginStart="25dp"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <View
+
+                            android:layout_width="5dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/gradient" />
+
+                        <ImageView
+                            android:id="@+id/rewardImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="20dp"
+                            android:padding="5dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/ic_rewards_icon"
+                            app:tint="@color/purple_500" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+            </LinearLayout>

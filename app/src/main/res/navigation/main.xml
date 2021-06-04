@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/deshboard">
+
+    <fragment
+        android:id="@+id/deshboard"
+        android:name="com.crypto.croytowallet.fragement.Deshboard"
+        android:label="@string/dashboard"
+        tools:layout="@layout/fragment_deshboard" />
+    <fragment
+        android:id="@+id/myWallet"
+        android:name="com.crypto.croytowallet.fragement.Wallet"
+        android:label="@string/wallet"
+        tools:layout="@layout/fragment_mywallet" />
+    <fragment
+        android:id="@+id/exchange"
+        android:name="com.crypto.croytowallet.fragement.Exchange"
+        android:label="@string/exchange"
+        tools:layout="@layout/fragment_exchange" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.crypto.croytowallet.fragement.Profile"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile"
+        />
+    <activity
+        android:id="@+id/security"
+        android:name="com.crypto.croytowallet.Activity.Security"
+
+        tools:layout="@layout/activity_security" />
+ <activity
+     android:id="@+id/support"
+     android:name="com.crypto.croytowallet.Activity.Support"
+     tools:layout="@layout/activity_support" />
+    <activity
+        android:id="@+id/setting"
+        android:name="com.crypto.croytowallet.Activity.Setting"
+        tools:layout="@layout/activity_setting" />
+
+    <activity
+        android:id="@+id/pay_history"
+        android:name="com.crypto.croytowallet.TransactionHistory.Transaction_history"
+        tools:layout="@layout/activity_transaction_history" />
+
+
+    <activity
+        android:id="@+id/coin_history"
+        android:name="com.crypto.croytowallet.TransactionHistory.CoinHistory"
+        tools:layout="@layout/activity_coin_history" />
+
+    <activity
+        android:id="@+id/our_Offer"
+        android:name="com.crypto.croytowallet.Offer.Offer"
+        tools:layout="@layout/activity_offer" />
+    <activity
+        android:id="@+id/our_Rewards"
+        android:name="com.crypto.croytowallet.Rewards.Rewards"
+        tools:layout="@layout/activity_rewards" />
+
+</navigation>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".SetTransactionPin.CuurentPin">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/toolbar"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:onClick="back"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_arrow_back_24"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginRight="50dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_gravity="center"
+        android:text="@string/currentPin"
+        android:textColor="@color/white"
+        android:id="@+id/toolbar_title" />
+</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/ent_cur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/enter_currentPin"
+        android:textSize="16dp"
+        android:textColor="@color/toolbar_text_color"
+        android:fontFamily="@font/montserrat"
+        android:layout_margin="20dp"
+        android:textStyle="normal" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/enterCurrent_pin"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+         android:cursorVisible="true"
+        android:inputType="numberPassword"
+        android:textColor="@color/toolbar_text_color"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="false"
+        app:itemCount="6"
+        app:itemHeight="45dp"
+        app:itemRadius="6dp"
+        app:itemSpacing="20dp"
+        app:itemWidth="40dp"
+        app:lineColor="@android:color/darker_gray"
+        app:lineWidth="2dp"
+        app:viewType="rectangle" />
+
+    <TextView
+        android:id="@+id/kind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_pin"
+        android:textSize="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/montserrat"
+        android:justificationMode="inter_word"
+        android:textColor="@color/toolbar_text_color"
+        android:textStyle="normal" />
+
+
+
+    <Button
+        android:id="@+id/skip_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/button_color_rounded"
+        android:textColor="@color/toolbar_text_color"
+        android:text="@string/confirm"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:text="@string/forgetPin"
+            android:layout_gravity="end"
+            android:onClick="forgetPIN"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/blue"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"/>
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>
