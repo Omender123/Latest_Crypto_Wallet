@@ -19,5 +19,6 @@ public class PrefConf {
     public static final String HIGH_AMOUNT = "HIGH_AMOUNT";
     public static final String SHORT = "SHORT";
     public static final String CHECK = "CHECK";
+    public static final String CHECK_SCREEN = "CHECK_SCREEN";
 
 }

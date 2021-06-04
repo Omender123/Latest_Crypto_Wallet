@@ -6,12 +6,15 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class TopUp_HistoryResponse  implements Serializable {
-    @SerializedName("_id")
+    @SerializedName("reward")
     @Expose
-    private String id;
+    private String reward;
     @SerializedName("status")
     @Expose
     private String status;
+    @SerializedName("_id")
+    @Expose
+    private String id;
     @SerializedName("accountName")
     @Expose
     private String accountName;
@@ -21,21 +24,21 @@ public class TopUp_HistoryResponse  implements Serializable {
     @SerializedName("customerName")
     @Expose
     private String customerName;
-    @SerializedName("currency")
-    @Expose
-    private String currency;
     @SerializedName("transactionId")
     @Expose
     private String transactionId;
+    @SerializedName("upiId")
+    @Expose
+    private String upiId;
     @SerializedName("amount")
     @Expose
     private String amount;
     @SerializedName("paymentMode")
     @Expose
     private String paymentMode;
-    @SerializedName("upiId")
+    @SerializedName("currency")
     @Expose
-    private String upiId;
+    private String currency;
     @SerializedName("userId")
     @Expose
     private String userId;
@@ -45,15 +48,12 @@ public class TopUp_HistoryResponse  implements Serializable {
     @SerializedName("updatedAt")
     @Expose
     private String updatedAt;
-    @SerializedName("utility")
-    @Expose
-    private String utility;
     @SerializedName("attachement")
     @Expose
     private String attachement;
-    @SerializedName("reward")
+    @SerializedName("utility")
     @Expose
-    private String reward;
+    private String utility;
 
     /**
      * No args constructor for use in serialization
@@ -61,34 +61,33 @@ public class TopUp_HistoryResponse  implements Serializable {
      */
     public TopUp_HistoryResponse() {
     }
-
-
-    public TopUp_HistoryResponse(String id, String status, String accountName, String accountNo, String customerName, String currency, String transactionId, String amount, String paymentMode, String upiId, String userId, String createdAt, String updatedAt, String utility, String attachement, String reward) {
+    
+    public TopUp_HistoryResponse(String reward, String status, String id, String accountName, String accountNo, String customerName, String transactionId, String upiId, String amount, String paymentMode, String currency, String userId, String createdAt, String updatedAt, String attachement, String utility) {
         super();
-        this.id = id;
+        this.reward = reward;
         this.status = status;
+        this.id = id;
         this.accountName = accountName;
         this.accountNo = accountNo;
         this.customerName = customerName;
-        this.currency = currency;
         this.transactionId = transactionId;
+        this.upiId = upiId;
         this.amount = amount;
         this.paymentMode = paymentMode;
-        this.upiId = upiId;
+        this.currency = currency;
         this.userId = userId;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.utility = utility;
         this.attachement = attachement;
+        this.utility = utility;
+    }
+
+    public String getReward() {
+        return reward;
+    }
+
+    public void setReward(String reward) {
         this.reward = reward;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getStatus() {
@@ -97,6 +96,14 @@ public class TopUp_HistoryResponse  implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getAccountName() {
@@ -123,20 +130,20 @@ public class TopUp_HistoryResponse  implements Serializable {
         this.customerName = customerName;
     }
 
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
     public String getTransactionId() {
         return transactionId;
     }
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+    }
+
+    public String getUpiId() {
+        return upiId;
+    }
+
+    public void setUpiId(String upiId) {
+        this.upiId = upiId;
     }
 
     public String getAmount() {
@@ -155,12 +162,12 @@ public class TopUp_HistoryResponse  implements Serializable {
         this.paymentMode = paymentMode;
     }
 
-    public String getUpiId() {
-        return upiId;
+    public String getCurrency() {
+        return currency;
     }
 
-    public void setUpiId(String upiId) {
-        this.upiId = upiId;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public String getUserId() {
@@ -187,14 +194,6 @@ public class TopUp_HistoryResponse  implements Serializable {
         this.updatedAt = updatedAt;
     }
 
-    public String getUtility() {
-        return utility;
-    }
-
-    public void setUtility(String utility) {
-        this.utility = utility;
-    }
-
     public String getAttachement() {
         return attachement;
     }
@@ -203,10 +202,13 @@ public class TopUp_HistoryResponse  implements Serializable {
         this.attachement = attachement;
     }
 
-    public String getReward() {
-        return reward;
+    public String getUtility() {
+        return utility;
     }
 
-    public void setReward(String reward) {
-        this.reward = reward;
-    }}
+    public void setUtility(String utility) {
+        this.utility = utility;
+    }
+
+
+}

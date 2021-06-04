@@ -61,7 +61,7 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
         holder.transaction_amount.setText(transactionHistoryModels.get(position).getAmount());
         holder.transaction_username.setText("Sender " + transactionHistoryModels.get(position).getSenderName());
 
-        if (!userData.getName().equals(transactionHistoryModels.get(position).getSenderName())){
+        if (userData.getId().equals(transactionHistoryModels.get(position).getReceiverId())){
             holder.transaction_amount.setText("+"+transactionHistoryModels.get(position).getAmount());
             holder.transaction_amount.setTextColor(context.getResources().getColor(R.color.green));
         }else{

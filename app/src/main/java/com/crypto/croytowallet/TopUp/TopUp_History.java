@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -78,15 +79,15 @@ public class TopUp_History extends AppCompatActivity implements TopUp_HistoryAda
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar currentCal = Calendar.getInstance();
         String endDate1 = dateFormat.format(currentCal.getTime());
-        currentCal.add(Calendar.DATE, -180);
+        currentCal.add(Calendar.DATE, -365);
         String   startDate1 = dateFormat.format(currentCal.getTime());
         String startDate = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.START_DATE,startDate1);
         String endDate = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.END_DATE,endDate1);
         String lowAmount = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.LOW_AMOUNT,"1");
         String highAmount = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.HIGH_AMOUNT,"NULL");
-        String Short = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.SHORT,"-1");
+        String Short = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.SHORT,"1");
 
-
+        Toast.makeText(this, ""+startDate1+endDate+lowAmount+highAmount+Short, Toast.LENGTH_SHORT).show();
         FilterBody.Filters  filters = new FilterBody.Filters(startDate,endDate,lowAmount,highAmount);
         FilterBody.Sort  sort = new FilterBody.Sort(Short);
         FilterBody filterBody = new FilterBody(filters,sort);
@@ -96,9 +97,9 @@ public class TopUp_History extends AppCompatActivity implements TopUp_HistoryAda
         call.enqueue(new Callback<List<TopUp_HistoryResponse>>() {
             @Override
             public void onResponse(Call<List<TopUp_HistoryResponse>> call, Response<List<TopUp_HistoryResponse>> response) {
-                hidepDialog();
+                  hidepDialog();
                 if (response.code() == 200 || response.isSuccessful()) {
-                    if (response.body() != null || response.body().size() > 0) {
+                    if (response.body() != null && response.body().size() > 0) {
 
                         TopUp_HistoryAdapter adapter = new TopUp_HistoryAdapter(response.body(), getApplicationContext(), TopUp_History.this);
                         RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(TopUp_History.this, LinearLayoutManager.VERTICAL, false);
@@ -178,7 +179,7 @@ public class TopUp_History extends AppCompatActivity implements TopUp_HistoryAda
         String trans_id = data.get(position).getTransactionId();
         String date = data.get(position).getCreatedAt();
         String amount = data.get(position).getAmount();
-        String utility = data.get(position).getTransactionId();
+        String utility = data.get(position).getUtility();
         String status = data.get(position).getStatus();
         String rewards = data.get(position).getReward();
 
@@ -196,6 +197,6 @@ public class TopUp_History extends AppCompatActivity implements TopUp_HistoryAda
     public void filter(View view) {
         FilterBottomSheet filterBottomSheet = new FilterBottomSheet();
         filterBottomSheet.show(getSupportFragmentManager(),filterBottomSheet.getTag());
-
+        MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.CHECK_SCREEN,"TopUp_history");
     }
 }

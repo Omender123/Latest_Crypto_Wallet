@@ -23,6 +23,7 @@ import com.crypto.croytowallet.Extra_Class.MyPreferences;
 import com.crypto.croytowallet.Extra_Class.PrefConf;
 import com.crypto.croytowallet.R;
 import com.crypto.croytowallet.SharedPrefernce.SharedPrefManager;
+import com.crypto.croytowallet.TopUp.TopUp_History;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -63,7 +64,7 @@ public class FilterBottomSheet extends BottomSheetDialogFragment {
 
         //setting layout with bottom sheet
         bottomSheet.setContentView(view);
-
+     String Check_screen=   MyPreferences.getInstance(getContext()).getString(PrefConf.CHECK_SCREEN,"");
 
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +125,7 @@ public class FilterBottomSheet extends BottomSheetDialogFragment {
 
 
 
+
                     MyPreferences.getInstance(getActivity()).putString(PrefConf.START_DATE, startDate1);
                     MyPreferences.getInstance(getActivity()).putString(PrefConf.END_DATE, endDate1);
                     MyPreferences.getInstance(getActivity()).putString(PrefConf.LOW_AMOUNT, lowAmount);
@@ -131,7 +133,12 @@ public class FilterBottomSheet extends BottomSheetDialogFragment {
                     MyPreferences.getInstance(getActivity()).putString(PrefConf.SHORT, short1);
                     MyPreferences.getInstance(getActivity()).putString(PrefConf.CHECK, "true");
 
-                    startActivity(new Intent(getActivity(), Transaction_history.class));
+                    if (Check_screen.equalsIgnoreCase("TopUp_history")){
+                        startActivity(new Intent(getActivity(), TopUp_History.class));
+
+                    }else{
+                        startActivity(new Intent(getActivity(), Transaction_history.class));
+                    }
 
 
 

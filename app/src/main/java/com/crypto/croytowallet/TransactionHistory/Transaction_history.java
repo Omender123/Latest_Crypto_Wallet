@@ -272,6 +272,7 @@ public class Transaction_history extends AppCompatActivity implements HistoryCli
     public void filter(View view) {
         FilterBottomSheet filterBottomSheet = new FilterBottomSheet();
         filterBottomSheet.show(getSupportFragmentManager(),filterBottomSheet.getTag());
+        MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.CHECK_SCREEN,"Transaction_history");
     }
 
     @Override
