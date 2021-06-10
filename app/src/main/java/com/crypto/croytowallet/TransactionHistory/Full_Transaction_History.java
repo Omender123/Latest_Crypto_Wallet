@@ -19,12 +19,12 @@ import com.crypto.croytowallet.SharedPrefernce.TransactionHistorySharedPrefManag
 import com.crypto.croytowallet.SharedPrefernce.Transaction_HistoryModel;
 
 public class Full_Transaction_History extends AppCompatActivity {
-TextView date,time,amount,download,share,trans_id,btncopy,receiverName,text_point;
+TextView date,time,amount,download,share,trans_id,btncopy,receiverName,text_point,text_type;
 Button showBtn,hideBtn;
 String date1,time1,amount1,id,receiverName1,EarnsRewards,Type;
 Transaction_HistoryModel transaction_historyModel;
 ImageView imageView;
-CardView card2,card3,card_rewards;
+CardView card2,card3,card_rewards,card4;
 String back;
 SharedPreferences sharedPreferences;
     @Override
@@ -45,8 +45,10 @@ SharedPreferences sharedPreferences;
         imageView =findViewById(R.id.back);
         card2  = findViewById(R.id.card2);
         card3  = findViewById(R.id.card3);
+        card4 = findViewById(R.id.card4);
         card_rewards = findViewById(R.id.card_rewards);
         text_point = findViewById(R.id.text_point);
+        text_type= findViewById(R.id.text_type);
         transaction_historyModel = TransactionHistorySharedPrefManager.getInstance(getApplicationContext()).getTransaction_History();
 
 
@@ -63,6 +65,11 @@ SharedPreferences sharedPreferences;
         EarnsRewards = transaction_historyModel.getRewards();
         back = transaction_historyModel.getStatus();
         Type= transaction_historyModel.getType();
+        if (Type.equalsIgnoreCase("airDropIMT")){
+            text_type.setText("IMT-Utility Transfer");
+        }else{
+            text_type.setText(Type);
+        }
 
         date.setText(AppUtils.getDate(date1));
         String[] s= date1.split("T");
@@ -81,12 +88,13 @@ SharedPreferences sharedPreferences;
                      card2.setVisibility(View.VISIBLE);
                      card3.setVisibility(View.VISIBLE);
                      card_rewards.setVisibility(View.VISIBLE);
+                     card4.setVisibility(View.VISIBLE);
                      showBtn.setVisibility(View.GONE);
                      hideBtn.setVisibility(View.VISIBLE);
                  }else{
                      card2.setVisibility(View.VISIBLE);
                      card3.setVisibility(View.VISIBLE);
-                    // card_rewards.setVisibility(View.GONE);
+                     card4.setVisibility(View.VISIBLE);
                      showBtn.setVisibility(View.GONE);
                      hideBtn.setVisibility(View.VISIBLE);
 
@@ -103,11 +111,13 @@ SharedPreferences sharedPreferences;
                     card2.setVisibility(View.GONE);
                     card3.setVisibility(View.GONE);
                     card_rewards.setVisibility(View.GONE);
+                    card4.setVisibility(View.GONE);
                     showBtn.setVisibility(View.VISIBLE);
                     hideBtn.setVisibility(View.GONE);
                 }else{
                     card2.setVisibility(View.GONE);
                     card3.setVisibility(View.GONE);
+                    card4.setVisibility(View.GONE);
                     showBtn.setVisibility(View.VISIBLE);
                     hideBtn.setVisibility(View.GONE);
 

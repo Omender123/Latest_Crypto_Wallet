@@ -62,11 +62,11 @@ public class Exchange extends Fragment implements View.OnClickListener {
     TextView swapBtn, txt_low, txt_average, txt_high, gwei_low, gwei_average, gwei_high, min_low, min_average, min_high, min_rate, half_rate, max_rate;
     LinearLayout lyt_low, lyt_average, lyt_high;
     EditText enter_Swap_Amount;
-    String[] coinName = {"ImSmart", "Bitcoin","Ethereum","Tether","XRP","Litecoin","USD Coin","Tron","BitTorrent","ImSmart Utility"};
+    String[] coinName = {"ImSmart", "Bitcoin","Ethereum","Tether","Ripple","Litecoin","USD Coin","Tron","BitTorrent","ImSmart Utility"};
     String[] coinSymbols = {"IMT", "BTC","ETH","USDT","XRP","LTC","USDC","TRX","BTT","IMT-U"};
     String[] coinId = {"imt", "btc","eth","usdt","xrp","ltc","usdc","trx","btt","airdrop"};
     String[] PricecoinId = {"airdrop", "bitcoin","ethereum","tether","ripple","litecoin","usd-coin","tron","bittorrent-2","airdrop"};
-    int[] coinImage = {R.mipmap.imt,R.mipmap.bitcoin_image,R.mipmap.group_blue,R.mipmap.usdt,R.mipmap.xrp,R.mipmap.ltc,R.mipmap.usdc,R.drawable.ic_tron,R.drawable.ic_btt,R.drawable.ic_imt__u};
+    int[] coinImage = {R.mipmap.imt,R.drawable.ic_bitcoin,R.drawable.ic_ethereum,R.drawable.ic_usdt,R.drawable.ic_xrp,R.drawable.ic_ltc,R.drawable.ic_usdc,R.drawable.ic_tron,R.drawable.ic_btt,R.drawable.ic_imt__u};
 
     String[] coinName1 = {"ImSmart Utility", "ImSmart"};
     String[] coinSymbols1 = {"IMT-U", "IMT"};
@@ -329,12 +329,12 @@ public class Exchange extends Fragment implements View.OnClickListener {
 
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // double balance2 = Double.parseDouble(String.valueOf(progress));
-
-                int total = progress * 10;
-                enter_Swap_Amount.setText(String.valueOf(total));
+                seekBar.setMin(Integer.parseInt(min_amount));
+                seekBar.setMax(Integer.parseInt(max_amount));
+                enter_Swap_Amount.setText(String.valueOf(progress));
             }
 
             @Override
@@ -557,8 +557,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                 max_rate.setTextColor(getResources().getColor(R.color.black));
                 enter_Swap_Amount.setText(min_amount);
                 Integer min = Integer.parseInt(min_amount);
-                int min1 = min / 10;
-                seekBar.setProgress(min1);
+                seekBar.setProgress(min);
                 break;
 
             case R.id.half:
@@ -570,9 +569,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                 max_rate.setTextColor(getResources().getColor(R.color.black));
                 enter_Swap_Amount.setText(half_amount);
                 Integer min2 = Integer.parseInt(half_amount);
-                int min3 = min2 / 10;
-                seekBar.setProgress(min3);
-                // seekBar.setProgress(Integer.parseInt(half_amount));
+                seekBar.setProgress(min2);
                 break;
 
             case R.id.max:
@@ -584,10 +581,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                 max_rate.setTextColor(getResources().getColor(R.color.white));
                 enter_Swap_Amount.setText(max_amount);
                 Integer min4 = Integer.parseInt(max_amount);
-                int min5 = min4 / 10;
-                seekBar.setProgress(min5);
-
-                // seekBar.setProgress(Integer.parseInt(max_amount));
+                seekBar.setProgress(min4);
                 break;
 
         }

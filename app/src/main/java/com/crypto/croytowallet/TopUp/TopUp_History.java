@@ -87,7 +87,6 @@ public class TopUp_History extends AppCompatActivity implements TopUp_HistoryAda
         String highAmount = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.HIGH_AMOUNT,"NULL");
         String Short = MyPreferences.getInstance(TopUp_History.this).getString(PrefConf.SHORT,"1");
 
-        Toast.makeText(this, ""+startDate1+endDate+lowAmount+highAmount+Short, Toast.LENGTH_SHORT).show();
         FilterBody.Filters  filters = new FilterBody.Filters(startDate,endDate,lowAmount,highAmount);
         FilterBody.Sort  sort = new FilterBody.Sort(Short);
         FilterBody filterBody = new FilterBody(filters,sort);
@@ -198,5 +197,15 @@ public class TopUp_History extends AppCompatActivity implements TopUp_HistoryAda
         FilterBottomSheet filterBottomSheet = new FilterBottomSheet();
         filterBottomSheet.show(getSupportFragmentManager(),filterBottomSheet.getTag());
         MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.CHECK_SCREEN,"TopUp_history");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MyPreferences.getInstance(getApplicationContext()).deletePreference(PrefConf.SHORT);
+        MyPreferences.getInstance(getApplicationContext()).deletePreference(PrefConf.LOW_AMOUNT);
+        MyPreferences.getInstance(getApplicationContext()).deletePreference(PrefConf.HIGH_AMOUNT);
+        MyPreferences.getInstance(getApplicationContext()).deletePreference(PrefConf.START_DATE);
+        MyPreferences.getInstance(getApplicationContext()).deletePreference(PrefConf.END_DATE);
+
     }
 }

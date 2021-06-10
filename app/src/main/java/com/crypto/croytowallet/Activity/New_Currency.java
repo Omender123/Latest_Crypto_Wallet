@@ -152,7 +152,7 @@ public class New_Currency extends AppCompatActivity implements NewCoinAdapter.On
                 hidepDialog();
 
                 if (response.code() == 200 || response.isSuccessful()) {
-                    if (response.body() != null || response.body().size() > 0) {
+                    if (response.body() != null && response.body().size() > 0) {
 
                         NewCoinAdapter adapter = new NewCoinAdapter(response.body(), getApplicationContext(), New_Currency.this);
                         RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(New_Currency.this, LinearLayoutManager.VERTICAL, false);

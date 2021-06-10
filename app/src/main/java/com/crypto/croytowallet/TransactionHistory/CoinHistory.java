@@ -538,7 +538,7 @@ public class CoinHistory extends AppCompatActivity implements HistoryClickLister
         String date =coinModals.get(position).getTime();
         String amount =coinModals.get(position).getAmount();
 
-        Transaction_HistoryModel historyModel=new Transaction_HistoryModel(transaction,"Success",amount,type,username,date,null,"coinTransfer");
+        Transaction_HistoryModel historyModel=new Transaction_HistoryModel(transaction,"Success",amount,type,username,date,null,type);
 
         //storing the user in shared preferences
         TransactionHistorySharedPrefManager.getInstance(getApplicationContext()).Transaction_History_Data(historyModel);
