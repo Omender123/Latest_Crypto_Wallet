@@ -14,11 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,9 +34,14 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.crypto.croytowallet.Activity.Add_Currency;
 import com.crypto.croytowallet.Activity.Graph_layout;
+import com.crypto.croytowallet.Activity.New_Currency;
+import com.crypto.croytowallet.Activity.WalletBalance;
+import com.crypto.croytowallet.Activity.WalletReceive;
+import com.crypto.croytowallet.Activity.WalletScan;
 import com.crypto.croytowallet.Adapter.Add_Currency_Adapter;
 import com.crypto.croytowallet.Adapter.Crypto_currencyInfo;
 import com.crypto.croytowallet.Adapter.OverViewAdapter;
+import com.crypto.croytowallet.ImtSmart.ImtSmartGraphLayout;
 import com.crypto.croytowallet.Interface.CryptoClickListner;
 import com.crypto.croytowallet.Interface.OverViewClickListner;
 import com.crypto.croytowallet.Model.CrptoInfoModel;
@@ -44,6 +51,7 @@ import com.crypto.croytowallet.R;
 import com.crypto.croytowallet.SharedPrefernce.SharedPrefManager;
 import com.crypto.croytowallet.SharedPrefernce.Updated_data;
 import com.crypto.croytowallet.SharedPrefernce.UserData;
+import com.crypto.croytowallet.TopUp.Top_up_Money;
 import com.crypto.croytowallet.database.RetrofitClient;
 import com.crypto.croytowallet.database.RetrofitGraph;
 import com.kaopiz.kprogresshud.KProgressHUD;
@@ -67,19 +75,23 @@ import retrofit2.Callback;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Wallet extends Fragment implements CryptoClickListner, OverViewClickListner {
+public class Wallet extends Fragment implements CryptoClickListner, OverViewClickListner, View.OnClickListener {
     ArrayList<CrptoInfoModel> crptoInfoModels;
     ArrayList<OverViewModel> overViewModels;
     RecyclerView WalletRecyclerView, overviewRecycler;
     RequestQueue requestQueue;
     Crypto_currencyInfo crypto_currencyInfo;
     OverViewAdapter overViewAdapter;
-    SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferences,sharedPreferences1;
     KProgressHUD progressDialog;
     String currency2;
-    TextView add_currency;
     UserData userData;
     ArrayList<String >strings;
+    TextView add_currency, increaseRate, null1, imtPrice,increaseRate2, null2, Price;
+    String imtPrices, increaseRate1, CurrencySymbols;
+    ImageView ImtChart,ImtChart1;
+    CardView imtsmart,card_imt;
+
 
     public Wallet() {
         // Required empty public constructor
@@ -96,12 +108,34 @@ public class Wallet extends Fragment implements CryptoClickListner, OverViewClic
         WalletRecyclerView = view.findViewById(R.id.walletRecyclerView);
         overviewRecycler = view.findViewById(R.id.overviewRecycler);
         add_currency = view.findViewById(R.id.Add_more_Currency);
+        imtsmart = view.findViewById(R.id.ImtSmart);
+        card_imt = view.findViewById(R.id.card);
+
+
+        /*-----------------------CryptoInfo---------------*/
+        increaseRate = view.findViewById(R.id.increaseRate);
+        null1 = view.findViewById(R.id.null1);
+        imtPrice = view.findViewById(R.id.coinrate);
+        ImtChart = view.findViewById(R.id.chart);
+
+        /*-----------------------overView---------------*/
+        increaseRate2 = view.findViewById(R.id.increaseRate1);
+        null2 = view.findViewById(R.id.null2);
+        Price = view.findViewById(R.id.price);
+        ImtChart1 = view.findViewById(R.id.imageView3);
+
+
         crptoInfoModels = new ArrayList<CrptoInfoModel>();
         overViewModels = new ArrayList<OverViewModel>();
         userData = SharedPrefManager.getInstance(getContext()).getUser();
 
+        sharedPreferences1 = getActivity().getSharedPreferences("imtInfo", Context.MODE_PRIVATE);// for imt price
+        sharedPreferences1.getString("price", null);
+
+
         sharedPreferences = getActivity().getSharedPreferences("currency", 0);
         currency2 = sharedPreferences.getString("currency1", "usd");
+        CurrencySymbols = sharedPreferences.getString("Currency_Symbols", "$");
 
        strings = new ArrayList<String>();
 
@@ -116,6 +150,9 @@ public class Wallet extends Fragment implements CryptoClickListner, OverViewClic
 
         getAllCoins();
         CryptoInfoRecyclerView();
+        getImtDetails();
+        imtsmart.setOnClickListener(this);
+        card_imt.setOnClickListener(this);
 
         return view;
     }
@@ -233,7 +270,7 @@ public class Wallet extends Fragment implements CryptoClickListner, OverViewClic
                                 String name = object1.getString("name");
 
                                 if (name.equalsIgnoreCase("imt")){
-
+                                    card_imt.setVisibility(View.VISIBLE);
                                 }else{
                                     strings.add(name);
                                 }
@@ -376,5 +413,149 @@ public class Wallet extends Fragment implements CryptoClickListner, OverViewClic
 
         Intent intent = new Intent(getContext(), Graph_layout.class);
         startActivity(intent);
+    }
+
+    public void getImtDetails() {
+
+        UserData userData = SharedPrefManager.getInstance(getContext()).getUser();
+
+        String Token = userData.getToken();
+        String currency = currency2.toUpperCase();
+
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().getIMTDetails(Token, currency);
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+                String s = null;
+
+
+                if (response.code() == 200) {
+                    try {
+                        s = response.body().string();
+
+                        JSONArray jsonArray = new JSONArray(s);
+
+                        for (int i = 0; i <= jsonArray.length(); i++) {
+                            JSONObject object = jsonArray.getJSONObject(i);
+                            imtPrices = object.getString("price");
+                            // imtPrices1 =object.getString("price");
+                            increaseRate1 = object.getString("percent_change_24h");
+
+                            imtPrice.setText(CurrencySymbols + imtPrices);
+                            Price.setText(CurrencySymbols + imtPrices);
+                            increaseRate.setText(increaseRate1);
+                            increaseRate2.setText(increaseRate1);
+
+                            SharedPreferences.Editor editor = sharedPreferences1.edit();
+                            editor.putString("imtPrices", imtPrices);
+                            editor.commit();
+
+                            try {
+                                increaseRate.setTextColor(increaseRate1.contains("-") ?
+                                        getContext().getResources().getColor(R.color.red) : getContext().getResources().getColor(R.color.green));
+
+                                null1.setTextColor(increaseRate1.contains("-") ?
+                                        getContext().getResources().getColor(R.color.red) : getContext().getResources().getColor(R.color.green));
+                                if (increaseRate1.contains("-")) {
+                                    increaseRate.setText(increaseRate1);
+                                    ImtChart.setImageDrawable(getResources().getDrawable(R.drawable.ic_down_blue));
+                                } else {
+                                    increaseRate.setText("+" + increaseRate1);
+                                    ImtChart.setImageDrawable(getResources().getDrawable(R.drawable.ic_up_blue));
+                                }
+                            } catch (Exception e) { }
+
+                            try {
+                                increaseRate2.setTextColor(increaseRate1.contains("-") ?
+                                        getContext().getResources().getColor(R.color.red) : getContext().getResources().getColor(R.color.green));
+
+                                null2.setTextColor(increaseRate1.contains("-") ?
+                                        getContext().getResources().getColor(R.color.red) : getContext().getResources().getColor(R.color.green));
+                                if (increaseRate1.contains("-")) {
+                                    increaseRate2.setText(increaseRate1);
+                                    ImtChart1.setImageDrawable(getResources().getDrawable(R.drawable.ic_orange_down));
+                                } else {
+                                    increaseRate2.setText("+" + increaseRate1);
+                                    ImtChart1.setImageDrawable(getResources().getDrawable(R.drawable.ic_orange_up));
+                                }
+                            } catch (Exception e) { }
+
+                        }
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                } else if (response.code() == 400) {
+                    try {
+                        s = response.errorBody().string();
+                        JSONObject jsonObject1 = new JSONObject(s);
+                        String error = jsonObject1.getString("error");
+
+
+                        Snacky.builder()
+                                .setActivity(getActivity())
+                                .setText(error)
+                                .setDuration(Snacky.LENGTH_SHORT)
+                                .setActionText(android.R.string.ok)
+                                .error()
+                                .show();
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                } else if (response.code() == 401) {
+
+                    Snacky.builder()
+                            .setActivity(getActivity())
+                            .setText("unAuthorization Request")
+                            .setDuration(Snacky.LENGTH_SHORT)
+                            .setActionText(android.R.string.ok)
+                            .error()
+                            .show();
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Snacky.builder()
+                        .setActivity(getActivity())
+                        .setText(t.getMessage())
+                        .setDuration(Snacky.LENGTH_SHORT)
+                        .setActionText(android.R.string.ok)
+                        .error()
+                        .show();
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if(id == R.id.card){
+            SharedPreferences.Editor editor = sharedPreferences1.edit();
+            editor.putString("price", imtPrices);
+            editor.putString("chanage", increaseRate1);
+            editor.commit();
+
+            startActivity(new Intent(getContext(), ImtSmartGraphLayout.class));
+
+        }else if(id == R.id.ImtSmart){
+            SharedPreferences.Editor editor = sharedPreferences1.edit();
+            editor.putString("price", imtPrices);
+            editor.putString("chanage", increaseRate1);
+            editor.commit();
+
+            startActivity(new Intent(getContext(), ImtSmartGraphLayout.class));
+
+        }
+
     }
 }

@@ -12,15 +12,127 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="10dp"
-            android:id="@+id/walletRecyclerView"
+
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="240dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
-            tools:listitem="@layout/customdashboard"/>
-        <TextView
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ImtSmart"
+                    android:layout_width="200dp"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="@color/background1"
+                    app:cardElevation="@dimen/cardview_default_elevation"
+                    app:cardCornerRadius="20dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/background1">
+                        <ImageView
+                            android:id="@+id/coinImage"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/imt" />
+
+                        <TextView
+                            android:id="@+id/increaseRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="25dp"
+                            android:layout_toStartOf="@+id/null1"
+                            android:layout_toLeftOf="@+id/null1"
+                            android:drawablePadding="1dp"
+                            android:maxLength="5"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/green"
+                            android:textSize="15dp" />
+                        <TextView
+                            android:id="@+id/null1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="25dp"
+                            android:drawablePadding="1dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/green"  android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_marginRight="10dp"/>
+                        <!--    android:drawableLeft="@drawable/ic_long_arrow_pointing_up"-->
+
+
+                        <TextView
+                            android:id="@+id/coinname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/coinImage"
+                            android:text="ImSmart"
+                            android:textColor="@color/toolbar_text_color"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="10dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                        <TextView
+                            android:id="@+id/coinrate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/coinname"
+                            android:textColor="@color/toolbar_text_color"
+                            android:maxLength="7"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginLeft="12dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+                        <ImageView
+                            android:id="@+id/chart"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_below="@id/coinrate"
+                            />
+                        <!--<lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/chart"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_below="@id/coinrate"
+                            />-->
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/walletRecyclerView"
+                    android:layout_width="1380dp"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/customdashboard"/>
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,6 +142,128 @@
             android:text="@string/overview"
             android:textSize="15dp" />
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="0dp"
+            android:padding="10dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="5dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="1dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/imt" />
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="86dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@+id/coinName"
+                    android:padding="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/coinName"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/image"
+                    android:layout_marginTop="12dp"
+                    android:padding="1dp"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="ImSmart"
+                    android:textColor="@color/toolbar_text_color"
+                    android:textSize="14dp"
+                    android:justificationMode="inter_word"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coinsymbols"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/coinName"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@id/image"
+                    android:text="IMT"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/montserrat"
+                    android:textStyle="normal"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:maxLength="8"
+                    android:layout_alignParentRight="true"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="right"
+                    android:textSize="13sp"
+                    android:textColor="@color/toolbar_text_color" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:orientation="horizontal"
+                    android:gravity="right">
+                    <TextView
+                        android:id="@+id/increaseRate1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="1dp"
+                        android:maxLength="5"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/toolbar_text_color"
+                        android:textSize="13dp" />
+                    <TextView
+                        android:id="@+id/null2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:drawablePadding="1dp"
+                        android:textSize="13dp"
+                        android:textColor="@color/toolbar_text_color"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/overviewRecycler"

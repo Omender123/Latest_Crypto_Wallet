@@ -13,6 +13,7 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TransactionHistoryResponse;
@@ -75,7 +76,13 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
 
         holder.transaction_date.setText(AppUtils.getDate(dateAndTime));
         holder.transaction_time.setText(time);
-        // holder.event_time.setText(AppUtils.getDate(data.get(position).getStartDate()));
+
+        if (transactionHistoryModels.get(position).getType().equalsIgnoreCase("Reward") || transactionHistoryModels.get(position).getType().equalsIgnoreCase("airDropIMT")
+        ||transactionHistoryModels.get(position).getType().equalsIgnoreCase("purchase by airdrop")){
+            holder.cardView.setBackgroundColor(context.getResources().getColor(R.color.card_background));
+        }else{
+            holder.cardView.setBackgroundColor(context.getResources().getColor(R.color.orange1));
+        }
 
         setAnimation(holder.itemView);
 
@@ -94,6 +101,7 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
 
     public class myViewHolder extends RecyclerView.ViewHolder {
         TextView transaction_status, transaction_amount, transaction_username, transaction_time, transaction_date;
+        CardView cardView;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -103,7 +111,7 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
             transaction_username = itemView.findViewById(R.id.transaction_username);
             transaction_date = itemView.findViewById(R.id.transaction_date);
             transaction_time = itemView.findViewById(R.id.transaction_Time);
-
+            cardView = itemView.findViewById(R.id.card);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -10,6 +10,7 @@
         android:id="@+id/deshboard"
         android:name="com.crypto.croytowallet.fragement.Deshboard"
         android:label="@string/dashboard"
+
         tools:layout="@layout/fragment_deshboard" />
     <fragment
         android:id="@+id/myWallet"
