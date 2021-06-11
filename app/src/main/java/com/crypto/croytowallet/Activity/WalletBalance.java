@@ -115,6 +115,7 @@ public class WalletBalance extends AppCompatActivity implements HistoryClickList
     private void GetAllTransactionHistory() {
         UserData user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
         String token=user.getToken();
+        String userId=user.getId();
 
         progressDialog = KProgressHUD.create(WalletBalance.this)
                 .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
@@ -138,7 +139,7 @@ public class WalletBalance extends AppCompatActivity implements HistoryClickList
                     data = new ArrayList<TransactionHistoryResponse.Result>(Arrays.asList(transactionHistoryResponse.getResults()));
 
                     if (data!=null && data.size()>0){
-                        transaaction_history_adapter = new Transaaction_history_adapter(data,getApplicationContext(),WalletBalance.this);
+                        transaaction_history_adapter = new Transaaction_history_adapter(data,getApplicationContext(),WalletBalance.this,userId);
                         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL,false);
                         recyclerView.setLayoutManager(mLayoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());

@@ -33,11 +33,13 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
     private HistoryClickLister historyClickLister;
     SharedPreferences sharedPreferences;
     private List<TransactionHistoryResponse.Result> exampleListFull;
+    String userId;
 
-    public Transaaction_history_adapter(ArrayList<TransactionHistoryResponse.Result> transactionHistoryModels, Context context, HistoryClickLister historyClickLister) {
+    public Transaaction_history_adapter(ArrayList<TransactionHistoryResponse.Result> transactionHistoryModels, Context context, HistoryClickLister historyClickLister,String userId) {
         this.transactionHistoryModels = transactionHistoryModels;
         this.context = context;
         this.historyClickLister = historyClickLister;
+        this.userId=userId;
         exampleListFull = new ArrayList<>(transactionHistoryModels);
     }
 
@@ -56,13 +58,14 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
 
-        UserData userData = SharedPrefManager.getInstance(context).getUser();
 
         holder.transaction_status.setText("Receiver " + transactionHistoryModels.get(position).getReceiverName());
         holder.transaction_amount.setText(transactionHistoryModels.get(position).getAmount());
         holder.transaction_username.setText("Sender " + transactionHistoryModels.get(position).getSenderName());
 
-        if (userData.getId().equals(transactionHistoryModels.get(position).getReceiverId())){
+        String receiverId =transactionHistoryModels.get(position).getReceiverId();
+
+        if (userId.equals(receiverId)){
             holder.transaction_amount.setText("+"+transactionHistoryModels.get(position).getAmount());
             holder.transaction_amount.setTextColor(context.getResources().getColor(R.color.green));
         }else{

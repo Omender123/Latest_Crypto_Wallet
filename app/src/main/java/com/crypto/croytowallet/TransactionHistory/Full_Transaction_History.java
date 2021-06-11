@@ -19,12 +19,12 @@ import com.crypto.croytowallet.SharedPrefernce.TransactionHistorySharedPrefManag
 import com.crypto.croytowallet.SharedPrefernce.Transaction_HistoryModel;
 
 public class Full_Transaction_History extends AppCompatActivity {
-TextView date,time,amount,download,share,trans_id,btncopy,receiverName,text_point,text_type;
+TextView date,time,amount,download,share,trans_id,btncopy,receiverName,text_point,text_type,sender_name;
 Button showBtn,hideBtn;
-String date1,time1,amount1,id,receiverName1,EarnsRewards,Type;
+String date1,time1,amount1,id,receiverName1,EarnsRewards,Type,senderName1;
 Transaction_HistoryModel transaction_historyModel;
 ImageView imageView;
-CardView card2,card3,card_rewards,card4;
+CardView card2,card3,card_rewards,card4,card5;
 String back;
 SharedPreferences sharedPreferences;
     @Override
@@ -40,12 +40,14 @@ SharedPreferences sharedPreferences;
         trans_id  =findViewById(R.id.trans_id);
         btncopy  =findViewById(R.id.btn_copy);
         receiverName  =findViewById(R.id.receiver_name);
+        sender_name=findViewById(R.id.sender_name);
         showBtn  =findViewById(R.id.show_btn);
         hideBtn  =findViewById(R.id.hide_btn);
         imageView =findViewById(R.id.back);
         card2  = findViewById(R.id.card2);
         card3  = findViewById(R.id.card3);
         card4 = findViewById(R.id.card4);
+        card5= findViewById(R.id.card5);
         card_rewards = findViewById(R.id.card_rewards);
         text_point = findViewById(R.id.text_point);
         text_type= findViewById(R.id.text_type);
@@ -65,6 +67,7 @@ SharedPreferences sharedPreferences;
         EarnsRewards = transaction_historyModel.getRewards();
         back = transaction_historyModel.getStatus();
         Type= transaction_historyModel.getType();
+        senderName1 = transaction_historyModel.getSenderName();
         if (Type.equalsIgnoreCase("airDropIMT")){
             text_type.setText("IMT-Utility Transfer");
         }else{
@@ -78,27 +81,51 @@ SharedPreferences sharedPreferences;
          amount.setText(amount1);
          trans_id.setText(id);
          receiverName.setText(receiverName1);
+        sender_name.setText(senderName1);
 
          showBtn.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
 
-                 if (EarnsRewards!=null){
-                     text_point.setText(EarnsRewards+" PT");
-                     card2.setVisibility(View.VISIBLE);
-                     card3.setVisibility(View.VISIBLE);
-                     card_rewards.setVisibility(View.VISIBLE);
-                     card4.setVisibility(View.VISIBLE);
-                     showBtn.setVisibility(View.GONE);
-                     hideBtn.setVisibility(View.VISIBLE);
+                 if (!senderName1.contentEquals("type")){
+                     if (EarnsRewards!=null){
+                         text_point.setText(EarnsRewards+" PT");
+                         card2.setVisibility(View.VISIBLE);
+                         card3.setVisibility(View.VISIBLE);
+                         card_rewards.setVisibility(View.VISIBLE);
+                         card4.setVisibility(View.VISIBLE);
+                         showBtn.setVisibility(View.GONE);
+                         hideBtn.setVisibility(View.VISIBLE);
+                     }else{
+                         card2.setVisibility(View.VISIBLE);
+                         card3.setVisibility(View.VISIBLE);
+                         card4.setVisibility(View.VISIBLE);
+                         showBtn.setVisibility(View.GONE);
+                         hideBtn.setVisibility(View.VISIBLE);
+
+                     }
+                     card5.setVisibility(View.VISIBLE);
                  }else{
-                     card2.setVisibility(View.VISIBLE);
-                     card3.setVisibility(View.VISIBLE);
-                     card4.setVisibility(View.VISIBLE);
-                     showBtn.setVisibility(View.GONE);
-                     hideBtn.setVisibility(View.VISIBLE);
+                     card5.setVisibility(View.GONE);
+                     if (EarnsRewards!=null){
+                         text_point.setText(EarnsRewards+" PT");
+                         card2.setVisibility(View.VISIBLE);
+                         card3.setVisibility(View.VISIBLE);
+                         card_rewards.setVisibility(View.VISIBLE);
+                         card4.setVisibility(View.VISIBLE);
+                         showBtn.setVisibility(View.GONE);
+                         hideBtn.setVisibility(View.VISIBLE);
+                     }else{
+                         card2.setVisibility(View.VISIBLE);
+                         card3.setVisibility(View.VISIBLE);
+                         card4.setVisibility(View.VISIBLE);
+                         showBtn.setVisibility(View.GONE);
+                         hideBtn.setVisibility(View.VISIBLE);
+
+                     }
 
                  }
+
 
 
              }
@@ -107,20 +134,43 @@ SharedPreferences sharedPreferences;
         hideBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (EarnsRewards!=null){
-                    card2.setVisibility(View.GONE);
-                    card3.setVisibility(View.GONE);
-                    card_rewards.setVisibility(View.GONE);
-                    card4.setVisibility(View.GONE);
-                    showBtn.setVisibility(View.VISIBLE);
-                    hideBtn.setVisibility(View.GONE);
-                }else{
-                    card2.setVisibility(View.GONE);
-                    card3.setVisibility(View.GONE);
-                    card4.setVisibility(View.GONE);
-                    showBtn.setVisibility(View.VISIBLE);
-                    hideBtn.setVisibility(View.GONE);
+                if (!senderName1.contentEquals("type")){
 
+                    if (EarnsRewards!=null){
+                        card2.setVisibility(View.GONE);
+                        card3.setVisibility(View.GONE);
+                        card_rewards.setVisibility(View.GONE);
+                        card4.setVisibility(View.GONE);
+                        showBtn.setVisibility(View.VISIBLE);
+                        hideBtn.setVisibility(View.GONE);
+                    }else{
+                        card2.setVisibility(View.GONE);
+                        card3.setVisibility(View.GONE);
+                        card4.setVisibility(View.GONE);
+                        showBtn.setVisibility(View.VISIBLE);
+                        hideBtn.setVisibility(View.GONE);
+
+                    }
+                    card5.setVisibility(View.GONE);
+
+                }else{
+                    card5.setVisibility(View.GONE);
+
+
+                    if (EarnsRewards!=null){
+                        card2.setVisibility(View.GONE);
+                        card3.setVisibility(View.GONE);
+                        card_rewards.setVisibility(View.GONE);
+                        card4.setVisibility(View.GONE);
+                        showBtn.setVisibility(View.VISIBLE);
+                        hideBtn.setVisibility(View.GONE);
+                    }else {
+                        card2.setVisibility(View.GONE);
+                        card3.setVisibility(View.GONE);
+                        card4.setVisibility(View.GONE);
+                        showBtn.setVisibility(View.VISIBLE);
+                        hideBtn.setVisibility(View.GONE);
+                    }
                 }
 
 

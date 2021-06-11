@@ -403,7 +403,7 @@ public class CoinHistory extends AppCompatActivity implements HistoryClickLister
                             String id = object1.getString("transactionHash");
                             String date = object1.getString("createdAt");
                             String userData = object1.getString("userId");
-                            //  String receiver = object1.getString("receiver");
+                            String receiver = object1.optString("receiver");
 
 
 
@@ -538,7 +538,7 @@ public class CoinHistory extends AppCompatActivity implements HistoryClickLister
         String date =coinModals.get(position).getTime();
         String amount =coinModals.get(position).getAmount();
 
-        Transaction_HistoryModel historyModel=new Transaction_HistoryModel(transaction,"Success",amount,type,username,date,null,type);
+        Transaction_HistoryModel historyModel=new Transaction_HistoryModel(transaction,"Success",amount,"type",username,date,null,type);
 
         //storing the user in shared preferences
         TransactionHistorySharedPrefManager.getInstance(getApplicationContext()).Transaction_History_Data(historyModel);
