@@ -148,8 +148,8 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Intent i = new Intent(Intent.ACTION_SEND);
                     i.setType("text/plain");
-                    String sAux = "Hey,\n \n" + "Its amazing install iMX which offer 0% transaction fees on crypto Assets \n Referral code : " + code + "\n Download " + getResources().getString(R.string.app_name) + "\n";
-                    sAux = sAux + "https://play.google.com/store/apps/details?id=" + getPackageName() + "\n";
+                    String sAux = "Hey,\n \n" + "Its amazing install iMX which offer 0% transaction fees on crypto Assets \n Referral code : " + code + "\n Download " + getResources().getString(R.string.app_name) + "\n" +"Available for Android & iPhone " + "\n" ;
+                    sAux = sAux + "For Android : https://play.google.com/store/apps/details?id=" + getPackageName() + "\n" +"For iPhone : https://apps.apple.com/be/app/imx/id1558636368"+"\n";
                     i.putExtra(Intent.EXTRA_TEXT, sAux);
                     startActivity(Intent.createChooser(i, "choose one"));
                 } catch (Exception e) {
