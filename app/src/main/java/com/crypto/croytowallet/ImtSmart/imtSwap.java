@@ -60,17 +60,17 @@ public class imtSwap extends AppCompatActivity implements View.OnClickListener {
     TextView swapBtn, txt_low, txt_average, txt_high, gwei_low, gwei_average, gwei_high, min_low, min_average, min_high, min_rate, half_rate, max_rate;
     LinearLayout lyt_low, lyt_average, lyt_high;
     EditText enter_Swap_Amount;
-    String[] coinName = {"ImSmart", "Bitcoin","Ethereum","Tether","Ripple","Litecoin","USD Coin","Tron","BitTorrent","ImSmart Utility"};
-    String[] coinSymbols = {"IMT", "BTC","ETH","USDT","XRP","LTC","USDC","TRX","BTT","IMT-U"};
-    String[] coinId = {"imt", "btc","eth","usdt","xrp","ltc","usdc","trx","btt","airdrop"};
-    String[] PricecoinId = {"airdrop", "bitcoin","ethereum","tether","ripple","litecoin","usd-coin","tron","bittorrent-2","airdrop"};
-    int[] coinImage = {R.mipmap.imt,R.drawable.ic_bitcoin,R.drawable.ic_ethereum,R.drawable.ic_usdt,R.drawable.ic_xrp,R.drawable.ic_ltc,R.drawable.ic_usdc,R.drawable.ic_tron,R.drawable.ic_btt,R.drawable.ic_imt__u};
+    String[] coinName = {"ImSmart", "Bitcoin","Ethereum","Tether","Ripple","Litecoin","USD Coin","Tron","BitTorrent","Doge Coin","Binance Coin","ImSmart Utility"};
+    String[] coinSymbols = {"IMT", "BTC","ETH","USDT","XRP","LTC","USDC","TRX","BTT","Doge","BNB","IMT-U"};
+    String[] coinId = {"imt", "btc","eth","usdt","xrp","ltc","usdc","trx","btt","doge","bnb","airdrop"};
+    String[] PricecoinId = {"airdrop", "bitcoin","ethereum","tether","ripple","litecoin","usd-coin","tron","bittorrent-2","dogecoin","binancecoin","airdrop"};
+    int[] coinImage = {R.mipmap.imt1,R.drawable.ic_bitcoin,R.drawable.ic_ethereum,R.drawable.ic_usdt,R.drawable.ic_xrp,R.drawable.ic_ltc,R.drawable.ic_usdc,R.drawable.ic_tron,R.drawable.ic_bittorrent,R.drawable.ic_doge,R.drawable.ic_binance,R.drawable.ic_imt__u};
 
     String[] coinName1 = {"ImSmart Utility", "ImSmart"};
     String[] coinSymbols1 = {"IMT-U","IMT"};
     String[] coinId1 = {"airdrop","imt"};
     String[] PricecoinId1 = {"airdrop","imt"};
-    int[] coinImage1 = {R.drawable.ic_imt__u, R.mipmap.imt};
+    int[] coinImage1 = {R.drawable.ic_imt__u, R.mipmap.imt1};
     int value,positions;
     SeekBar seekBar;
     KProgressHUD progressDialog;
