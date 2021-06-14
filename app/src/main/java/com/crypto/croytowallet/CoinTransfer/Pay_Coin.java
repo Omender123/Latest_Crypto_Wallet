@@ -95,7 +95,7 @@ public class Pay_Coin extends AppCompatActivity {
 
         userData= SharedPrefManager.getInstance(getApplicationContext()).getUser();
 
-        toolbar_title.setText("Send "+cryptoCurrency);
+        toolbar_title.setText("Send "+cryptoCurrency.toUpperCase());
 
 
         next.setOnClickListener(new View.OnClickListener() {

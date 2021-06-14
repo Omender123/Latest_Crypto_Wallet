@@ -80,7 +80,7 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
                 inboxStyle.addLine(message);
 
                 // notification icon
-                final int icon = R.mipmap.app_logo;
+                final int icon = R.mipmap.noti_icon;
                 NotificationCompat.Builder notificationBuilder = new
                         NotificationCompat.Builder(this);
                 setSmallIcon(notificationBuilder);
@@ -115,7 +115,7 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
                 inboxStyle.addLine(message);
 
                 // notification icon
-                final int icon =R.mipmap.app_logo ;
+                final int icon =R.mipmap.noti_icon ;
                 NotificationCompat.Builder notificationBuilder = new
                         NotificationCompat.Builder(this);
                 setSmallIcon(notificationBuilder);
@@ -191,7 +191,7 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
                     inboxStyle.addLine(message);
 
                     // notification icon
-                    final int icon = R.mipmap.app_logo;
+                    final int icon = R.mipmap.noti_icon;
 
 
                     NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this);
@@ -241,7 +241,7 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
                     inboxStyle.addLine(message);
 
                     // notification icon
-                    final int icon = R.mipmap.app_logo;
+                    final int icon = R.mipmap.noti_icon;
 
 
                     NotificationCompat.Builder notificationBuilder = new
@@ -304,7 +304,7 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
             notificationManager.createNotificationChannel(mChannel);
         }
         // notification icon
-        final int icon = R.mipmap.app_logo;
+        final int icon = R.mipmap.noti_icon;
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, channelId);
         setSmallIcon(mBuilder);
         //.setSmallIcon(R.drawable.ic_cancel_small)
@@ -354,10 +354,10 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
 
     private void setSmallIcon ( NotificationCompat.Builder notification)  {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            notification.setSmallIcon(R.mipmap.app_logo);
+            notification.setSmallIcon(R.mipmap.noti_icon);
             notification.setColor(getResources().getColor(R.color.background));
         } else {
-            notification.setSmallIcon(R.mipmap.app_logo);
+            notification.setSmallIcon(R.mipmap.noti_icon);
         }
     }
 
