@@ -3,6 +3,7 @@ package com.crypto.croytowallet.Adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -64,6 +66,8 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
         holder.transaction_username.setText("Sender " + transactionHistoryModels.get(position).getSenderName());
 
         String receiverId =transactionHistoryModels.get(position).getReceiverId();
+         Log.d("egals",receiverId+"="+userId);
+
 
         if (userId.equals(receiverId)){
             holder.transaction_amount.setText("+"+transactionHistoryModels.get(position).getAmount());
@@ -87,7 +91,10 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
             holder.cardView.setBackgroundColor(context.getResources().getColor(R.color.orange1));
         }
 
+
         setAnimation(holder.itemView);
+
+
 
     }
 

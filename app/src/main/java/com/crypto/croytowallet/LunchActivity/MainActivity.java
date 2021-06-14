@@ -571,7 +571,8 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             String Devicetoken = task.getResult().getToken();
-                            new Handler().postDelayed(new Runnable() {
+
+                             new Handler().postDelayed(new Runnable() {
 
 
                                 @Override

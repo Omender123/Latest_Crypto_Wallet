@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "1082226873911",
-    "project_id": "croyto-wallet",
-    "storage_bucket": "croyto-wallet.appspot.com"
+    "project_number": "511121432577",
+    "project_id": "imx-project-4097f",
+    "storage_bucket": "imx-project-4097f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1082226873911:android:99b54f6b3a87e15a1a11b2",
+        "mobilesdk_app_id": "1:511121432577:android:b2a1bcfcf3a77a3c956000",
         "android_client_info": {
           "package_name": "com.crypto.croytowallet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1082226873911-hpd93nbtkpkk7e8u0kb9em29h7ke32df.apps.googleusercontent.com",
+          "client_id": "511121432577-h40e7ljpveqpjed1bcmfioncrq2ot62d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.crypto.croytowallet",
+            "certificate_hash": "82cbd60107c8f97026dfeb149a2734162e6a43ef"
+          }
+        },
+        {
+          "client_id": "511121432577-rkfh3vhlii2lsnc8ke8isiekpdv2q0jh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAaHtajAdAXacrHs82nofOmMRbfZPFTO7Q"
+          "current_key": "AIzaSyCSkq6lmxK9_YealiIYfWMR_E93Ge95O-g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1082226873911-hpd93nbtkpkk7e8u0kb9em29h7ke32df.apps.googleusercontent.com",
+              "client_id": "511121432577-rkfh3vhlii2lsnc8ke8isiekpdv2q0jh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

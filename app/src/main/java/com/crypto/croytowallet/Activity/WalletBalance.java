@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crypto.croytowallet.Adapter.Transaaction_history_adapter;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TransactionHistoryResponse;
@@ -116,6 +117,7 @@ public class WalletBalance extends AppCompatActivity implements HistoryClickList
         UserData user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
         String token=user.getToken();
         String userId=user.getId();
+
 
         progressDialog = KProgressHUD.create(WalletBalance.this)
                 .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
