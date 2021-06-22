@@ -13,9 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.crypto.croytowallet.Model.OfferModel;
 import com.crypto.croytowallet.R;
 import com.crypto.croytowallet.SharedPrefernce.OfferSharedPrefManager;
+import com.crypto.croytowallet.VolleyDatabase.URLs;
 import com.squareup.picasso.Picasso;
 
 public class Full_Offer extends AppCompatActivity {
@@ -49,7 +51,8 @@ TextView offername,shortDes,long_Des,title;
          if(offerModel.getImageUrl().equals("https://imsmart.s3.ap-south-1.amazonaws.com/logo.png")){
             imageView.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.ic_artboard___5));
         }else {
-            Picasso.get().load(offerModel.getImageUrl()).into(imageView);
+          //  Picasso.get().load(offerModel.getImageUrl()).into(imageView);
+             Glide.with(getApplicationContext()).load(URLs.URL_Image +offerModel.getImageUrl()).into(imageView);
         }
 
        // hideSystemUI();

@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/card_background"
+    android:backgroundTint="@color/card_background"
     android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:padding="5dp"
         android:background="@color/card_background"
+        android:backgroundTint="@color/card_background"
+        android:baselineAligned="false"
+        android:padding="5dp"
         android:src="@mipmap/imt" /><!--Make sure image is present in Drawable folder-->
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@color/card_background"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/coinName"
@@ -27,23 +31,25 @@
             android:layout_gravity="center"
             android:layout_marginTop="3dp"
             android:background="@color/card_background"
+            android:backgroundTint="@color/card_background"
+            android:fontFamily="@font/montserrat"
             android:text="ImSmart"
             android:textColor="@color/toolbar_text_color"
-            android:fontFamily="@font/montserrat"
             android:textSize="17dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/coinsymbols"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
             android:background="@color/card_background"
+            android:backgroundTint="@color/card_background"
+            android:fontFamily="@font/montserrat"
             android:text="imt"
             android:textColor="@color/toolbar_text_color"
-            android:fontFamily="@font/montserrat"
-            android:textSize="17dp"
-            android:layout_marginBottom="3dp"/>
+            android:textSize="17dp" />
     </LinearLayout>
 
 </LinearLayout>

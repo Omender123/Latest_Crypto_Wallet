@@ -9,17 +9,17 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/card_background"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="5dp"
-        app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp">
         <RelativeLayout
+            android:id="@+id/relative"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/card_background"
             android:layout_gravity="center"
             android:paddingBottom="15dp">
 

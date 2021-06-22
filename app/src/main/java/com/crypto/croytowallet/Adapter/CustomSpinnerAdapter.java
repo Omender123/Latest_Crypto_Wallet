@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -53,6 +54,7 @@ public class CustomSpinnerAdapter   extends BaseAdapter {
         ImageView coinImages = (ImageView) view.findViewById(R.id.imageView);
         TextView coinNames = (TextView) view.findViewById(R.id.coinName);
         TextView coinSymbol = (TextView) view.findViewById(R.id.coinsymbols);
+        LinearLayout linearLayout =(LinearLayout) view.findViewById(R.id.linear);
 
         coinImages.setImageResource(coinImage[i]);
         coinNames.setText(coinName[i]);

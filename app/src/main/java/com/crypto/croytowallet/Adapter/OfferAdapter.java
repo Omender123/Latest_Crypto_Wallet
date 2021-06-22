@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.crypto.croytowallet.Extra_Class.AppUtils;
 import com.crypto.croytowallet.Interface.HistoryClickLister;
 import com.crypto.croytowallet.Model.OfferModel;
@@ -51,7 +52,8 @@ Context context;
         if(offerModels.get(position).getImageUrl().equals("https://imsmart.s3.ap-south-1.amazonaws.com/logo.png")){
             holder.image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_artboard___5));
         }else {
-            Picasso.get().load(URLs.URL_Image +offerModels.get(position).getImageUrl()).into(holder.image);
+           // Picasso.get().load(URLs.URL_Image +offerModels.get(position).getImageUrl()).into(holder.image);
+            Glide.with(context).load(URLs.URL_Image +offerModels.get(position).getImageUrl()).into(holder.image);
         }
     }
 

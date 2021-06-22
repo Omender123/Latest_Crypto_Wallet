@@ -129,6 +129,7 @@ public class imtSwap extends AppCompatActivity implements View.OnClickListener {
 
         imtPrice = sharedPreferences1.getString("imtPrices", "0.09");
 
+
         CustomSpinnerAdapter customAdapter = new CustomSpinnerAdapter(getApplicationContext(), coinImage, coinName, coinSymbols,coinId,PricecoinId);
         sendSpinner.setAdapter(customAdapter);
         sendSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -183,7 +184,6 @@ public class imtSwap extends AppCompatActivity implements View.OnClickListener {
         });
 
         CustomSpinnerAdapter customAdapter1 = new CustomSpinnerAdapter(getApplicationContext(), coinImage1, coinName1, coinSymbols1,coinId1,PricecoinId1);
-
         reciveSpinner.setAdapter(customAdapter1);
         reciveSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

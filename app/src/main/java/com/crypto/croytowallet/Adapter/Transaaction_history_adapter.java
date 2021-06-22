@@ -11,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,9 +87,15 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
 
         if (transactionHistoryModels.get(position).getType().equalsIgnoreCase("Reward") || transactionHistoryModels.get(position).getType().equalsIgnoreCase("airDropIMT")
         ||transactionHistoryModels.get(position).getType().equalsIgnoreCase("purchase by airdrop")){
-            holder.cardView.setBackgroundColor(context.getResources().getColor(R.color.card_background));
+           // holder.cardView.setBackgroundColor();
+         //   holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.card_background));
+          // holder.relativeLayout.setBackgroundColor(context.getResources().getColor(R.color.card_background));
+
+
         }else{
-            holder.cardView.setBackgroundColor(context.getResources().getColor(R.color.orange1));
+            holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.orange1));
+            holder.relativeLayout.setBackgroundColor(context.getResources().getColor(R.color.orange1));
+
         }
 
 
@@ -112,6 +119,7 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
     public class myViewHolder extends RecyclerView.ViewHolder {
         TextView transaction_status, transaction_amount, transaction_username, transaction_time, transaction_date;
         CardView cardView;
+        RelativeLayout relativeLayout;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -122,6 +130,8 @@ public class Transaaction_history_adapter extends RecyclerView.Adapter<Transaact
             transaction_date = itemView.findViewById(R.id.transaction_date);
             transaction_time = itemView.findViewById(R.id.transaction_Time);
             cardView = itemView.findViewById(R.id.card);
+            relativeLayout = itemView.findViewById(R.id.relative);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
