@@ -249,30 +249,41 @@ public class MainActivity extends AppCompatActivity {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle(R.string.app_name);
-            builder.setIcon(R.mipmap.ic_launcher);
-            builder.setMessage(R.string.exit_text)
-                    .setCancelable(false)
-                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+
+            if (bottomNavigationView.getSelectedItemId() == R.id.deshboard) {
+
+                new android.app.AlertDialog.Builder(MainActivity.this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle(R.string.app_name)
+                        .setMessage("Are you sure you want to close App?")
+                        .setPositiveButton("Yes", (dialog, which) -> {
+                            Intent a = new Intent(Intent.ACTION_MAIN);
+                            a.addCategory(Intent.CATEGORY_HOME);
+                            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(a);
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                finishAffinity();
+                            }
                             finish();
-                        }
-                    })
-                    .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+                        })
+                        .setNegativeButton("No",(dialog, which) -> {
                             dialog.cancel();
-                        }
-                    });
-            AlertDialog alert = builder.create();
-            alert.setCancelable(false);
-            alert.show();
+                        } )
+                        .setCancelable(false)
+                        .show();
+
+            } else {
+                super.onBackPressed();
+            }
+
+        }
+
 
 
         }
 
 
-    }
+
 
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

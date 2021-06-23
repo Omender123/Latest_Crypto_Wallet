@@ -48,4 +48,5 @@ public class All_Product extends AppCompatActivity implements DrawableTextView.D
                 break;
         }
     }
+
 }
