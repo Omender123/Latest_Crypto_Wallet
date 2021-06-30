@@ -37,6 +37,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.LoginResponse;
 import com.crypto.croytowallet.LunchActivity.MainActivity;
 import com.crypto.croytowallet.R;
 import com.crypto.croytowallet.SharedPrefernce.CrashDataModel;
@@ -209,18 +210,53 @@ TextInputLayout layout_otp;
 
         showpDialog();
 
-        Call<ResponseBody> call =RetrofitClient.getInstance().getApi()
+        Call<LoginResponse> call =RetrofitClient.getInstance().getApi()
                 .Login(usernames,passwords,otp1,locations,os,ipAddress);
 
-        call.enqueue(new Callback<ResponseBody>() {
+        call.enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 String s=null;
                 hideKeyboard(view);
                 hidepDialog();
-                if (response.code()==200){
+                if (response.code()==200 && response.body()!=null){
+                    id = response.body().getResult().getId();
 
-                    try {
+
+                    UserData userData=new UserData(id,response.body().getResult().getName(),
+                            response.body().getResult().getEmail(),
+                            response.body().getResult().getPhone(),
+                            response.body().getResult().getUsername(),
+                            response.body().getResult().getMnemonic(),
+                            response.body().getResult().getMyReferalcode(),
+                            response.body().getResult().getTransactionPin(),
+                            response.body().getToken(),
+                            response.body().getResult().getEthAddress(),
+                            response.body().getResult().getBitcoinAddress(),
+                            response.body().getResult().getLitecoinAddress(),
+                            response.body().getResult().getXrpAddress(),
+                            response.body().getResult().getSecurityEnable().getEmail2fa(),
+                            response.body().getResult().getEmailVerify());
+
+                    //storing the user in shared preferences
+                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(userData);
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    finish();
+                    Toast.makeText(Login.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+
+
+
+                    new Handler().postDelayed(new Runnable() {
+
+
+                        @Override
+                        public void run() {
+                            // This method will be executed once the timer is over
+                            sendEmail();
+
+                        }
+                    }, 500);
+                   /* try {
                         s=response.body().string();
                         JSONObject object= new JSONObject(s);
                         String result =object.getString("result");
@@ -271,7 +307,7 @@ TextInputLayout layout_otp;
                     } catch (IOException | JSONException e) {
                         e.printStackTrace();
                     }
-
+*/
                 } else if(response.code()==400) {
                     try {
                         s = response.errorBody().string();
@@ -301,10 +337,10 @@ TextInputLayout layout_otp;
                         }else if(error.equals("Transaction Pin not set")){
 
                             startActivity(new Intent(getApplicationContext(),CreashSetTransactionPin.class));
-                        }else if(error.equals("Your email is not verified at the time of signup")){
+                        }/*else if(error.equals("Your email is not verified at the time of signup")){
                             startActivity(new Intent(getApplicationContext(),CrashOtpActivity.class));
                             resendOTP();
-                        }else{
+                        }*/else{
 
                             Snacky.builder()
                                     .setActivity(Login.this)
@@ -323,7 +359,7 @@ TextInputLayout layout_otp;
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
                 hidepDialog();
                 hideKeyboard(view);
 

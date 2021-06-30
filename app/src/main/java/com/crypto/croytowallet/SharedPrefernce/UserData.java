@@ -2,7 +2,8 @@ package com.crypto.croytowallet.SharedPrefernce;
 
 public class UserData {
     private String id;
-    private String name, email, mobile, username, mnemonic, Referral_code, transaction_Pin, token,ETH,BTC,LITE,XRP,EMAIL2FA;
+    private String name, email, mobile, username, mnemonic, Referral_code, transaction_Pin, token,ETH,BTC,LITE,XRP;
+    private Boolean EMAIL2FA,EmailVerify;
 
 
 
@@ -10,7 +11,7 @@ public class UserData {
 
     public UserData(String id, String name, String email, String mobile, String username, String mnemonic, String referral_code,
                     String transaction_Pin, String token, String ETH, String BTC, String LITE, String XRP,
-                     String EMAIL2FA) {
+                    Boolean EMAIL2FA,Boolean EmailVerify) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -24,8 +25,8 @@ public class UserData {
         this.BTC = BTC;
         this.LITE = LITE;
         this.XRP = XRP;
-
         this.EMAIL2FA = EMAIL2FA;
+        this.EmailVerify =EmailVerify;
     }
 
     public UserData() {
@@ -136,11 +137,19 @@ public class UserData {
     }
 
 
-    public String getEMAIL2FA() {
+    public Boolean getEMAIL2FA() {
         return EMAIL2FA;
     }
 
-    public void setEMAIL2FA(String EMAIL2FA) {
+    public void setEMAIL2FA(Boolean EMAIL2FA) {
         this.EMAIL2FA = EMAIL2FA;
+    }
+
+    public Boolean getEmailVerify() {
+        return EmailVerify;
+    }
+
+    public void setEmailVerify(Boolean emailVerify) {
+        EmailVerify = emailVerify;
     }
 }

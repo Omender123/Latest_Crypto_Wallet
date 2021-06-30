@@ -3,6 +3,7 @@ package com.crypto.croytowallet.database;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.ActiveDeviceResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.FilterBody;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.GetNewCoinRespinse;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.LoginResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.PublicKeyResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.PearToPearResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.ResponseBankDetails;
@@ -47,7 +48,7 @@ public interface Api {
 
     @FormUrlEncoded
     @POST("user/login")
-    Call<ResponseBody> Login(
+    Call<LoginResponse> Login(
             @Field("username") String username,
             @Field("password") String password,
             @Field("otp") String otp,

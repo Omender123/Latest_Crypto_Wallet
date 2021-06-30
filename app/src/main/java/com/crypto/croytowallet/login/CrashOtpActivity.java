@@ -2,8 +2,11 @@ package com.crypto.croytowallet.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -11,13 +14,17 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crypto.croytowallet.LunchActivity.MainActivity;
 import com.crypto.croytowallet.R;
 import com.crypto.croytowallet.SharedPrefernce.CrashDataModel;
 import com.crypto.croytowallet.SharedPrefernce.CreshSharedPrefManager;
+import com.crypto.croytowallet.SharedPrefernce.SharedPrefManager;
+import com.crypto.croytowallet.SharedPrefernce.UserData;
 import com.crypto.croytowallet.database.RetrofitClient;
 import com.crypto.croytowallet.signup.GmailVerfiyOtp;
 import com.google.android.material.snackbar.Snackbar;
@@ -52,7 +59,7 @@ public class CrashOtpActivity extends AppCompatActivity {
 
     KProgressHUD progressDialog;
     EditText enter_otp;
-    CrashDataModel user;
+    UserData user;
     Button next2;
     TextView timer_txt,resendOtp;
     private static CountDownTimer countDownTimer;
@@ -61,7 +68,7 @@ public class CrashOtpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crash_otp);
 
-        user = CreshSharedPrefManager.getInstance(getApplicationContext()).getCreshData();
+        user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
 
         next2 = findViewById(R.id.next2);
         enter_otp = findViewById(R.id.enter_otp);
@@ -125,7 +132,29 @@ public class CrashOtpActivity extends AppCompatActivity {
                 String s = null;
                 if (response.code() == 200) {
                     hideKeyboard(view);
-                startActivity(new Intent(getApplicationContext(),Login.class));
+
+                    UserData userData=new UserData(user.getId(),user.getName(),
+                            user.getEmail(),
+                            user.getMobile(),
+                            user.getUsername(),
+                            user.getMnemonic(),
+                            user.getReferral_code(),
+                            user.getTransaction_Pin(),
+                            user.getToken(),
+                            user.getETH(),
+                            user.getBTC(),
+                            user.getLITE(),
+                            user.getXRP(),
+                            user.getEMAIL2FA(),
+                            true);
+
+                    //storing the user in shared preferences
+                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(userData);
+
+
+                    showRightCustomDialog();
+
+
 
                 } else if (response.code() == 400) {
                     hideKeyboard(view);
@@ -263,49 +292,11 @@ public class CrashOtpActivity extends AppCompatActivity {
         if (progressDialog.isShowing())
             progressDialog.dismiss();
     }
-    public void OTPexpire(){
-        new Handler().postDelayed(new Runnable() {
-
-
-            @Override
-            public void run() {
-                // This method will be executed once the timer is over
-                expire();
-            }
-        }, 60000);
-    }
-
-    public void expire(){
-        String username=   user.getUsername();
-
-        Call<ResponseBody> call=  RetrofitClient
-                .getInstance()
-                .getApi().expireOtp(username);
-
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                // hidepDialog();
-
-                String s=null;
-                if (response.code()==200){
-                    Toast.makeText(CrashOtpActivity.this, "Your Otp is expire", Toast.LENGTH_SHORT).show();
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-
-            }
-        });
-
-    }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(),Login.class));
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
     }
     public void timer(){
@@ -403,5 +394,33 @@ public class CrashOtpActivity extends AppCompatActivity {
 
     }
 
+    private void showRightCustomDialog() {
+        final Dialog dialog = new Dialog(CrashOtpActivity.this);
+        dialog.setContentView(R.layout.custom_check_emailverify_dialogbox);
 
+        TextView btn_verify = (TextView) dialog.findViewById(R.id.btn_verify);
+        ImageView imageView = (ImageView) dialog.findViewById(R.id.imageView4);
+        TextView tittle = (TextView) dialog.findViewById(R.id.textView5);
+        TextView text_dialog = (TextView) dialog.findViewById(R.id.text_dialog);
+        btn_verify.setText("Done");
+        imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_green_email));
+        tittle.setText("Email Verified");
+        text_dialog.setText("Your Account has been  Successful verified");
+
+
+        btn_verify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(CrashOtpActivity.this,MainActivity.class));
+                finish();
+
+
+            }
+        });
+
+        dialog.show();
+        dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    }
 }

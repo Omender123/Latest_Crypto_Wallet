@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,6 +23,7 @@ import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.os.Build;
@@ -52,6 +54,11 @@ import com.crypto.croytowallet.SharedPrefernce.TransactionHistorySharedPrefManag
 import com.crypto.croytowallet.SharedPrefernce.UserData;
 
 import com.crypto.croytowallet.database.RetrofitClient;
+import com.crypto.croytowallet.login.CrashOtpActivity;
+import com.crypto.croytowallet.login.ForgetPassword;
+import com.crypto.croytowallet.login.OTP_Activity;
+import com.crypto.croytowallet.login.Unlock_Account;
+import com.crypto.croytowallet.signup.GmailVerfiyOtp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
     Switch drawerSwitch;
     SharedPreferences sharedPreferences1, sharedPreferences2;
     String token;
+    UserData userData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,15 +131,19 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences2 = getApplicationContext().getSharedPreferences("PROJECT_NAME", 0);
 
         //getting the current user
-        UserData user = SharedPrefManager.getInstance(this).getUser();
+         userData = SharedPrefManager.getInstance(this).getUser();
 
-        token = user.getToken();
+        token = userData.getToken();
         //setting the values to the textviews
-        username.setText(user.getUsername());
-        usergmail.setText(user.getEmail());
+        username.setText(userData.getUsername());
+        usergmail.setText(userData.getEmail());
 
-        //  toolbar.setNavigationIcon(R.drawable.your_drawable_name);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+      if (userData.getEmailVerify()==false){
+          showRightCustomDialog();
+      }
+
+         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
         //  NavigationView();
@@ -143,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 
-                String code = user.getReferral_code();
+                String code = userData.getReferral_code();
 
                 try {
                     Intent i = new Intent(Intent.ACTION_SEND);
@@ -653,6 +665,91 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void showRightCustomDialog() {
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.custom_check_emailverify_dialogbox);
+
+        TextView btn_verify = (TextView) dialog.findViewById(R.id.btn_verify);
 
 
+        btn_verify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                sendOTP();
+
+            }
+        });
+
+        dialog.show();
+        dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    }
+    private void sendOTP() {
+
+
+        progressDialog = KProgressHUD.create(MainActivity.this)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setLabel("Please wait.....")
+                .setCancellable(false)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show();
+
+        showpDialog();
+
+        Call<ResponseBody> call=  RetrofitClient
+                .getInstance()
+                .getApi().sendOtp(userData.getUsername());
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                hidepDialog();
+
+                String s=null;
+                if (response.code()==200){
+
+                    startActivity(new Intent(getApplicationContext(), CrashOtpActivity.class));
+                    Toast.makeText(getApplicationContext(), "Otp send in your registered Email", Toast.LENGTH_SHORT).show();
+
+                }else if(response.code()==400){
+                     try {
+
+                        s=response.errorBody().string();
+                        JSONObject jsonObject1=new JSONObject(s);
+                        String error =jsonObject1.getString("error");
+
+                        Snacky.builder()
+                                .setActivity(MainActivity.this)
+                                .setText(" Oops Username Not Found !!!!!")
+                                .setDuration(Snacky.LENGTH_SHORT)
+                                .setActionText(android.R.string.ok)
+                                .error()
+                                .show();
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                hidepDialog();
+                 Snacky.builder()
+                        .setActivity(MainActivity.this)
+                        .setText(t.getLocalizedMessage())
+                        .setDuration(Snacky.LENGTH_SHORT)
+                        .setActionText(android.R.string.ok)
+                        .error()
+                        .show();
+            }
+        });
+
+    }
 }
