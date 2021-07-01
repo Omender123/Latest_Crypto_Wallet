@@ -138,7 +138,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/history_recycler"
             android:layout_width="match_parent"
-            android:layout_height="700dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginLeft="05dp"
             tools:itemCount="7"
