@@ -392,6 +392,7 @@ public interface Api {
 
     @PUT("user/emailCorrection")
     Call<ResponseBody> EmailCorrection(
+            @Header("Authorization") String Authtoken,
             @Body JsonObject object
     );
 

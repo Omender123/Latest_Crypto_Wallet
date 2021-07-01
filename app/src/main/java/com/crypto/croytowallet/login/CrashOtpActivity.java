@@ -95,8 +95,8 @@ public class CrashOtpActivity extends AppCompatActivity {
                             .warning();
                     warningSnackBar.show();
                 } else {
-                    verifyOTP(v);
-
+                   verifyOTP(v);
+                   // showRightCustomDialog();
 
                 }
             }

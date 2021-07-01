@@ -58,6 +58,7 @@ import com.crypto.croytowallet.login.CrashOtpActivity;
 import com.crypto.croytowallet.login.ForgetPassword;
 import com.crypto.croytowallet.login.OTP_Activity;
 import com.crypto.croytowallet.login.Unlock_Account;
+import com.crypto.croytowallet.signup.GmailCorrection;
 import com.crypto.croytowallet.signup.GmailVerfiyOtp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -677,7 +678,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                sendOTP();
+                startActivity(new Intent(MainActivity.this, GmailCorrection.class));
 
             }
         });
@@ -686,70 +687,5 @@ public class MainActivity extends AppCompatActivity {
         dialog.setCancelable(false);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
-    private void sendOTP() {
 
-
-        progressDialog = KProgressHUD.create(MainActivity.this)
-                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                .setLabel("Please wait.....")
-                .setCancellable(false)
-                .setAnimationSpeed(2)
-                .setDimAmount(0.5f)
-                .show();
-
-        showpDialog();
-
-        Call<ResponseBody> call=  RetrofitClient
-                .getInstance()
-                .getApi().sendOtp(userData.getUsername());
-
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                hidepDialog();
-
-                String s=null;
-                if (response.code()==200){
-
-                    startActivity(new Intent(getApplicationContext(), CrashOtpActivity.class));
-                    Toast.makeText(getApplicationContext(), "Otp send in your registered Email", Toast.LENGTH_SHORT).show();
-
-                }else if(response.code()==400){
-                     try {
-
-                        s=response.errorBody().string();
-                        JSONObject jsonObject1=new JSONObject(s);
-                        String error =jsonObject1.getString("error");
-
-                        Snacky.builder()
-                                .setActivity(MainActivity.this)
-                                .setText(" Oops Username Not Found !!!!!")
-                                .setDuration(Snacky.LENGTH_SHORT)
-                                .setActionText(android.R.string.ok)
-                                .error()
-                                .show();
-
-
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                    }
-
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                hidepDialog();
-                 Snacky.builder()
-                        .setActivity(MainActivity.this)
-                        .setText(t.getLocalizedMessage())
-                        .setDuration(Snacky.LENGTH_SHORT)
-                        .setActionText(android.R.string.ok)
-                        .error()
-                        .show();
-            }
-        });
-
-    }
 }

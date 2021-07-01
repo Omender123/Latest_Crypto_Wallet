@@ -20,45 +20,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="140dp"
-            android:text="@string/login"
-            android:fontFamily="@font/montserrat"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:fontFamily="@font/montserrat"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="140dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/sign_up"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/purple_500"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/hello"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/login"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="240dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/hello_nice"
             android:textColor="@color/hello_color"
@@ -77,119 +47,55 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <ScrollView
-            android:id="@+id/scrollView"
+
+        <EditText
+            android:id="@+id/oldGmail"
             android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/welcome"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginRight="20dp"
+            android:layout_toStartOf="@+id/editEmail"
+            android:background="@drawable/verifying_textview"
+            android:drawableLeft="@drawable/ic_contact_details_email"
+            android:drawablePadding="10dp"
+            android:enabled="false"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/editEmail"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/welcome">
+            android:layout_below="@id/welcome"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="26dp"
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            android:layout_marginRight="19dp"
+            android:onClick="Edit_Btn"
+            android:src="@drawable/ic_edit" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/oldGmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="26dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_toStartOf="@+id/editEmail"
-                        android:background="@drawable/verifying_textview"
-                        android:drawableLeft="@drawable/ic_contact_details_email"
-                        android:drawablePadding="10dp"
-                        android:fontFamily="@font/montserrat"
-                        android:paddingStart="10dp"
-                        android:paddingTop="2dp"
-                        android:gravity="center_vertical"
-                        android:paddingEnd="2dp"
-                        android:paddingBottom="5dp"
-                        android:textStyle="normal"
-                        android:textSize="14sp"
-                        android:textColor="@color/light_gray" />
-
-                    <ImageView
-                        android:id="@+id/editEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="26dp"
-                        android:layout_marginRight="19dp"
-                        android:onClick="Edit_Btn"
-                        android:src="@drawable/ic_edit" />
-                </RelativeLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_newEmail"
-                    style="@style/OutlineBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/welcome"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:visibility="gone"
-                    android:hint="@string/email"
-                    app:passwordToggleTint="@android:color/darker_gray">
-
-                    <EditText
-                        android:id="@+id/newEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_contact_details_email"
-                        android:drawablePadding="10dp"
-                        android:drawableTint="#707070"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:textColor="@color/toolbar" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/text_pass"
-                    style="@style/OutlineBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/welcome"
-                    android:visibility="gone"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:hint="@string/password"
-                    app:passwordToggleTint="@android:color/darker_gray">
-
-                    <EditText
-                        android:id="@+id/userPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_passcode"
-                        android:drawablePadding="10dp"
-                        android:drawableTint="#707070"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:textColor="@color/toolbar" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-            </LinearLayout>
-        </ScrollView>
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/scrollView"
+            android:layout_below="@id/oldGmail"
             android:layout_marginLeft="20dp"
-            android:textSize="15sp"
-            android:fontFamily="@font/montserrat"
             android:layout_marginTop="7dp"
             android:layout_marginRight="20dp"
+            android:fontFamily="@font/montserrat"
             android:text="Confirm your Email if you want to change your email id please click on the edit icon."
+            android:textSize="15sp"
             android:textStyle="normal" />
 
         <Button
