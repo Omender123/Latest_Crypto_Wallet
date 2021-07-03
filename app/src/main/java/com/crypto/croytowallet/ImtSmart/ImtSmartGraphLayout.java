@@ -20,8 +20,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.crypto.croytowallet.Extra_Class.ApiResponse.SendCoinHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.MyMarkerView1;
-import com.crypto.croytowallet.Adapter.Coin_History_Adapter;
+import com.crypto.croytowallet.Adapter.Coin_Send_History_Adapter;
 import com.crypto.croytowallet.Interface.HistoryClickLister;
 import com.crypto.croytowallet.Model.CoinModal;
 import com.crypto.croytowallet.R;
@@ -56,7 +57,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnClickListener, HistoryClickLister {
+public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnClickListener, Coin_Send_History_Adapter.OnSendCoinItemListener {
     ImageView back, received, send;
     TextView price, balances, coinprice, increaseRate, null1, more;
     KProgressHUD progressDialog;
@@ -68,7 +69,7 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
     String currency2, CurrencySymbols;
     LinearLayout h_24, d_7, m_1, m_3, m_6, y_1;
     ArrayList<CoinModal> coinModals;
-    Coin_History_Adapter coin_history_adapter;
+    Coin_Send_History_Adapter coin_Send_history_adapter;
     RecyclerView recyclerView;
     TextView history_Empty;
     ArrayList<Entry> yvalue;
@@ -143,7 +144,7 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
         getBalance();
 
         GetImtGraph1d("imt", currency2, 24);
-        getSendCoinHistory();
+       getSendCoinHistory(userData.getToken(),"imt");
     }
 
 
@@ -616,7 +617,7 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
             progressDialog.dismiss();
     }
 
-    public void getSendCoinHistory() {
+   /* public void getSendCoinHistory() {
 
         UserData user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
         String token = user.getToken();
@@ -666,11 +667,11 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                         e.printStackTrace();
                     }
                     if (coinModals != null && coinModals.size() > 0) {
-                        coin_history_adapter = new Coin_History_Adapter(coinModals, getApplicationContext(), ImtSmartGraphLayout.this);
+                        coin_Send_history_adapter = new Coin_Send_History_Adapter(coinModals, getApplicationContext(), ImtSmartGraphLayout.this);
                         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
                         recyclerView.setLayoutManager(mLayoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(coin_history_adapter);
+                        recyclerView.setAdapter(coin_Send_history_adapter);
                     } else {
 
 
@@ -723,9 +724,94 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
 
             }
         });
+    }*/
+
+
+    public void getSendCoinHistory(String token, String symbol) {
+
+
+
+
+        Call<SendCoinHistoryResponse> call = RetrofitClient.getInstance().getApi().get_SendHistory(token, symbol);
+
+        call.enqueue(new Callback<SendCoinHistoryResponse>() {
+            @Override
+            public void onResponse(Call<SendCoinHistoryResponse> call, Response<SendCoinHistoryResponse> response) {
+                String s = null;
+                if (response.code() == 200  && response.body()!=null) {
+                    if (response.body().getResult()!=null && response.body().getResult().size()>0){
+                        coin_Send_history_adapter = new Coin_Send_History_Adapter(response.body(), getApplicationContext(), ImtSmartGraphLayout.this);
+                        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                        recyclerView.setLayoutManager(mLayoutManager);
+                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        recyclerView.setAdapter(coin_Send_history_adapter);
+                        history_Empty.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
+
+                    }else{
+                        history_Empty.setVisibility(View.VISIBLE);
+                        recyclerView.setVisibility(View.GONE);
+                    }
+                } else if (response.code() == 400 || response.code() == 401) {
+                    try {
+                        s = response.errorBody().string();
+                        JSONObject jsonObject1 = new JSONObject(s);
+                        String error = jsonObject1.getString("error");
+
+
+                        Snacky.builder()
+                                .setActivity(ImtSmartGraphLayout.this)
+                                .setText(error)
+                                .setDuration(Snacky.LENGTH_SHORT)
+                                .setActionText(android.R.string.ok)
+                                .error()
+                                .show();
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<SendCoinHistoryResponse> call, Throwable t) {
+                Snacky.builder()
+                        .setActivity(ImtSmartGraphLayout.this)
+                        .setText(t.getLocalizedMessage())
+                        .setDuration(Snacky.LENGTH_SHORT)
+                        .setActionText(android.R.string.ok)
+                        .error()
+                        .show();
+
+            }
+        });
     }
 
+
+
     @Override
+    public void onSendCoinItemClickListener(SendCoinHistoryResponse sendCoinHistoryResponse, int position) {
+        String username = sendCoinHistoryResponse.getResult().get(position).getUserId().getUsername();
+        String transaction = sendCoinHistoryResponse.getResult().get(position).getTransactionHash();
+        String type = sendCoinHistoryResponse.getResult().get(position).getType();
+        String date = sendCoinHistoryResponse.getResult().get(position).getCreatedAt();
+        String amount = sendCoinHistoryResponse.getResult().get(position).getAmtOfCrypto();
+
+        Transaction_HistoryModel historyModel = new Transaction_HistoryModel(transaction, "Success", amount, "type", username, date, null, type);
+
+        //storing the user in shared preferences
+        TransactionHistorySharedPrefManager.getInstance(getApplicationContext()).Transaction_History_Data(historyModel);
+
+
+        Intent intent = new Intent(ImtSmartGraphLayout.this, Full_Transaction_History.class);
+        startActivity(intent);
+
+    }
+   /* @Override
     public void onHistoryItemClickListener(int position) {
         String username = coinModals.get(position).getUsername();
         String transaction = coinModals.get(position).getId();
@@ -742,4 +828,4 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
         Intent intent = new Intent(ImtSmartGraphLayout.this, Full_Transaction_History.class);
         startActivity(intent);
     }
-}
+*/}

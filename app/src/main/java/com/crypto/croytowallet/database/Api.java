@@ -6,9 +6,11 @@ import com.crypto.croytowallet.Extra_Class.ApiResponse.GetNewCoinRespinse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.LoginResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.PublicKeyResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.PearToPearResponse;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.ReceviedCoinHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.ResponseBankDetails;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.RewardHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.SendAddAmountRequestResponse;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.SendCoinHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TCResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TopUp_HistoryResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TransactionHistoryResponse;
@@ -191,14 +193,14 @@ public interface Api {
 
     @FormUrlEncoded
     @POST("transaction/send/user")
-    Call<ResponseBody> get_SendHistory(
+    Call<SendCoinHistoryResponse> get_SendHistory(
             @Header("Authorization") String Authtoken,
             @Field("crypto") String type
     );
 
     @FormUrlEncoded
     @POST("transaction/receive/user")
-    Call<ResponseBody> get_ReceivedHistory(
+    Call<List<ReceviedCoinHistoryResponse>> get_ReceivedHistory(
             @Header("Authorization") String Authtoken,
             @Field("crypto") String type
     );

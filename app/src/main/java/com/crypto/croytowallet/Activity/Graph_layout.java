@@ -20,9 +20,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.crypto.croytowallet.Adapter.Coin_History_Adapter;
+import com.crypto.croytowallet.Adapter.Coin_Send_History_Adapter;
 import com.crypto.croytowallet.CoinTransfer.CoinScan;
 import com.crypto.croytowallet.CoinTransfer.Received_Coin;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.SendCoinHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.MyMarkerView;
 import com.crypto.croytowallet.Extra_Class.MyPreferences;
 import com.crypto.croytowallet.Extra_Class.PrefConf;
@@ -65,7 +66,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Graph_layout extends AppCompatActivity implements View.OnClickListener, HistoryClickLister {
+public class Graph_layout extends AppCompatActivity implements View.OnClickListener,  Coin_Send_History_Adapter.OnSendCoinItemListener {
 
     TextView swap, price, balance, coinname, coinsymbols, coinprice, sync, increaseRate, null1, more;
     LinearLayout h_24, d_7, m_1, m_3, m_6, y_1;
@@ -80,7 +81,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
     CircleImageView circleImageView;
     String balance1, price1,token;
     ArrayList<CoinModal> coinModals;
-    Coin_History_Adapter coin_history_adapter;
+    Coin_Send_History_Adapter coin_send_history_adapter;
     RecyclerView recyclerView;
     TextView history_Empty;
 
@@ -179,7 +180,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
         geTypeToken(token,symbol);
 
 
-        getSendCoinHistory();
+       getSendCoinHistory(userData.getToken(),symbol.toLowerCase());
 
     }
     @Override
@@ -607,69 +608,32 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void getSendCoinHistory() {
-
-        UserData user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
-        String token = user.getToken();
+    public void getSendCoinHistory(String token, String symbol) {
 
 
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().get_SendHistory(token, symbol.toLowerCase());
 
-        call.enqueue(new Callback<ResponseBody>() {
+
+        Call<SendCoinHistoryResponse> call = RetrofitClient.getInstance().getApi().get_SendHistory(token, symbol);
+
+        call.enqueue(new Callback<SendCoinHistoryResponse>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                hidepDialog();
+            public void onResponse(Call<SendCoinHistoryResponse> call, Response<SendCoinHistoryResponse> response) {
                 String s = null;
-                if (response.code() == 200) {
-                    coinModals.clear();
-                    try {
-                        s = response.body().string();
-                        JSONObject object = new JSONObject(s);
-                        String result = object.getString("result");
-                        JSONArray jsonArray = new JSONArray(result);
-                        for (int i = 0; i <= jsonArray.length(); i++) {
-                            JSONObject object1 = jsonArray.getJSONObject(i);
-
-                            CoinModal modal = new CoinModal();
-                            String type = object1.getString("cryptoCurrency");
-                            String amount = object1.getString("amtOfCrypto");
-                            String id = object1.getString("transactionHash");
-                            String date = object1.getString("createdAt");
-                            String userData = object1.getString("userId");
-
-
-                            JSONObject object2 = new JSONObject(userData);
-                            String username = object2.getString("username");
-
-
-                            modal.setUsername(username);
-                            modal.setTime(date);
-                            modal.setAmount(amount);
-                            modal.setType(type.toUpperCase());
-                            modal.setId(id);
-                            coinModals.add(modal);
-
-
-                        }
-
-
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                    }
-                    if (coinModals != null && coinModals.size() > 0) {
-                        coin_history_adapter = new Coin_History_Adapter(coinModals, getApplicationContext(), Graph_layout.this);
+                if (response.code() == 200  && response.body()!=null) {
+                    if (response.body().getResult()!=null && response.body().getResult().size()>0){
+                        coin_send_history_adapter = new Coin_Send_History_Adapter(response.body(), getApplicationContext(), Graph_layout.this);
                         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
                         recyclerView.setLayoutManager(mLayoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(coin_history_adapter);
-                    } else {
+                        recyclerView.setAdapter(coin_send_history_adapter);
+                        history_Empty.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
 
-
+                    }else{
                         history_Empty.setVisibility(View.VISIBLE);
-
+                        recyclerView.setVisibility(View.GONE);
                     }
-
-                } else if (response.code() == 400) {
+                } else if (response.code() == 400 || response.code() == 401) {
                     try {
                         s = response.errorBody().string();
                         JSONObject jsonObject1 = new JSONObject(s);
@@ -689,25 +653,16 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                         e.printStackTrace();
                     }
 
-                } else if (response.code() == 401) {
-                    Snacky.builder()
-                            .setActivity(Graph_layout.this)
-                            .setText("unAuthorization Request")
-                            .setDuration(Snacky.LENGTH_SHORT)
-                            .setActionText(android.R.string.ok)
-                            .error()
-                            .show();
-
                 }
+
 
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                coinModals.clear();
+            public void onFailure(Call<SendCoinHistoryResponse> call, Throwable t) {
                 Snacky.builder()
                         .setActivity(Graph_layout.this)
-                        .setText(t.getMessage())
+                        .setText(t.getLocalizedMessage())
                         .setDuration(Snacky.LENGTH_SHORT)
                         .setActionText(android.R.string.ok)
                         .error()
@@ -717,16 +672,17 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    @Override
-    public void onHistoryItemClickListener(int position) {
-        String username = coinModals.get(position).getUsername();
-        String transaction = coinModals.get(position).getId();
-        String type = coinModals.get(position).getType();
-        String date = coinModals.get(position).getTime();
-        String amount = coinModals.get(position).getAmount();
-        String Type = "coinTransfer";
 
-        Transaction_HistoryModel historyModel = new Transaction_HistoryModel(transaction, coinId, amount, "type", username, date,null,type);
+
+    @Override
+    public void onSendCoinItemClickListener(SendCoinHistoryResponse sendCoinHistoryResponse, int position) {
+        String username = sendCoinHistoryResponse.getResult().get(position).getUserId().getUsername();
+        String transaction = sendCoinHistoryResponse.getResult().get(position).getTransactionHash();
+        String type = sendCoinHistoryResponse.getResult().get(position).getType();
+        String date = sendCoinHistoryResponse.getResult().get(position).getCreatedAt();
+        String amount = sendCoinHistoryResponse.getResult().get(position).getAmtOfCrypto();
+
+        Transaction_HistoryModel historyModel = new Transaction_HistoryModel(transaction, "Success", amount, "type", username, date, null, type);
 
         //storing the user in shared preferences
         TransactionHistorySharedPrefManager.getInstance(getApplicationContext()).Transaction_History_Data(historyModel);
