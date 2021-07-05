@@ -2,6 +2,7 @@ package com.crypto.croytowallet.Activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -66,9 +67,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Graph_layout extends AppCompatActivity implements View.OnClickListener,  Coin_Send_History_Adapter.OnSendCoinItemListener {
+public class Graph_layout extends AppCompatActivity implements View.OnClickListener, Coin_Send_History_Adapter.OnSendCoinItemListener {
 
-    TextView swap, price, balance, coinname, coinsymbols, coinprice, sync, increaseRate, null1, more;
+    TextView swap, price, balance, coinname, coinsymbols, coinprice, sync, increaseRate, null1, text_activity, text_about, text_video, text_blog, text_description,netWork,cprice;
     LinearLayout h_24, d_7, m_1, m_3, m_6, y_1;
     private Exchange exchange;
     int position;
@@ -79,11 +80,12 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
     private LineChart chart;
     UserData userData;
     CircleImageView circleImageView;
-    String balance1, price1,token;
+    String balance1, price1, token;
     ArrayList<CoinModal> coinModals;
     Coin_Send_History_Adapter coin_send_history_adapter;
     RecyclerView recyclerView;
     TextView history_Empty;
+    ConstraintLayout constraintLayout;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -104,16 +106,21 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
         increaseRate = findViewById(R.id.increaseRate);
         recyclerView = findViewById(R.id.recyclerView);
         history_Empty = findViewById(R.id.txt_list_is_empty);
-        more = findViewById(R.id.moretransactions);
-
+        text_activity = findViewById(R.id.text_activity);
+        text_about = findViewById(R.id.text_about);
+        text_video = findViewById(R.id.text_video);
+        text_blog = findViewById(R.id.text_blog);
+        text_description = findViewById(R.id.text_description);
+        constraintLayout = findViewById(R.id.constraint);
+        cprice = findViewById(R.id.cprice);
         null1 = findViewById(R.id.null1);
+        netWork = findViewById(R.id.netWork);
         h_24 = findViewById(R.id.h_24);
         d_7 = findViewById(R.id.d_7);
         m_1 = findViewById(R.id.m_1);
         m_3 = findViewById(R.id.m_3);
         m_6 = findViewById(R.id.m_6);
         y_1 = findViewById(R.id.y_1);
-        more.setOnClickListener(this);
         send = findViewById(R.id.send_coin);
         swap.setOnClickListener(this);
         back.setOnClickListener(this);
@@ -125,6 +132,10 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
         m_3.setOnClickListener(this);
         m_6.setOnClickListener(this);
         y_1.setOnClickListener(this);
+        text_activity.setOnClickListener(this);
+        text_about.setOnClickListener(this);
+        text_video.setOnClickListener(this);
+        text_blog.setOnClickListener(this);
 
         coinModals = new ArrayList<CoinModal>();
 
@@ -135,7 +146,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
         coinName = Updated_data.getInstans(getApplicationContext()).getUsername();
         change = Updated_data.getInstans(getApplicationContext()).getChange();
 
-        //  Toast.makeText(this, ""+symbol, Toast.LENGTH_SHORT).show();
+        cprice.setText(symbol.toUpperCase()+" Price ");
 
         sharedPreferences = getApplicationContext().getSharedPreferences("currency", 0);
 
@@ -145,7 +156,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
 
         userData = SharedPrefManager.getInstance(getApplicationContext()).getUser();
 
-        token  = userData.getToken();
+        token = userData.getToken();
 
         Glide.with(this).load(image).into(circleImageView);
 
@@ -174,15 +185,20 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
         } else {
             increaseRate.setText("+" + change);
         }
-       // getBalance();
+        // getBalance();
 
         getGraphData(coinId, currency2, "1", "");
-        geTypeToken(token,symbol);
+        geTypeToken(token, symbol);
 
 
-       getSendCoinHistory(userData.getToken(),symbol.toLowerCase());
+        getSendCoinHistory(userData.getToken(), symbol.toLowerCase());
+        chart.setNoDataText("Loading......................");
+        chart.setNoDataTextColor(getResources().getColor(R.color.toolbar_text_color));
+        chart.setBackgroundColor(getResources().getColor(R.color.graph));
+
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -206,11 +222,6 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent2);
                 break;
 
-            case R.id.moretransactions:
-                Intent intent3 = new Intent(getApplicationContext(), CoinHistory.class);
-                startActivity(intent3);
-                break;
-
             case R.id.h_24:
                 h_24.setBackground(getResources().getDrawable(R.drawable.graph_box));
                 d_7.setBackgroundColor(getResources().getColor(R.color.background));
@@ -230,7 +241,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                 m_6.setBackgroundColor(getResources().getColor(R.color.background));
                 y_1.setBackgroundColor(getResources().getColor(R.color.background));
 
-                getGraphData(coinId, currency2, "7", "daily");
+                getGraphData(coinId, currency2, "7", "");
 
                 break;
 
@@ -282,38 +293,94 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                 break;
 
 
+            case R.id.text_activity:
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                constraintLayout.setVisibility(View.VISIBLE);
+                text_description.setVisibility(View.GONE);
+                getSendCoinHistory(userData.getToken(),"imt");
+
+
+                break;
+            case R.id.text_about:
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                constraintLayout.setVisibility(View.GONE);
+                text_description.setVisibility(View.VISIBLE);
+                text_description.setText("Descriptions");
+
+                break;
+            case R.id.text_video:
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                constraintLayout.setVisibility(View.VISIBLE);
+                text_description.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.GONE);
+                history_Empty.setVisibility(View.VISIBLE);
+                history_Empty.setText("No Videos are Available");
+
+                break;
+            case R.id.text_blog:
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                constraintLayout.setVisibility(View.VISIBLE);
+                text_description.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.GONE);
+                history_Empty.setVisibility(View.VISIBLE);
+                history_Empty.setText("No Blog are Available");
+                break;
+
         }
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
         onSaveInstanceState(new Bundle());
     }
 
     private void geTypeToken(String token, String symbol) {
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().getToken(token,symbol);
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().getToken(token, symbol);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 String s = null;
-                if (response.code()==200){
+                if (response.code() == 200) {
                     try {
                         s = response.body().string();
                         JSONObject object = new JSONObject(s);
                         String token1 = object.getString("token");
-                        getBalance(token,token1,symbol,"usd");
-                        MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.TOKEN_TYPE,token1);
+                      //  swap.setText("SWAP "+token1.toUpperCase());
+                        if (token1.equalsIgnoreCase("erc")){
+                            netWork.setText("NETWORK : Ethereum");
+                        }else if (token1.equalsIgnoreCase("trc20")){
+                            netWork.setText("NETWORK : Tron");
+                        }else if (token1.equalsIgnoreCase("trc10")){
+                            netWork.setText("NETWORK : Tron");
+                        }else if (token1.equalsIgnoreCase("bep20")){
+                            netWork.setText("NETWORK : Binance ");
+                        }
+                        getBalance(token, token1, symbol, "usd");
+                        MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.TOKEN_TYPE, token1);
                     } catch (IOException | JSONException e) {
                         e.printStackTrace();
                     }
 
-                }else if (response.code()==400){
-                    getBalance(token,symbol,symbol,"usd");
-                    MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.TOKEN_TYPE,symbol);
-                }else if (response.code()==401){
+                } else if (response.code() == 400) {
+                    getBalance(token, symbol, symbol, "usd");
+                 //   swap.setText("SWAP "+symbol.toUpperCase());
+                    netWork.setText("NETWORK : "+coinName);
+                    MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.TOKEN_TYPE, symbol);
+                } else if (response.code() == 401) {
                     Snacky.builder()
                             .setActivity(Graph_layout.this)
                             .setText("unAuthorization Request")
@@ -340,10 +407,10 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void getBalance(String token,String type,String name,String currency) {
+    public void getBalance(String token, String type, String name, String currency) {
 
 
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().Balance(token,type,name ,currency);
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().Balance(token, type, name, currency);
 
         call.enqueue(new Callback<ResponseBody>() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -360,7 +427,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                         balance1 = jsonObject.getString("balance");
 
 
-                        if (!balance1.equalsIgnoreCase("null")){
+                        if (!balance1.equalsIgnoreCase("null")) {
                             double balance2 = Double.parseDouble(balance1);
                             double price = Double.parseDouble(price1);
                             double total = balance2 * price;
@@ -370,12 +437,10 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                             balance.setText(CurrencySymbols + df.format(total));
                             coinprice.setText("" + df.format(balance2));
 
-                        }else {
+                        } else {
                             balance.setText(CurrencySymbols + "0");
                             coinprice.setText("0");
                         }
-
-
 
 
                         // Log.d("bal",df.format(total));
@@ -611,16 +676,14 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
     public void getSendCoinHistory(String token, String symbol) {
 
 
-
-
         Call<SendCoinHistoryResponse> call = RetrofitClient.getInstance().getApi().get_SendHistory(token, symbol);
 
         call.enqueue(new Callback<SendCoinHistoryResponse>() {
             @Override
             public void onResponse(Call<SendCoinHistoryResponse> call, Response<SendCoinHistoryResponse> response) {
                 String s = null;
-                if (response.code() == 200  && response.body()!=null) {
-                    if (response.body().getResult()!=null && response.body().getResult().size()>0){
+                if (response.code() == 200 && response.body() != null) {
+                    if (response.body().getResult() != null && response.body().getResult().size() > 0) {
                         coin_send_history_adapter = new Coin_Send_History_Adapter(response.body(), getApplicationContext(), Graph_layout.this);
                         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
                         recyclerView.setLayoutManager(mLayoutManager);
@@ -629,7 +692,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                         history_Empty.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
 
-                    }else{
+                    } else {
                         history_Empty.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                     }
@@ -671,7 +734,6 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-
 
 
     @Override

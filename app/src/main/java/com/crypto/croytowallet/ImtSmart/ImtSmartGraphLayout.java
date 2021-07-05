@@ -2,6 +2,7 @@ package com.crypto.croytowallet.ImtSmart;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,7 +21,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.crypto.croytowallet.ImtSmart.ImtSmartGraphLayout;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.SendCoinHistoryResponse;
+import com.crypto.croytowallet.Extra_Class.MyMarkerView;
 import com.crypto.croytowallet.Extra_Class.MyMarkerView1;
 import com.crypto.croytowallet.Adapter.Coin_Send_History_Adapter;
 import com.crypto.croytowallet.Interface.HistoryClickLister;
@@ -59,7 +62,7 @@ import retrofit2.Response;
 
 public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnClickListener, Coin_Send_History_Adapter.OnSendCoinItemListener {
     ImageView back, received, send;
-    TextView price, balances, coinprice, increaseRate, null1, more;
+    TextView price, balances, coinprice, increaseRate, null1,  text_activity, text_about, text_video, text_blog, text_description;
     KProgressHUD progressDialog;
     UserData userData;
     private LineChart chart;
@@ -73,6 +76,8 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
     RecyclerView recyclerView;
     TextView history_Empty;
     ArrayList<Entry> yvalue;
+    ConstraintLayout constraintLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +92,12 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
         coinprice = findViewById(R.id.coinPrice);
         recyclerView = findViewById(R.id.recyclerView);
         history_Empty = findViewById(R.id.txt_list_is_empty);
-        more = findViewById(R.id.moretransactions);
+        text_activity = findViewById(R.id.text_activity);
+        text_about = findViewById(R.id.text_about);
+        text_video = findViewById(R.id.text_video);
+        text_blog = findViewById(R.id.text_blog);
+        text_description = findViewById(R.id.text_description);
+        constraintLayout = findViewById(R.id.constraint);
 
         increaseRate = findViewById(R.id.increaseRate);
         null1 = findViewById(R.id.null1);
@@ -105,13 +115,19 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
         back.setOnClickListener(this);
         received.setOnClickListener(this);
         send.setOnClickListener(this);
-        more.setOnClickListener(this);
         h_24.setOnClickListener(this);
         d_7.setOnClickListener(this);
         m_1.setOnClickListener(this);
         m_3.setOnClickListener(this);
         m_6.setOnClickListener(this);
         y_1.setOnClickListener(this);
+        text_activity.setOnClickListener(this);
+        text_about.setOnClickListener(this);
+        text_video.setOnClickListener(this);
+        text_blog.setOnClickListener(this);
+
+
+
 
         userData = SharedPrefManager.getInstance(getApplicationContext()).getUser();
         sharedPreferences1 = getSharedPreferences("imtInfo", Context.MODE_PRIVATE);
@@ -144,7 +160,11 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
         getBalance();
 
         GetImtGraph1d("imt", currency2, 24);
-       getSendCoinHistory(userData.getToken(),"imt");
+        getSendCoinHistory(userData.getToken(),"imt");
+        chart.setNoDataText("Loading......................");
+        chart.setNoDataTextColor(getResources().getColor(R.color.toolbar_text_color));
+
+        chart.setBackgroundColor(getResources().getColor(R.color.graph));
     }
 
 
@@ -190,7 +210,7 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 m_3.setBackgroundColor(getResources().getColor(R.color.background));
                 m_6.setBackgroundColor(getResources().getColor(R.color.background));
                 y_1.setBackgroundColor(getResources().getColor(R.color.background));
-                GetImtGraphAll("imt", currency2, 7);
+                getGraphData("moneytoken", currency2, "7", "");
                 break;
 
             case R.id.m_1:
@@ -200,7 +220,7 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 m_3.setBackgroundColor(getResources().getColor(R.color.background));
                 m_6.setBackgroundColor(getResources().getColor(R.color.background));
                 y_1.setBackgroundColor(getResources().getColor(R.color.background));
-                GetImtGraphAll("imt", currency2, 30);
+                getGraphData("moneytoken", currency2, "30", "daily");
                 break;
 
             case R.id.m_3:
@@ -210,7 +230,7 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 m_3.setBackground(getResources().getDrawable(R.drawable.graph_box));
                 m_6.setBackgroundColor(getResources().getColor(R.color.background));
                 y_1.setBackgroundColor(getResources().getColor(R.color.background));
-                GetImtGraphAll("imt", currency2, 90);
+                getGraphData("moneytoken", currency2, "90", "daily");
                 break;
 
             case R.id.m_6:
@@ -221,7 +241,7 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 m_6.setBackground(getResources().getDrawable(R.drawable.graph_box));
                 y_1.setBackgroundColor(getResources().getColor(R.color.background));
 
-                GetImtGraphAll("imt", currency2, 180);
+                getGraphData("moneytoken", currency2, "180", "daily");
                 break;
 
             case R.id.y_1:
@@ -231,9 +251,56 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 m_3.setBackgroundColor(getResources().getColor(R.color.background));
                 m_6.setBackgroundColor(getResources().getColor(R.color.background));
                 y_1.setBackground(getResources().getDrawable(R.drawable.graph_box));
-
-                GetImtGraphAll("imt", currency2, 365);
+                getGraphData("moneytoken", currency2, "365", "daily");
+               
                 break;
+
+            case R.id.text_activity:
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                constraintLayout.setVisibility(View.VISIBLE);
+                text_description.setVisibility(View.GONE);
+                getSendCoinHistory(userData.getToken(),"imt");
+
+
+                break;
+            case R.id.text_about:
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                constraintLayout.setVisibility(View.GONE);
+                text_description.setVisibility(View.VISIBLE);
+                text_description.setText("Descriptions");
+
+                break;
+            case R.id.text_video:
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                constraintLayout.setVisibility(View.VISIBLE);
+                text_description.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.GONE);
+                history_Empty.setVisibility(View.VISIBLE);
+                history_Empty.setText("No Videos are Available");
+
+                break;
+            case R.id.text_blog:
+                text_about.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_activity.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_video.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
+                text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_color));
+                constraintLayout.setVisibility(View.VISIBLE);
+                text_description.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.GONE);
+                history_Empty.setVisibility(View.VISIBLE);
+                history_Empty.setText("No Blog are Available");
+                break;
+
+
 
         }
     }
@@ -350,6 +417,159 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                         .show();
             }
         });
+    }
+
+   
+    private void showpDialog() {
+        if (!progressDialog.isShowing())
+            progressDialog.show();
+    }
+
+    private void hidepDialog() {
+        if (progressDialog.isShowing())
+            progressDialog.dismiss();
+    }
+
+
+
+    public void getGraphData(String id, String currency, String days, String interval) {
+
+        progressDialog = KProgressHUD.create(ImtSmartGraphLayout.this)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setLabel("Please wait.....")
+                .setCancellable(false)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show();
+
+        showpDialog();
+
+
+        Call<ResponseBody> call = RetrofitGraph.getInstance().getApi().getGraphData1(id, currency, days, interval);
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                String s = null;
+                hidepDialog();
+                if (response.code() == 200) {
+                    ArrayList<Entry> yvalue = new ArrayList<>();
+                    yvalue.clear();
+                    try {
+                        s = response.body().string();
+
+                        JSONObject object = new JSONObject(s);
+
+                        String prices = object.getString("prices");
+                        JSONArray jsonArray = new JSONArray(prices);
+
+                        for (int i = 0; i <= jsonArray.length(); i++) {
+
+                            String peice1 = jsonArray.getString(i);
+
+                            JSONArray jsonArray1 = new JSONArray(peice1);
+                            for (int j = 0; j <= jsonArray1.length(); j++) {
+                                String lowPrices = jsonArray1.getString(1);
+
+                                Float aFloat = Float.parseFloat(lowPrices);
+                                yvalue.add(new Entry(i, aFloat));
+                            }
+
+                        }
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    chart.setDragEnabled(true);
+                    chart.setScaleEnabled(true);
+                    chart.setPinchZoom(true);
+                    /* create marker to display box when values are selected */
+                    MyMarkerView mv = new MyMarkerView(ImtSmartGraphLayout.this, R.layout.custom_marker_view);
+
+                    // Set the marker to the chart
+                    mv.setChartView(chart);
+                    chart.setMarker(mv);
+                    chart.animateXY(2000, 200);
+                    chart.getXAxis().setDrawGridLines(false);
+                    chart.getAxisLeft().setDrawGridLinesBehindData(false);
+                    chart.getAxisLeft().setDrawGridLines(false);
+                    chart.getAxisRight().setDrawGridLines(false);
+                    chart.getDescription().setEnabled(false);
+                    chart.getAxisLeft().setDrawLabels(false);
+                    chart.getAxisRight().setDrawLabels(false);
+                    chart.getXAxis().setDrawLabels(false);
+                    chart.getLegend().setEnabled(false);
+                    YAxis y = chart.getAxisRight();
+                    y.setEnabled(false);
+                    y.setDrawAxisLine(false);
+                    YAxis y1 = chart.getAxisLeft();
+                    y1.setDrawAxisLine(false);
+
+                    XAxis x = chart.getXAxis();
+                    x.setDrawAxisLine(false);
+                    x.setDrawGridLines(false);
+
+
+                    LineDataSet set1 = new LineDataSet(yvalue, "");
+                    set1.setFillAlpha(110);
+                    ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+                    dataSets.add(set1);
+                    LineData data = new LineData(dataSets);
+                    chart.setData(data);
+
+                    if (Utils.getSDKInt() >= 18) {
+                        Drawable drawable = ContextCompat.getDrawable(ImtSmartGraphLayout.this, R.drawable.gradient1);
+                        set1.setFillDrawable(drawable);
+                    } else {
+                        set1.setFillColor(Color.rgb(229, 146, 19));
+                    }
+                    set1.setMode(LineDataSet.Mode.LINEAR);
+                    set1.setLineWidth(2f);
+                    set1.setColor(getResources().getColor(R.color.graph_line));
+                    set1.setDrawValues(!set1.isDrawValuesEnabled());
+                    set1.setDrawFilled(true);
+                    set1.setDrawCircles(false);
+                    chart.setBackgroundColor(getResources().getColor(R.color.graph));
+
+
+                } else if (response.code() == 400) {
+                    try {
+                        s = response.errorBody().string();
+                        JSONObject jsonObject1 = new JSONObject(s);
+                        String error = jsonObject1.getString("error");
+                        Snacky.builder()
+                                .setActivity(ImtSmartGraphLayout.this)
+                                .setText(error)
+                                .setDuration(Snacky.LENGTH_SHORT)
+                                .setActionText(android.R.string.ok)
+                                .error()
+                                .show();
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                hidepDialog();
+                Snacky.builder()
+                        .setActivity(ImtSmartGraphLayout.this)
+                        .setText(t.getLocalizedMessage())
+                        .setDuration(Snacky.LENGTH_SHORT)
+                        .setActionText(android.R.string.ok)
+                        .error()
+                        .show();
+            }
+        });
+
     }
 
     public void GetImtGraph1d(String coinName, String currency2, int hour) {
@@ -478,254 +698,6 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
             }
         });
     }
-
-    public void GetImtGraphAll(String coinName, String currency2, int days) {
-
-        progressDialog = KProgressHUD.create(ImtSmartGraphLayout.this)
-                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                .setLabel("Please wait.....")
-                .setCancellable(false)
-                .setAnimationSpeed(2)
-                .setDimAmount(0.5f)
-                .show();
-
-        showpDialog();
-
-        Call<ResponseBody> call = RetrofitGraph.RetrofitGraph1.getInstance().getApi1().ImtGraphall(coinName, currency2, days);
-
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                String s = null;
-                hidepDialog();
-
-                if (response.isSuccessful()) {
-
-                    yvalue.clear();
-                    try {
-                        s = response.body().string();
-
-                        JSONObject object = new JSONObject(s);
-                        String response1 = object.getString("Response");
-
-                        if (response1.equals("Error")) {
-                            String Message = object.getString("Message");
-                            Snacky.builder()
-                                    .setActivity(ImtSmartGraphLayout.this)
-                                    .setText(Message)
-                                    .setDuration(Snacky.LENGTH_SHORT)
-                                    .setActionText(android.R.string.ok)
-                                    .error()
-                                    .show();
-                        } else {
-                            String Data = object.getString("Data");
-
-                            JSONObject object1 = new JSONObject(Data);
-                            String Data1 = object1.getString("Data");
-
-                            JSONArray jsonArray = new JSONArray(Data1);
-                            for (int i = 0; i <= jsonArray.length(); i++) {
-                                JSONObject object2 = jsonArray.getJSONObject(i);
-                                String high = object2.getString("high");
-                                Float aFloat = Float.parseFloat(high);
-                                yvalue.add(new Entry(i, aFloat));
-                            }
-                        }
-
-
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                    chart.setDragEnabled(true);
-                    chart.setScaleEnabled(true);
-                    chart.setPinchZoom(true);
-                    /* create marker to display box when values are selected */
-                    MyMarkerView1 mv = new MyMarkerView1(ImtSmartGraphLayout.this, R.layout.custom_marker_view);
-
-                    // Set the marker to the chart
-                    mv.setChartView(chart);
-                    chart.setMarker(mv);
-                    chart.animateXY(2000, 200);
-                    // chart.animateX(2000);
-                    chart.getXAxis().setDrawGridLines(false);
-                    chart.getAxisLeft().setDrawGridLinesBehindData(false);
-                    chart.getAxisLeft().setDrawGridLines(false);
-                    chart.getAxisRight().setDrawGridLines(false);
-                    chart.getDescription().setEnabled(false);
-                    chart.getAxisLeft().setDrawLabels(false);
-                    chart.getAxisRight().setDrawLabels(false);
-                    chart.getXAxis().setDrawLabels(false);
-                    chart.getLegend().setEnabled(false);
-                    YAxis y = chart.getAxisRight();
-                    y.setEnabled(false);
-                    y.setDrawAxisLine(false);
-                    YAxis y1 = chart.getAxisLeft();
-                    y1.setDrawAxisLine(false);
-
-                    XAxis x = chart.getXAxis();
-                    x.setDrawAxisLine(false);
-                    x.setDrawGridLines(false);
-
-
-                    LineDataSet set1 = new LineDataSet(yvalue, "");
-                    set1.setFillAlpha(110);
-                    ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-                    dataSets.add(set1);
-                    LineData data = new LineData(dataSets);
-                    chart.setData(data);
-
-                    if (Utils.getSDKInt() >= 18) {
-                        Drawable drawable = ContextCompat.getDrawable(ImtSmartGraphLayout.this, R.drawable.gradient1);
-                        set1.setFillDrawable(drawable);
-                    } else {
-                        set1.setFillColor(Color.rgb(229, 146, 19));
-                    }
-                    set1.setMode(LineDataSet.Mode.LINEAR);
-                    set1.setLineWidth(2f);
-                    set1.setColor(getResources().getColor(R.color.graph_line));
-                    set1.setDrawValues(!set1.isDrawValuesEnabled());
-                    set1.setDrawFilled(true);
-                    set1.setDrawCircles(false);
-                    chart.setBackgroundColor(getResources().getColor(R.color.graph));
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                hidepDialog();
-                Snacky.builder()
-                        .setActivity(ImtSmartGraphLayout.this)
-                        .setText("Internet Problem ")
-                        .setDuration(Snacky.LENGTH_SHORT)
-                        .setActionText(android.R.string.ok)
-                        .error()
-                        .show();
-            }
-        });
-    }
-
-
-    private void showpDialog() {
-        if (!progressDialog.isShowing())
-            progressDialog.show();
-    }
-
-    private void hidepDialog() {
-        if (progressDialog.isShowing())
-            progressDialog.dismiss();
-    }
-
-   /* public void getSendCoinHistory() {
-
-        UserData user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
-        String token = user.getToken();
-
-
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().get_SendHistory(token, "imt");
-
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                hidepDialog();
-                String s = null;
-                if (response.code() == 200) {
-                    coinModals.clear();
-                    try {
-                        s = response.body().string();
-                        JSONObject object = new JSONObject(s);
-                        String result = object.getString("result");
-                        JSONArray jsonArray = new JSONArray(result);
-                        for (int i = 0; i <= jsonArray.length(); i++) {
-                            JSONObject object1 = jsonArray.getJSONObject(i);
-
-                            CoinModal modal = new CoinModal();
-                            String type = object1.getString("cryptoCurrency");
-                            String amount = object1.getString("amtOfCrypto");
-                            String id = object1.getString("transactionHash");
-                            String date = object1.getString("createdAt");
-                            String userData = object1.getString("userId");
-
-
-                            JSONObject object2 = new JSONObject(userData);
-                            String username = object2.getString("username");
-
-
-                            modal.setUsername(username);
-                            modal.setTime(date);
-                            modal.setAmount(amount);
-                            modal.setType(type.toUpperCase());
-                            modal.setId(id);
-                            coinModals.add(modal);
-
-
-                        }
-
-
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                    }
-                    if (coinModals != null && coinModals.size() > 0) {
-                        coin_Send_history_adapter = new Coin_Send_History_Adapter(coinModals, getApplicationContext(), ImtSmartGraphLayout.this);
-                        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-                        recyclerView.setLayoutManager(mLayoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(coin_Send_history_adapter);
-                    } else {
-
-
-                        history_Empty.setVisibility(View.VISIBLE);
-
-                    }
-
-                } else if (response.code() == 400) {
-                    try {
-                        s = response.errorBody().string();
-                        JSONObject jsonObject1 = new JSONObject(s);
-                        String error = jsonObject1.getString("error");
-
-
-                        Snacky.builder()
-                                .setActivity(ImtSmartGraphLayout.this)
-                                .setText(error)
-                                .setDuration(Snacky.LENGTH_SHORT)
-                                .setActionText(android.R.string.ok)
-                                .error()
-                                .show();
-
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                } else if (response.code() == 401) {
-                    Snacky.builder()
-                            .setActivity(ImtSmartGraphLayout.this)
-                            .setText("unAuthorization Request")
-                            .setDuration(Snacky.LENGTH_SHORT)
-                            .setActionText(android.R.string.ok)
-                            .error()
-                            .show();
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Snacky.builder()
-                        .setActivity(ImtSmartGraphLayout.this)
-                        .setText(t.getLocalizedMessage())
-                        .setDuration(Snacky.LENGTH_SHORT)
-                        .setActionText(android.R.string.ok)
-                        .error()
-                        .show();
-
-
-            }
-        });
-    }*/
-
 
     public void getSendCoinHistory(String token, String symbol) {
 

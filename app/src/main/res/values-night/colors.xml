@@ -13,6 +13,7 @@
     <color name="status_color">#1F2641</color>
     <color name="toolbar">#1F2641</color>
     <color name="toolbar_text_color">#F8F8F8</color>
+    <color name="toolbar_text_unSelectcolor">#99F8F8F8</color>
     <color name="icon"> #232b49</color>
     <color name="Orange">#ED8A4C</color>
     <color name="drawer_background">#1F2641</color>

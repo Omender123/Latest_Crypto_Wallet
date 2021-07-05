@@ -308,12 +308,7 @@ public interface Api {
             @Query("limit") int hour
     );
 
-    @GET("histoday")
-    Call<ResponseBody> ImtGraphall(
-            @Query("fsym") String coinName,
-            @Query("tsym") String currency,
-            @Query("limit") int days
-    );
+
 
     @FormUrlEncoded
     @POST("currency/newIMT")
