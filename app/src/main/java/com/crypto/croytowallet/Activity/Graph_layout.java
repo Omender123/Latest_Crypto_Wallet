@@ -13,17 +13,21 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.icu.text.DecimalFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.crypto.croytowallet.Adapter.Coin_Send_History_Adapter;
+import com.crypto.croytowallet.Adapter.CurrencyDetailsAdapter;
 import com.crypto.croytowallet.CoinTransfer.CoinScan;
 import com.crypto.croytowallet.CoinTransfer.Received_Coin;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.CurrencyDetailsModelResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.SendCoinHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.MyMarkerView;
 import com.crypto.croytowallet.Extra_Class.MyPreferences;
@@ -67,9 +71,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Graph_layout extends AppCompatActivity implements View.OnClickListener, Coin_Send_History_Adapter.OnSendCoinItemListener {
+public class Graph_layout extends AppCompatActivity implements View.OnClickListener, Coin_Send_History_Adapter.OnSendCoinItemListener, CurrencyDetailsAdapter.OnCurrencyDetails {
 
-    TextView swap, price, balance, coinname, coinsymbols, coinprice, sync, increaseRate, null1, text_activity, text_about, text_video, text_blog, text_description,netWork,cprice;
+    TextView swap, price, balance, coinname, coinsymbols, coinprice, sync, increaseRate, null1, text_activity, text_about, text_video, text_blog, text_description, netWork, cprice;
     LinearLayout h_24, d_7, m_1, m_3, m_6, y_1;
     private Exchange exchange;
     int position;
@@ -146,7 +150,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
         coinName = Updated_data.getInstans(getApplicationContext()).getUsername();
         change = Updated_data.getInstans(getApplicationContext()).getChange();
 
-        cprice.setText(symbol.toUpperCase()+" Price ");
+        cprice.setText(symbol.toUpperCase() + " Price ");
 
         sharedPreferences = getApplicationContext().getSharedPreferences("currency", 0);
 
@@ -300,7 +304,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                 text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
                 constraintLayout.setVisibility(View.VISIBLE);
                 text_description.setVisibility(View.GONE);
-                getSendCoinHistory(userData.getToken(),"imt");
+                getSendCoinHistory(userData.getToken(), "imt");
 
 
                 break;
@@ -311,7 +315,8 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                 text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
                 constraintLayout.setVisibility(View.GONE);
                 text_description.setVisibility(View.VISIBLE);
-                text_description.setText("Descriptions");
+                // text_description.setText("Descriptions");
+                getCurrencyDetails("Descriptions", symbol);
 
                 break;
             case R.id.text_video:
@@ -321,9 +326,8 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                 text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
                 constraintLayout.setVisibility(View.VISIBLE);
                 text_description.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.GONE);
-                history_Empty.setVisibility(View.VISIBLE);
-                history_Empty.setText("No Videos are Available");
+                 history_Empty.setVisibility(View.GONE);
+                 getCurrencyDetails("video", symbol);
 
                 break;
             case R.id.text_blog:
@@ -333,9 +337,8 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                 text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_color));
                 constraintLayout.setVisibility(View.VISIBLE);
                 text_description.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.GONE);
-                history_Empty.setVisibility(View.VISIBLE);
-                history_Empty.setText("No Blog are Available");
+                history_Empty.setVisibility(View.GONE);
+                getCurrencyDetails("blogs",symbol);
                 break;
 
         }
@@ -359,14 +362,14 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                         s = response.body().string();
                         JSONObject object = new JSONObject(s);
                         String token1 = object.getString("token");
-                      //  swap.setText("SWAP "+token1.toUpperCase());
-                        if (token1.equalsIgnoreCase("erc")){
+                        //  swap.setText("SWAP "+token1.toUpperCase());
+                        if (token1.equalsIgnoreCase("erc")) {
                             netWork.setText("NETWORK : Ethereum");
-                        }else if (token1.equalsIgnoreCase("trc20")){
+                        } else if (token1.equalsIgnoreCase("trc20")) {
                             netWork.setText("NETWORK : Tron");
-                        }else if (token1.equalsIgnoreCase("trc10")){
+                        } else if (token1.equalsIgnoreCase("trc10")) {
                             netWork.setText("NETWORK : Tron");
-                        }else if (token1.equalsIgnoreCase("bep20")){
+                        } else if (token1.equalsIgnoreCase("bep20")) {
                             netWork.setText("NETWORK : Binance ");
                         }
                         getBalance(token, token1, symbol, "usd");
@@ -377,8 +380,8 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
 
                 } else if (response.code() == 400) {
                     getBalance(token, symbol, symbol, "usd");
-                 //   swap.setText("SWAP "+symbol.toUpperCase());
-                    netWork.setText("NETWORK : "+coinName);
+                    //   swap.setText("SWAP "+symbol.toUpperCase());
+                    netWork.setText("NETWORK : " + coinName);
                     MyPreferences.getInstance(getApplicationContext()).putString(PrefConf.TOKEN_TYPE, symbol);
                 } else if (response.code() == 401) {
                     Snacky.builder()
@@ -693,6 +696,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
                         recyclerView.setVisibility(View.VISIBLE);
 
                     } else {
+                        history_Empty.setText(getResources().getString(R.string.recent_txt));
                         history_Empty.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                     }
@@ -752,6 +756,97 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = new Intent(Graph_layout.this, Full_Transaction_History.class);
         startActivity(intent);
+
+    }
+
+
+    public void getCurrencyDetails(String Type, String symbol) {
+
+        Call<CurrencyDetailsModelResponse> call = RetrofitClient.getInstance().getApi().getCurrencyDetails(symbol);
+
+        call.enqueue(new Callback<CurrencyDetailsModelResponse>() {
+            @Override
+            public void onResponse(Call<CurrencyDetailsModelResponse> call, Response<CurrencyDetailsModelResponse> response) {
+                if (response.isSuccessful() && response.code() == 200) {
+
+                    if (Type.equalsIgnoreCase("video")){
+
+                        if (response.body().getErc().getVideo()!=null && response.body().getErc().getVideo().size()>0){
+                            CurrencyDetailsAdapter currencyDetailsAdapter = new CurrencyDetailsAdapter(response.body(),Type,getApplicationContext(),Graph_layout.this);
+                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                            recyclerView.setLayoutManager(mLayoutManager);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            recyclerView.setAdapter(currencyDetailsAdapter);
+                            history_Empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        }else {
+                            history_Empty.setText("No Videos are Available");
+                            history_Empty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                        }
+
+                    }else if(Type.equalsIgnoreCase("blogs")){
+                        if (response.body().getErc().getBlog()!=null && response.body().getErc().getBlog().size()>0){
+                            CurrencyDetailsAdapter currencyDetailsAdapter = new CurrencyDetailsAdapter(response.body(),Type,Graph_layout.this,Graph_layout.this);
+                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                            recyclerView.setLayoutManager(mLayoutManager);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            recyclerView.setAdapter(currencyDetailsAdapter);
+                            history_Empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+
+                        }else {
+                            history_Empty.setText("No Blog are Available");
+                            history_Empty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                        }
+                    }else{
+                        text_description.setText(response.body().getErc().getAboutCurrency());
+                    }
+
+                } else {
+                    Snacky.builder()
+                            .setActivity(Graph_layout.this)
+                            .setText(response.message())
+                            .setDuration(Snacky.LENGTH_SHORT)
+                            .setActionText(android.R.string.ok)
+                            .error()
+                            .show();
+                    history_Empty.setVisibility(View.GONE);
+                    recyclerView.setVisibility(View.GONE);
+
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CurrencyDetailsModelResponse> call, Throwable t) {
+                Snacky.builder()
+                        .setActivity(Graph_layout.this)
+                        .setText(t.getLocalizedMessage())
+                        .setDuration(Snacky.LENGTH_SHORT)
+                        .setActionText(android.R.string.ok)
+                        .error()
+                        .show();
+
+            }
+        });
+
+    }
+
+    @Override
+    public void OnCurrencyDetailsClickListener(String VideoId,String link, String type) {
+
+       if (type.equalsIgnoreCase("video")){
+           startActivity(new Intent(getApplicationContext(),PlayVideoScreen.class).putExtra("VideoId",VideoId));
+
+       }else if (type.equalsIgnoreCase("blogs")){
+           Intent i = new Intent(Intent.ACTION_VIEW);
+           i.setData(Uri.parse(link));
+           startActivity(i);
+       }
+
 
     }
 }

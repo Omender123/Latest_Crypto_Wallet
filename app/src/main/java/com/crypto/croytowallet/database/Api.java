@@ -1,6 +1,7 @@
 package com.crypto.croytowallet.database;
 
 import com.crypto.croytowallet.Extra_Class.ApiResponse.ActiveDeviceResponse;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.CurrencyDetailsModelResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.FilterBody;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.GetNewCoinRespinse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.LoginResponse;
@@ -526,5 +527,11 @@ public interface Api {
     Call<List<TopUp_HistoryResponse>>getRewardHistory(
             @Header("Authorization") String Authtoken,
             @Body FilterBody filterBody
+    );
+
+    @FormUrlEncoded
+    @POST("about/CurrencyDetails")
+    Call<CurrencyDetailsModelResponse>getCurrencyDetails(
+            @Field("currencyName") String symbols
     );
 }

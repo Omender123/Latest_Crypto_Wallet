@@ -32,9 +32,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CroytoWallet"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".TopUp.Full_TopUp_History"
-            android:theme="@style/Theme.CroytoWallet.NoActionBar"></activity>
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true">
+        <activity android:name=".Activity.PlayVideoScreen"
+            android:theme="@style/Theme.CroytoWallet.NoActionBar"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"/>
+        <activity
+            android:name=".TopUp.Full_TopUp_History"
+            android:theme="@style/Theme.CroytoWallet.NoActionBar" />
         <activity
             android:name=".TopUp.TopUp_History"
             android:theme="@style/Theme.CroytoWallet.NoActionBar" />
