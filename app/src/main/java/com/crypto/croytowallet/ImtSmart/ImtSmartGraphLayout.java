@@ -14,6 +14,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.icu.text.DecimalFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.crypto.croytowallet.Activity.Graph_layout;
+import com.crypto.croytowallet.Activity.PlayVideoScreen;
+import com.crypto.croytowallet.Adapter.CurrencyDetailsAdapter;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.CurrencyDetailsModelResponse;
 import com.crypto.croytowallet.ImtSmart.ImtSmartGraphLayout;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.SendCoinHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.MyMarkerView;
@@ -60,7 +65,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnClickListener, Coin_Send_History_Adapter.OnSendCoinItemListener {
+public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnClickListener, Coin_Send_History_Adapter.OnSendCoinItemListener, CurrencyDetailsAdapter.OnCurrencyDetails {
     ImageView back, received, send;
     TextView price, balances, coinprice, increaseRate, null1,  text_activity, text_about, text_video, text_blog, text_description;
     KProgressHUD progressDialog;
@@ -273,7 +278,8 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
                 constraintLayout.setVisibility(View.GONE);
                 text_description.setVisibility(View.VISIBLE);
-                text_description.setText("Descriptions");
+               // text_description.setText("Descriptions");
+                getCurrencyDetails("Descriptions", "imt");
 
                 break;
             case R.id.text_video:
@@ -283,10 +289,8 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
                 constraintLayout.setVisibility(View.VISIBLE);
                 text_description.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.GONE);
-                history_Empty.setVisibility(View.VISIBLE);
-                history_Empty.setText("No Videos are Available");
-
+                history_Empty.setVisibility(View.GONE);
+                getCurrencyDetails("video", "imt");
                 break;
             case R.id.text_blog:
                 text_about.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
@@ -294,10 +298,10 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
                 text_video.setTextColor(getResources().getColor(R.color.toolbar_text_unSelectcolor));
                 text_blog.setTextColor(getResources().getColor(R.color.toolbar_text_color));
                 constraintLayout.setVisibility(View.VISIBLE);
+                constraintLayout.setVisibility(View.VISIBLE);
                 text_description.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.GONE);
-                history_Empty.setVisibility(View.VISIBLE);
-                history_Empty.setText("No Blog are Available");
+                history_Empty.setVisibility(View.GONE);
+                getCurrencyDetails("blogs","imt");
                 break;
 
 
@@ -783,21 +787,96 @@ public class ImtSmartGraphLayout extends AppCompatActivity implements View.OnCli
         startActivity(intent);
 
     }
-   /* @Override
-    public void onHistoryItemClickListener(int position) {
-        String username = coinModals.get(position).getUsername();
-        String transaction = coinModals.get(position).getId();
-        String type = coinModals.get(position).getType();
-        String date = coinModals.get(position).getTime();
-        String amount = coinModals.get(position).getAmount();
-        String Type = "coinTransfer";
-        Transaction_HistoryModel historyModel = new Transaction_HistoryModel(transaction, "imt", amount, "type", username, date,null,type);
-
-        //storing the user in shared preferences
-        TransactionHistorySharedPrefManager.getInstance(getApplicationContext()).Transaction_History_Data(historyModel);
 
 
-        Intent intent = new Intent(ImtSmartGraphLayout.this, Full_Transaction_History.class);
-        startActivity(intent);
+    public void getCurrencyDetails(String Type, String symbol) {
+
+        Call<CurrencyDetailsModelResponse> call = RetrofitClient.getInstance().getApi().getCurrencyDetails(symbol);
+
+        call.enqueue(new Callback<CurrencyDetailsModelResponse>() {
+            @Override
+            public void onResponse(Call<CurrencyDetailsModelResponse> call, Response<CurrencyDetailsModelResponse> response) {
+                if (response.isSuccessful() && response.code() == 200) {
+
+                    if (Type.equalsIgnoreCase("video")){
+
+                        if (response.body().getErc().getVideo()!=null && response.body().getErc().getVideo().size()>0){
+                            CurrencyDetailsAdapter currencyDetailsAdapter = new CurrencyDetailsAdapter(response.body(),Type,getApplicationContext(), ImtSmartGraphLayout.this);
+                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                            recyclerView.setLayoutManager(mLayoutManager);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            recyclerView.setAdapter(currencyDetailsAdapter);
+                            history_Empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        }else {
+                            history_Empty.setText("No Videos are Available");
+                            history_Empty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                        }
+
+                    }else if(Type.equalsIgnoreCase("blogs")){
+                        if (response.body().getErc().getBlog()!=null && response.body().getErc().getBlog().size()>0){
+                            CurrencyDetailsAdapter currencyDetailsAdapter = new CurrencyDetailsAdapter(response.body(),Type,ImtSmartGraphLayout.this,ImtSmartGraphLayout.this);
+                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                            recyclerView.setLayoutManager(mLayoutManager);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            recyclerView.setAdapter(currencyDetailsAdapter);
+                            history_Empty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+
+                        }else {
+                            history_Empty.setText("No Blog are Available");
+                            history_Empty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                        }
+                    }else{
+                        text_description.setText(response.body().getErc().getAboutCurrency());
+                    }
+
+                } else {
+                    Snacky.builder()
+                            .setActivity(ImtSmartGraphLayout.this)
+                            .setText(response.message())
+                            .setDuration(Snacky.LENGTH_SHORT)
+                            .setActionText(android.R.string.ok)
+                            .error()
+                            .show();
+                    history_Empty.setVisibility(View.GONE);
+                    recyclerView.setVisibility(View.GONE);
+
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CurrencyDetailsModelResponse> call, Throwable t) {
+                Snacky.builder()
+                        .setActivity(ImtSmartGraphLayout.this)
+                        .setText(t.getLocalizedMessage())
+                        .setDuration(Snacky.LENGTH_SHORT)
+                        .setActionText(android.R.string.ok)
+                        .error()
+                        .show();
+
+            }
+        });
+
     }
-*/}
+
+    @Override
+    public void OnCurrencyDetailsClickListener(String VideoId,String link, String type) {
+
+        if (type.equalsIgnoreCase("video")){
+            startActivity(new Intent(getApplicationContext(), PlayVideoScreen.class).putExtra("VideoId",VideoId));
+
+        }else if (type.equalsIgnoreCase("blogs")){
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(link));
+            startActivity(i);
+        }
+
+
+    }
+
+}
