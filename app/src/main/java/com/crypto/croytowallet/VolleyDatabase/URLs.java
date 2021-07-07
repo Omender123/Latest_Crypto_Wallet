@@ -35,4 +35,5 @@ public class URLs {
     public static final String URL_Image = "https://imxapp1.s3-ap-southeast-1.amazonaws.com/";
 
 
+
 }

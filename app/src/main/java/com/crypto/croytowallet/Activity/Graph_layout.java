@@ -839,7 +839,7 @@ public class Graph_layout extends AppCompatActivity implements View.OnClickListe
     public void OnCurrencyDetailsClickListener(String VideoId,String link, String type) {
 
        if (type.equalsIgnoreCase("video")){
-           startActivity(new Intent(getApplicationContext(),PlayVideoScreen.class).putExtra("VideoId",VideoId));
+         startActivity(new Intent(getApplicationContext(),PlayVideoScreen.class).putExtra("VideoId",VideoId));
 
        }else if (type.equalsIgnoreCase("blogs")){
            Intent i = new Intent(Intent.ACTION_VIEW);

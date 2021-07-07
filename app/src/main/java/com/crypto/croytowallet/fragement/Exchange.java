@@ -28,7 +28,10 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.crypto.croytowallet.Adapter.CoinSpinnerAdapter;
 import com.crypto.croytowallet.Adapter.CustomSpinnerAdapter;
+import com.crypto.croytowallet.Adapter.SendCoinSpinnerAdapter;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.TrueEcResponse;
 import com.crypto.croytowallet.ImtSmart.SwapConfirmation;
 import com.crypto.croytowallet.ImtSmart.imtSwap;
 import com.crypto.croytowallet.Model.SwapModel;
@@ -36,6 +39,7 @@ import com.crypto.croytowallet.R;
 import com.crypto.croytowallet.SharedPrefernce.SharedPrefManager;
 import com.crypto.croytowallet.SharedPrefernce.SwapSharedPrefernce;
 import com.crypto.croytowallet.SharedPrefernce.UserData;
+import com.crypto.croytowallet.TransactionHistory.CoinHistory;
 import com.crypto.croytowallet.VolleyDatabase.URLs;
 import com.crypto.croytowallet.VolleyDatabase.VolleySingleton;
 import com.crypto.croytowallet.database.RetrofitClient;
@@ -47,6 +51,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import de.mateware.snacky.Snacky;
@@ -57,16 +62,11 @@ import retrofit2.Response;
 
 public class Exchange extends Fragment implements View.OnClickListener {
     Spinner sendSpinner, reciveSpinner;
-    String sendData, receviedData, SwapAmount, low_gasFees, average_gasFees, high_gasFees, min_amount, half_amount, max_amount, priceCoinId, coinPrice,coinTypes;
+    String sendData, receviedData, receviedData1, SwapAmount, low_gasFees, average_gasFees, high_gasFees, min_amount, half_amount, max_amount, priceCoinId, coinPrice, coinTypes;
     ImageView img_low, img_average, img_high;
     TextView swapBtn, txt_low, txt_average, txt_high, gwei_low, gwei_average, gwei_high, min_low, min_average, min_high, min_rate, half_rate, max_rate;
     LinearLayout lyt_low, lyt_average, lyt_high;
     EditText enter_Swap_Amount;
-    String[] coinName = {"ImSmart", "Bitcoin","Ethereum","Tether","Ripple","Litecoin","USD Coin","Tron","BitTorrent","Doge Coin","Binance Coin","ImSmart Utility"};
-    String[] coinSymbols = {"IMT", "BTC","ETH","USDT","XRP","LTC","USDC","TRX","BTT","Doge","BNB","IMT-U"};
-    String[] coinId = {"imt", "btc","eth","usdt","xrp","ltc","usdc","trx","btt","doge","bnb","airdrop"};
-    String[] PricecoinId = {"airdrop", "bitcoin","ethereum","tether","ripple","litecoin","usd-coin","tron","bittorrent-2","dogecoin","binancecoin","airdrop"};
-    int[] coinImage = {R.mipmap.imt1,R.drawable.ic_bitcoin,R.drawable.ic_ethereum,R.drawable.ic_usdt,R.drawable.ic_xrp,R.drawable.ic_ltc,R.drawable.ic_usdc,R.drawable.ic_tron,R.drawable.ic_bittorrent,R.drawable.ic_doge,R.drawable.ic_binance,R.drawable.ic_imt__u};
 
     String[] coinName1 = {"ImSmart Utility", "ImSmart"};
     String[] coinSymbols1 = {"IMT-U", "IMT"};
@@ -139,84 +139,9 @@ public class Exchange extends Fragment implements View.OnClickListener {
 
         imtPrice = sharedPreferences1.getString("imtPrices", "0.09");
 
-        CustomSpinnerAdapter customAdapter = new CustomSpinnerAdapter(getContext(), coinImage, coinName, coinSymbols, coinId, PricecoinId);
-        sendSpinner.setAdapter(customAdapter);
-        sendSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        getAllTrueEC(token);
 
-                sendData = coinId[position];
-                priceCoinId = PricecoinId[position];
-                coinSymbol = coinSymbols[position];
-                positions = position;
-                geTypeToken(token, sendData);
-                // AirDropBalance(token,sendData,currency2);
 
-                if (sendData.equals(receviedData)) {
-                    Snacky.builder()
-                            .setActivity(getActivity())
-                            .setText("You can't select the same currency for Swap ")
-                            .setDuration(Snacky.LENGTH_SHORT)
-                            .setActionText(android.R.string.ok)
-                            .error()
-                            .show();
-                } else if (priceCoinId.equals("airdrop")) {
-                    SwapAmount = enter_Swap_Amount.getText().toString().trim();
-                    if (!SwapAmount.isEmpty()) {
-                        DecimalFormat df = new DecimalFormat();
-                        df.setMaximumFractionDigits(8);
-
-                        Double coinprices, enterAmount, totalAmoumt;
-                        coinprices = Double.parseDouble(imtPrice);
-                        enterAmount = Double.parseDouble(SwapAmount);
-
-                        totalAmoumt = enterAmount * coinprices;
-
-                        text_send.setText(SwapAmount + " " + coinSymbol + "=" + df.format(totalAmoumt) + " " + currency2.toUpperCase());
-                    }
-                } else {
-
-                    String coinid = priceCoinId.toLowerCase();
-                    String currency = currency2.toLowerCase();
-
-                    getCoinPrice(coinid, currency);
-
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        CustomSpinnerAdapter customAdapter1 = new CustomSpinnerAdapter(getContext(), coinImage1, coinName1, coinSymbols1, coinId1, PricecoinId1);
-
-        reciveSpinner.setAdapter(customAdapter1);
-        reciveSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                receviedData = coinId1[position];
-                // Toast.makeText(view.getContext(), receviedData,Toast.LENGTH_SHORT).show();
-
-                if (sendData.equals(receviedData)) {
-                    Snacky.builder()
-                            .setActivity(getActivity())
-                            .setText("You can't select the same currency for Swap ")
-                            .setDuration(Snacky.LENGTH_SHORT)
-                            .setActionText(android.R.string.ok)
-                            .error()
-                            .show();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
         GET_GAS();
         swapBtn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -263,7 +188,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                             .setActionText(android.R.string.ok)
                             .error()
                             .show();
-                } else if (priceCoinId.equals("airdrop")) {
+                } else if (priceCoinId.equalsIgnoreCase("imt") || priceCoinId.equalsIgnoreCase("ImSmart Utility")) {
 
                     DecimalFormat df = new DecimalFormat();
                     df.setMaximumFractionDigits(8);
@@ -277,7 +202,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                     String coinAmount = String.valueOf(df.format(totalAmoumt));
 
 
-                    SwapModel swapModel = new SwapModel(sendData, receviedData, imtPrice, currency2, CurrencySymbols, coinAmount, SwapAmount, userBalance, coinAmount, value, "Swap",coinTypes);
+                    SwapModel swapModel = new SwapModel(sendData, receviedData, imtPrice, currency2, CurrencySymbols, coinAmount, SwapAmount, userBalance, coinAmount, value, "Swap", coinTypes);
                     SwapSharedPrefernce.getInstance(getContext()).SetData(swapModel);
 
 
@@ -303,15 +228,15 @@ public class Exchange extends Fragment implements View.OnClickListener {
                     String coinAmount = String.valueOf(df.format(totalAmoumt));
 
 
-                    SwapModel swapModel = new SwapModel(sendData, receviedData, coinPrice, currency2, CurrencySymbols, coinAmount, SwapAmount, userBalance, coinAmount, value, "Swap",coinTypes);
+                    SwapModel swapModel = new SwapModel(sendData, receviedData, coinPrice, currency2, CurrencySymbols, coinAmount, SwapAmount, userBalance, coinAmount, value, "Swap", coinTypes);
                     SwapSharedPrefernce.getInstance(getContext()).SetData(swapModel);
 
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            Intent intent = new Intent(getContext(), SwapConfirmation.class);
-                            startActivity(intent);
+                             Intent intent = new Intent(getContext(), SwapConfirmation.class);
+                             startActivity(intent);
                         }
                     }, 500);
 
@@ -363,7 +288,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                 String msg = s.toString();
 
 
-                if (priceCoinId.equals("airdrop")) {
+                if (priceCoinId.equalsIgnoreCase("imt") || priceCoinId.equalsIgnoreCase("ImSmart Utility")) {
 
                     if (msg.isEmpty()) {
                         text_send.setText(" ");
@@ -406,6 +331,153 @@ public class Exchange extends Fragment implements View.OnClickListener {
         });
 
         return view;
+    }
+
+    private void getAllTrueEC(String token) {
+
+        progressDialog = KProgressHUD.create(getActivity())
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setLabel("Loading.........")
+                .setCancellable(false)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show();
+
+        showpDialog();
+
+        Call<List<TrueEcResponse>> call = RetrofitClient.getInstance().getApi().getALLTrueEc(token);
+
+        call.enqueue(new Callback<List<TrueEcResponse>>() {
+            @Override
+            public void onResponse(Call<List<TrueEcResponse>> call, Response<List<TrueEcResponse>> response) {
+                hidepDialog();
+                String s = null;
+                if (response.isSuccessful() && response.body() != null && response.body().size() > 0) {
+                    SendCoinSpinnerAdapter sendCoinSpinnerAdapter = new SendCoinSpinnerAdapter(getContext(), response.body());
+                    sendSpinner.setAdapter(sendCoinSpinnerAdapter);
+
+                    sendSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.N)
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            priceCoinId = response.body().get(position).getName();
+                            coinSymbol = response.body().get(position).getSymbol();
+                            positions = position;
+                            if (priceCoinId.equalsIgnoreCase("ImSmart Utility")) {
+                                geTypeToken(token, "airdrop");
+                                sendData = "airdrop";
+
+                            } else {
+                                sendData = response.body().get(position).getSymbol().toLowerCase();
+                                geTypeToken(token, sendData);
+
+                            }
+
+                            if (coinSymbol.equalsIgnoreCase(receviedData1)) {
+                                Snacky.builder()
+                                        .setActivity(getActivity())
+                                        .setText("You can't select the same currency for Swap ")
+                                        .setDuration(Snacky.LENGTH_SHORT)
+                                        .setActionText(android.R.string.ok)
+                                        .error()
+                                        .show();
+                            } else if (priceCoinId.equalsIgnoreCase("imt") || priceCoinId.equalsIgnoreCase("ImSmart Utility")) {
+                                SwapAmount = enter_Swap_Amount.getText().toString().trim();
+                                if (!SwapAmount.isEmpty()) {
+                                    DecimalFormat df = new DecimalFormat();
+                                    df.setMaximumFractionDigits(8);
+
+                                    Double coinprices, enterAmount, totalAmoumt;
+                                    coinprices = Double.parseDouble(imtPrice);
+                                    enterAmount = Double.parseDouble(SwapAmount);
+
+                                    totalAmoumt = enterAmount * coinprices;
+
+                                    text_send.setText(SwapAmount + " " + coinSymbol + "=" + df.format(totalAmoumt) + " " + currency2.toUpperCase());
+                                }
+                            } else {
+
+                                String coinid = priceCoinId.toLowerCase();
+                                String currency = currency2.toLowerCase();
+
+                                getCoinPrice(coinid, currency);
+
+                            }
+
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+
+                } else {
+                    try {
+                        s = response.errorBody().string();
+                        JSONObject jsonObject1 = new JSONObject(s);
+                        String error = jsonObject1.getString("error");
+
+
+                        Snacky.builder()
+                                .setActivity(getActivity())
+                                .setText(error)
+                                .setDuration(Snacky.LENGTH_SHORT)
+                                .setActionText(android.R.string.ok)
+                                .error()
+                                .show();
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                CustomSpinnerAdapter customAdapter1 = new CustomSpinnerAdapter(getContext(), coinImage1, coinName1, coinSymbols1, coinId1, PricecoinId1);
+
+                reciveSpinner.setAdapter(customAdapter1);
+                reciveSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        receviedData = coinId1[position];
+                        receviedData1 = coinSymbols1[position];
+                        // Toast.makeText(view.getContext(), receviedData,Toast.LENGTH_SHORT).show();
+
+                        if (coinSymbol.equalsIgnoreCase(receviedData1)) {
+                            Snacky.builder()
+                                    .setActivity(getActivity())
+                                    .setText("You can't select the same currency for Swap ")
+                                    .setDuration(Snacky.LENGTH_SHORT)
+                                    .setActionText(android.R.string.ok)
+                                    .error()
+                                    .show();
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
+            }
+
+            @Override
+            public void onFailure(Call<List<TrueEcResponse>> call, Throwable t) {
+                hidepDialog();
+                Snacky.builder()
+                        .setActivity(getActivity())
+                        .setText(t.getLocalizedMessage())
+                        .setDuration(Snacky.LENGTH_SHORT)
+                        .setActionText(android.R.string.ok)
+                        .error()
+                        .show();
+
+            }
+        });
+
     }
 
 
@@ -730,6 +802,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                         String token1 = object.getString("token");
                         coinTypes = token1;
                         getBalance(token, token1, symbol, currency2);
+
                     } catch (IOException | JSONException e) {
                         e.printStackTrace();
                     }
@@ -737,6 +810,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                 } else if (response.code() == 400) {
                     getBalance(token, symbol, symbol, currency2);
                     coinTypes = symbol;
+
                 } else if (response.code() == 401) {
                     Snacky.builder()
                             .setActivity(getActivity())
@@ -765,12 +839,11 @@ public class Exchange extends Fragment implements View.OnClickListener {
     }
 
 
+    public void getBalance(String token, String coinType, String coinSymbol, String currency) {
 
-    public void getBalance(String token,String coinType,String coinSymbol,String currency){
+        if (positions == 0) {
 
-        if (positions==0){
-
-        }else{
+        } else {
             progressDialog = KProgressHUD.create(getActivity())
                     .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
                     .setLabel("Please wait.....")
@@ -783,38 +856,36 @@ public class Exchange extends Fragment implements View.OnClickListener {
         }
 
 
-
-        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().Balance(token,coinType,coinSymbol,currency);
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().Balance(token, coinType, coinSymbol, currency);
 
         call.enqueue(new Callback<ResponseBody>() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
-                String s =null;
-                if (positions==0){
+                String s = null;
+                if (positions == 0) {
 
-                }else {
+                } else {
                     hidepDialog();
                 }
-                if (response.code()==200){
+                if (response.code() == 200) {
                     try {
-                        s=response.body().string();
+                        s = response.body().string();
 
                         JSONObject object = new JSONObject(s);
                         userBalance = object.getString("balance");
 
-                       // Toast.makeText(getContext(), ""+use, Toast.LENGTH_SHORT).show();
-                     } catch (IOException | JSONException e) {
+                    } catch (IOException | JSONException e) {
                         e.printStackTrace();
                     }
 
-                } else if(response.code()==400){
+                } else if (response.code() == 400) {
                     try {
-                        s=response.errorBody().string();
-                        JSONObject jsonObject1=new JSONObject(s);
-                        String error =jsonObject1.getString("error");
+                        s = response.errorBody().string();
+                        JSONObject jsonObject1 = new JSONObject(s);
+                        String error = jsonObject1.getString("error");
 
-                        userBalance="0";
+                        userBalance = "0";
 
                         Snacky.builder()
                                 .setActivity(getActivity())
@@ -829,7 +900,7 @@ public class Exchange extends Fragment implements View.OnClickListener {
                         e.printStackTrace();
                     }
 
-                } else if(response.code()==401){
+                } else if (response.code() == 401) {
 
                     Snacky.builder()
                             .setActivity(getActivity())
@@ -845,9 +916,9 @@ public class Exchange extends Fragment implements View.OnClickListener {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                if (positions==0){
+                if (positions == 0) {
 
-                }else {
+                } else {
                     hidepDialog();
                 }
                 Snacky.builder()

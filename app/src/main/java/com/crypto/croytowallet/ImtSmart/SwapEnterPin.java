@@ -89,7 +89,7 @@ public class SwapEnterPin extends AppCompatActivity {
         swapModel = SwapSharedPrefernce.getInstance(getApplicationContext()).getSwapData();
         userData = SharedPrefManager.getInstance(getApplicationContext()).getUser();
         Token = userData.getToken();
-        coinToken = swapModel.getType();
+        //coinToken = swapModel.getType();
 
         sendData = swapModel.getSendData();
         receivedData = swapModel.getReceivedData();
@@ -126,8 +126,8 @@ public class SwapEnterPin extends AppCompatActivity {
                         }
                     }, 200);
 
-                    //Toast.makeText(getApplicationContext(),"name "+ sendData +"sendCurrency "+coinToken,Toast.LENGTH_LONG).show();
-                 done(enterPin);
+                  //  Toast.makeText(getApplicationContext(),sendData+CoinPrice+coinToken+receivedData+value+enterAmount+ enterPin,Toast.LENGTH_LONG).show();
+                done(enterPin);
                 }else{
                     new Handler().postDelayed(new Runnable() {
                         @Override

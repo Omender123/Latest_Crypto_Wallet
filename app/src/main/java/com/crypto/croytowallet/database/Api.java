@@ -15,6 +15,7 @@ import com.crypto.croytowallet.Extra_Class.ApiResponse.SendCoinHistoryResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TCResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TopUp_HistoryResponse;
 import com.crypto.croytowallet.Extra_Class.ApiResponse.TransactionHistoryResponse;
+import com.crypto.croytowallet.Extra_Class.ApiResponse.TrueEcResponse;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
@@ -533,5 +534,15 @@ public interface Api {
     @POST("about/CurrencyDetails")
     Call<CurrencyDetailsModelResponse>getCurrencyDetails(
             @Field("currencyName") String symbols
+    );
+
+    @GET("EC/TrueEc")
+    Call<List<TrueEcResponse>>getTrueEc(
+            @Header("Authorization") String Authtoken
+    );
+
+    @GET("EC/allTrueEc")
+    Call<List<TrueEcResponse>>getALLTrueEc(
+            @Header("Authorization") String Authtoken
     );
 }

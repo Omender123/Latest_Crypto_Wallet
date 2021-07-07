@@ -42,18 +42,6 @@ public class PlayVideoScreen extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         VideoId = bundle.getString("VideoId");
 
-      /*  getLifecycle().addObserver(youTubePlayerView);
-        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
-            @Override
-            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
-                  youTubePlayer.loadVideo(VideoId, 0);
-            }
-        });
-        youTubePlayerView.enterFullScreen();
-        youTubePlayerView.exitFullScreen();
-        youTubePlayerView.isFullScreen();
-        youTubePlayerView.toggleFullScreen();
-*/
 
         initYouTubePlayerView();
     }
