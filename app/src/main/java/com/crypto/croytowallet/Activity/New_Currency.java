@@ -229,6 +229,7 @@ public class New_Currency extends AppCompatActivity implements NewCoinAdapter.On
         String image = data.get(position).getImage();
         Boolean aBoolean = true;
 
+        Toast.makeText(this, ""+name, Toast.LENGTH_SHORT).show();
         AddCoinInUserProfile(token, name, aBoolean, symbols, image);
 
 

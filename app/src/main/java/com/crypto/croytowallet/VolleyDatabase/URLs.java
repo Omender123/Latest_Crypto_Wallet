@@ -5,7 +5,7 @@ public class URLs {
 
     private static final String ROOT_URL = "https://api.imx.global/api/";
 
-    // private static final String ROOT_URL = " http://13.233.136.56:8080/api/";
+    // private static final String ROOT_URL = " http://35.154.44.155:8089/api/";
 
     public static final String URL_CHANGE_PASSWORD = ROOT_URL + "user/forgot-password";
     public static final String URL_SET_TRANSACTIONPin = ROOT_URL + "user/transactionPin";

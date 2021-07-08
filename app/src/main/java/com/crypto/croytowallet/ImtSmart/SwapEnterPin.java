@@ -221,7 +221,7 @@ public class SwapEnterPin extends AppCompatActivity {
                         SwapResponsePrefernce.getInstance(getApplicationContext()).SetData(swapRespoinseModel);
 
                          Intent intent = new Intent(SwapEnterPin.this,SwapAcknowledgement.class);
-                            startActivity(intent);
+                         startActivity(intent);
 
                     } catch (JSONException e) {
                         e.printStackTrace();

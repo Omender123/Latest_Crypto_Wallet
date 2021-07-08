@@ -152,7 +152,7 @@ public interface Api {
 
     @FormUrlEncoded
     @POST("transaction/swapCurrency")
-    Call<ResponseBody> IMT_SWAP(
+    Call<ResponseBody>IMT_SWAP(
             @Header("Authorization") String Authtoken,
             @Field("name") String sendData,
             @Field("sendPrice") String sendPrice,
@@ -165,7 +165,7 @@ public interface Api {
 
     @FormUrlEncoded
     @POST("user/appCrashed/transactionPin")
-    Call<ResponseBody> setTransactionPin(
+    Call<ResponseBody>setTransactionPin(
             @Field("username") String username,
             @Field("transactionPin") String transactionPin,
             @Field("password") String password);
@@ -310,8 +310,6 @@ public interface Api {
             @Query("limit") int hour
     );
 
-
-
     @FormUrlEncoded
     @POST("currency/newIMT")
     Call<ResponseBody> getIMTDetails(
@@ -411,7 +409,7 @@ public interface Api {
     @GET("EC")
     Call<ResponseBody> getAllCoinDataBase(
             @Header("Authorization") String Authtoken
-            );
+    );
 
     @GET("bankD")
     Call<ResponseBankDetails> getBankDetails(
@@ -425,7 +423,7 @@ public interface Api {
 
     @FormUrlEncoded
     @POST("user/cryptoKey")
-    Call<PublicKeyResponse>GetPublicKey(
+    Call<PublicKeyResponse> GetPublicKey(
             @Header("Authorization") String Authtoken,
             @Field("crypto") String CoinId
     );
@@ -443,19 +441,19 @@ public interface Api {
             @Part("utility") RequestBody utility,
             @Part MultipartBody.Part image
 
-           );
+    );
 
     @FormUrlEncoded
     @POST("EC/editEC")
-    Call<ResponseBody>EditCoin(
+    Call<ResponseBody> EditCoin(
             @Header("Authorization") String Authtoken,
             @Field("crypto") String symbol,
-            @Field("enabled") String  aBoolean
+            @Field("enabled") String aBoolean
 
-            );
+    );
 
     @GET("EC/modifyEC")
-    Call<ResponseBody>UpdateCoin(
+    Call<ResponseBody> UpdateCoin(
             @Header("Authorization") String Authtoken
     );
 
@@ -472,77 +470,80 @@ public interface Api {
 
     @FormUrlEncoded
     @POST("currency/addNewCurrency")
-    Call<ResponseBody>AddCoinInProfile(
+    Call<ResponseBody> AddCoinInProfile(
             @Header("Authorization") String Authtoken,
             @Field("name") String CoinName,
-            @Field("enabled") Boolean  aBoolean,
+            @Field("enabled") Boolean aBoolean,
             @Field("symbol") String symbol,
             @Field("image") String Image
-     );
+    );
+
     @FormUrlEncoded
     @POST("user/findCurrentlyActiveDevices")
-    Call<ActiveDeviceResponse>ActiveDevice(
+    Call<ActiveDeviceResponse> ActiveDevice(
             @Field("username") String username
-            );
+    );
 
     @FormUrlEncoded
     @POST(" ERC20/getToken")
-    Call<ResponseBody>getToken(
+    Call<ResponseBody> getToken(
             @Header("Authorization") String Authtoken,
             @Field("name") String coinSymbols
     );
+
     @POST("transaction/allPeerTransactiones1")
-    Call<TransactionHistoryResponse>GetAllTransactionHistory(
+    Call<TransactionHistoryResponse> GetAllTransactionHistory(
             @Header("Authorization") String Authtoken
     );
-     @POST("transaction/allPeerTransactiones2")
-    Call<TransactionHistoryResponse>GetAllTransactionHistory1(
+
+    @POST("transaction/allPeerTransactiones2")
+    Call<TransactionHistoryResponse> GetAllTransactionHistory1(
             @Header("Authorization") String Authtoken,
             @Body FilterBody filterBody
-            );
+    );
 
     @FormUrlEncoded
     @POST("transaction/swapRewards")
-    Call<ResponseBody>SwapRewards(
+    Call<ResponseBody> SwapRewards(
             @Header("Authorization") String Authtoken,
             @Field("sendAmount") String amount,
             @Field("transactionPin") String transactionPin
     );
 
     @GET("user/calculateReward")
-    Call<ResponseBody>GetRewards(
+    Call<ResponseBody> GetRewards(
             @Header("Authorization") String Authtoken
     );
 
     @GET("transaction/rewardHistory")
-    Call<RewardHistoryResponse>GetHistoryRewards(
+    Call<RewardHistoryResponse> GetHistoryRewards(
             @Header("Authorization") String Authtoken
     );
 
     @GET("TC")
-    Call<TCResponse>getTCs(
+    Call<TCResponse> getTCs(
             @Header("Authorization") String Authtoken
     );
 
     @POST("pending/userPendingTrans")
-    Call<List<TopUp_HistoryResponse>>getRewardHistory(
+    Call<List<TopUp_HistoryResponse>> getRewardHistory(
             @Header("Authorization") String Authtoken,
             @Body FilterBody filterBody
     );
 
     @FormUrlEncoded
     @POST("about/CurrencyDetails")
-    Call<CurrencyDetailsModelResponse>getCurrencyDetails(
+    Call<CurrencyDetailsModelResponse> getCurrencyDetails(
             @Field("currencyName") String symbols
     );
 
     @GET("EC/TrueEc")
-    Call<List<TrueEcResponse>>getTrueEc(
+    Call<List<TrueEcResponse>> getTrueEc(
             @Header("Authorization") String Authtoken
     );
 
     @GET("EC/allTrueEc")
-    Call<List<TrueEcResponse>>getALLTrueEc(
+    Call<List<TrueEcResponse>> getALLTrueEc(
             @Header("Authorization") String Authtoken
     );
 }

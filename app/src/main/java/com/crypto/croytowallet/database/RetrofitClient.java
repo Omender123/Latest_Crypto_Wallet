@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
    private static final String BASE_URL="https://api.imx.global/api/";
-  // private static final String BASE_URL="http://13.233.136.56:8080/api/";
+  // private static final String BASE_URL="http://35.154.44.155:8089/api/";
     private static RetrofitClient mInstance;
     private Retrofit retrofit;
     private Context context;
